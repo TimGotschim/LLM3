@@ -42,8 +42,9 @@ def main():
     if not check_ollama():
         sys.exit(1)
     
-    # Configuration
-    PDF_FOLDER = "../rexx_pdfs"
+    # Use relative path from script location
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    PDF_FOLDER = os.path.join(script_dir, "rexx_pdfs")
     MODEL_NAME = "llama2"  # Change this to your preferred model
     
     # Check if PDF folder exists

@@ -3,7 +3,8 @@ import os
 import requests
 
 # Test 1: Check if PDF folder exists
-pdf_folder = "../rexx_pdfs"
+script_dir = os.path.dirname(os.path.abspath(__file__))
+pdf_folder = os.path.join(script_dir, "rexx_pdfs")
 if os.path.exists(pdf_folder):
     pdf_count = len([f for f in os.listdir(pdf_folder) if f.endswith('.pdf')])
     print(f"✅ Found {pdf_count} PDFs in {pdf_folder}")

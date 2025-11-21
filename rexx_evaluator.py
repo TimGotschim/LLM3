@@ -469,11 +469,13 @@ class RAGEvaluator:
 
 def main():
     """Example evaluation workflow."""
-    
+
+    import os
     from rexx_rag_system import RexxRAGSystem
-    
-    # Initialize RAG system
-    pdf_folder = "/Users/timgotschim/Documents/LLM/Large-Language-Models/rexx_pdfs"
+
+    # Use relative path from script location
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    pdf_folder = os.path.join(script_dir, "rexx_pdfs")
     rag_system = RexxRAGSystem(pdf_folder)
     
     # Process PDFs if needed

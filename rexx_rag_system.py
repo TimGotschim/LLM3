@@ -24,7 +24,7 @@ from sentence_transformers import SentenceTransformer
 import chromadb
 #from chromadb.config import Settings
 
-# Ollama integration
+# integration
 import requests
 
 # Progress tracking
@@ -408,9 +408,10 @@ Answer: """
 
 def main():
     """Example usage of the RAG system."""
-    
-    # Update this path to your actual PDF folder
-    pdf_folder = "../rexx_pdfs"
+
+    # Use relative path from script location
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    pdf_folder = os.path.join(script_dir, "rexx_pdfs")
     
     # Initialize RAG system
     rag = RexxRAGSystem(pdf_folder, model_name="llama2")

@@ -426,12 +426,14 @@ class RexxFineTuner:
 
 def main():
     """Example fine-tuning workflow."""
-    
+
+    import os
     # Import the RAG system
     from rexx_rag_system import RexxRAGSystem
-    
-    # Initialize systems
-    pdf_folder = "/Users/timgotschim/Documents/LLM/Large-Language-Models/rexx_pdfs"
+
+    # Use relative path from script location
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    pdf_folder = os.path.join(script_dir, "rexx_pdfs")
     rag_system = RexxRAGSystem(pdf_folder)
     
     # Ensure PDFs are processed
