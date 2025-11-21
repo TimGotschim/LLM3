@@ -43,8 +43,9 @@ class RexxRAGSystem:
         self.model_name = model_name
         self.ollama_base_url = "http://localhost:11434"
 
-        # Folder where Chroma DB will store its data
-        self.persist_directory = "rexx_chroma_db"
+        # Use absolute path for Chroma DB storage (relative to this script's location)
+        self.script_dir = os.path.dirname(os.path.abspath(__file__))
+        self.persist_directory = os.path.join(self.script_dir, "rexx_chroma_db")
 
         # Initialize embedding model
         print("Loading embedding model...")
@@ -70,8 +71,8 @@ class RexxRAGSystem:
             separators=["\n\n", "\n", ". ", " ", ""]
         )
 
-        # Metadata storage
-        self.metadata_file = "rexx_rag_metadata.json"
+        # Metadata storage (also use absolute path)
+        self.metadata_file = os.path.join(self.script_dir, "rexx_rag_metadata.json")
         self.load_metadata()
 
     
