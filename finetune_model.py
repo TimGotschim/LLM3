@@ -110,13 +110,13 @@ def main():
 
     tokenized_dataset = train_dataset.map(tokenize_function, batched=True, remove_columns=["text"])
 
-    # Training arguments - optimized for CPU/MPS
+    # Training arguments - optimized to prevent overfitting
     training_args = TrainingArguments(
         output_dir=output_dir,
-        num_train_epochs=3,
+        num_train_epochs=1,  # Reduced from 3 to prevent overfitting
         per_device_train_batch_size=2,
         gradient_accumulation_steps=8,
-        learning_rate=2e-4,
+        learning_rate=5e-5,  # Reduced from 2e-4 for gentler training
         weight_decay=0.01,
         logging_steps=5,
         save_steps=50,

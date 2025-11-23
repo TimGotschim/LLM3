@@ -1,10 +1,10 @@
 {
   "metadata": {
     "description": "Curated Q&A dataset for Rexx HR System evaluation",
-    "version": "1.0",
+    "version": "1.1",
     "language": "German",
     "total_test_questions": 50,
-    "total_train_questions": 100,
+    "total_train_questions": 120,
     "categories": ["general", "skillmanagement", "recruiting", "workflows", "administration", "documents", "time_management"]
   },
   "test": [
@@ -360,6 +360,126 @@
     }
   ],
   "train": [
+    {
+      "id": "train_000a",
+      "question": "Was ist rexx HR Software?",
+      "expected_answer": "rexx HR Software ist eine cloudbasierte Human Resources Management Lösung der rexx systems GmbH aus Hamburg. Sie bietet Module für Personalverwaltung, Recruiting, Talentmanagement, Zeiterfassung und Dokumentenmanagement.",
+      "category": "general"
+    },
+    {
+      "id": "train_000b",
+      "question": "Wer stellt rexx HR her?",
+      "expected_answer": "rexx HR wird von der rexx systems GmbH hergestellt, einem Unternehmen mit Sitz in Hamburg, Deutschland.",
+      "category": "general"
+    },
+    {
+      "id": "train_000c",
+      "question": "Wofür wird rexx HR verwendet?",
+      "expected_answer": "rexx HR wird für die digitale Personalverwaltung verwendet. Es unterstützt Unternehmen bei Recruiting, Personalmanagement, Zeiterfassung, Skillmanagement und HR-Prozessen.",
+      "category": "general"
+    },
+    {
+      "id": "train_000d",
+      "question": "Welche Module hat rexx HR?",
+      "expected_answer": "rexx HR umfasst Module für Recruiting, Personalverwaltung, Zeiterfassung, Skillmanagement, Dokumentenmanagement, Workflows und Reporting.",
+      "category": "general"
+    },
+    {
+      "id": "train_000e",
+      "question": "Ist rexx HR cloudbasiert?",
+      "expected_answer": "Ja, rexx HR ist eine cloudbasierte Software-as-a-Service (SaaS) Lösung, die über den Webbrowser zugänglich ist.",
+      "category": "general"
+    },
+    {
+      "id": "train_000f",
+      "question": "Was kann man mit rexx HR machen?",
+      "expected_answer": "Mit rexx HR kann man Mitarbeiterdaten verwalten, Stellenanzeigen veröffentlichen, Bewerber managen, Arbeitszeiten erfassen, Skills verwalten und HR-Prozesse digitalisieren.",
+      "category": "general"
+    },
+    {
+      "id": "train_000g",
+      "question": "Für wen ist rexx HR geeignet?",
+      "expected_answer": "rexx HR ist für mittelständische und große Unternehmen geeignet, die ihre HR-Prozesse digitalisieren und automatisieren möchten.",
+      "category": "general"
+    },
+    {
+      "id": "train_000h",
+      "question": "Was bedeutet rexx?",
+      "expected_answer": "rexx ist der Markenname der HR-Software von rexx systems GmbH. Das Unternehmen bietet rexx HR für Personalverwaltung und rexx Recruiting für Bewerbermanagement.",
+      "category": "general"
+    },
+    {
+      "id": "train_000i",
+      "question": "Welche Sprachen unterstützt rexx HR?",
+      "expected_answer": "rexx HR unterstützt Mehrsprachigkeit und ist in verschiedenen Sprachen verfügbar, darunter Deutsch und Englisch.",
+      "category": "general"
+    },
+    {
+      "id": "train_000j",
+      "question": "Wie sicher ist rexx HR?",
+      "expected_answer": "rexx HR ist DSGVO-konform und bietet Funktionen für Datenschutz, Zugriffsrechte und revisionssichere Archivierung.",
+      "category": "general"
+    },
+    {
+      "id": "train_000k",
+      "question": "Was ist rexx Recruiting?",
+      "expected_answer": "rexx Recruiting ist das Bewerbermanagement-Modul von rexx systems für Stellenausschreibungen, Bewerberverwaltung und den gesamten Recruiting-Prozess.",
+      "category": "recruiting"
+    },
+    {
+      "id": "train_000l",
+      "question": "Was ist das Self Service Portal in rexx?",
+      "expected_answer": "Das Self Service Portal ermöglicht Mitarbeitenden den eigenständigen Zugriff auf ihre Personaldaten, Anträge und Dokumente ohne HR-Abteilung.",
+      "category": "general"
+    },
+    {
+      "id": "train_000m",
+      "question": "Was sind Workflows in rexx?",
+      "expected_answer": "Workflows in rexx sind digitale Prozessabläufe für Genehmigungen, Anträge und automatisierte HR-Vorgänge wie Urlaubsanträge oder Stammdatenänderungen.",
+      "category": "workflows"
+    },
+    {
+      "id": "train_000n",
+      "question": "Was ist Skillmanagement in rexx?",
+      "expected_answer": "Skillmanagement in rexx erfasst und verwaltet die Fähigkeiten und Kompetenzen der Mitarbeitenden für Personalentwicklung und internes Matching.",
+      "category": "skillmanagement"
+    },
+    {
+      "id": "train_000o",
+      "question": "Wie funktioniert die Zeiterfassung in rexx?",
+      "expected_answer": "Die Zeiterfassung in rexx ermöglicht das Erfassen von Arbeitszeiten, Abwesenheiten und Überstunden über verschiedene Methoden wie Browser, App oder QR-Code.",
+      "category": "time_management"
+    },
+    {
+      "id": "train_000p",
+      "question": "Was ist die digitale Personalakte in rexx?",
+      "expected_answer": "Die digitale Personalakte in rexx speichert alle mitarbeiterbezogenen Dokumente zentral und revisionssicher im System.",
+      "category": "documents"
+    },
+    {
+      "id": "train_000q",
+      "question": "Wie erstellt man Berichte in rexx?",
+      "expected_answer": "Berichte werden über die Reporting-Funktion erstellt. Die Search&List Engine ermöglicht individuelle Auswertungen und Exporte.",
+      "category": "general"
+    },
+    {
+      "id": "train_000r",
+      "question": "Was sind Berechtigungen in rexx?",
+      "expected_answer": "Berechtigungen steuern welche Benutzer auf welche Funktionen und Daten im System zugreifen können. Sie werden über Berechtigungsprofile verwaltet.",
+      "category": "administration"
+    },
+    {
+      "id": "train_000s",
+      "question": "Was ist ein Jobportal in rexx?",
+      "expected_answer": "Ein Jobportal in rexx ist die Karriereseite für die Unternehmens-Homepage, auf der Stellenanzeigen veröffentlicht und Bewerbungen entgegengenommen werden.",
+      "category": "recruiting"
+    },
+    {
+      "id": "train_000t",
+      "question": "Wie funktioniert das Bewerbermanagement in rexx?",
+      "expected_answer": "Das Bewerbermanagement in rexx organisiert den gesamten Recruiting-Prozess vom Bewerbungseingang über Screening und Interviews bis zur Einstellung.",
+      "category": "recruiting"
+    },
     {
       "id": "train_001",
       "question": "Was ist rexx HR?",
