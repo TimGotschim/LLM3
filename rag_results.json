@@ -1,0 +1,1181 @@
+{
+  "metadata": {
+    "model": "llama2 + RAG",
+    "embedding_model": "all-MiniLM-L6-v2",
+    "generator_model": "llama2 (Ollama)",
+    "retrieval_top_k": 3,
+    "rag_enabled": true,
+    "timestamp": "2025-11-23T21:04:47",
+    "num_questions": 50
+  },
+  "aggregate_metrics": {
+    "avg_cosine_similarity": 0.1132,
+    "avg_precision": 0.059,
+    "avg_recall": 0.3237,
+    "avg_f1_score": 0.0986,
+    "avg_key_terms_ratio": 0.2344,
+    "by_category": {
+      "recruiting": 0.0948,
+      "skillmanagement": 0.1088,
+      "administration": 0.095,
+      "documents": 0.0712,
+      "time_management": 0.0921,
+      "workflows": 0.1354,
+      "general": 0.0969
+    },
+    "total_time_seconds": 565.43,
+    "avg_response_time": 11.31
+  },
+  "results": [
+    {
+      "id": "test_001",
+      "question": "Was ist der Jobportal-Konfigurator in rexx?",
+      "expected_answer": "Der Jobportal-Konfigurator ermöglicht einfaches und effektives Anpassen des Jobportals nach den eigenen Vorstellungen. Er bietet Einstellungen für Schriftarten, Farben und Layout.",
+      "generated_answer": "Der Jobportal-Konfigurator von rexx ist ein einfaches und effektives Werkzeug, mit dem die Individualisierung des eigenen Jobportals ermöglicht wird. Mit diesem Tool können Mitarbeiter das Aussehen der meisten Elemente der Jobportal-Seite gestalten, ein neues Logo einbinden oder das Schriftart-Design anpassen. Der Konfigurator ist komplett kostenfrei und erfordert keine tiefgreifenden Kenntnisse in HTML und CSS. Die Bedingung für den Zugang zum Konfigurator ist, dass der Mitarbeiter unter Admin,Ticket > Berechtigungsprofile > Profil XY das Recht Recruiting Vakanzen Jobportal-Konfigurator aktiv? ID.30.334 gewährt wird. Der Zugriff erfolgt über den eigenen Webbrowser und eine Login-Maske, die sicherstellt, dass nur durch das System validierte Personen Zugriff auf den Jobportal-Konfigurator erhalten.",
+      "category": "recruiting",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.3346,
+        "precision": 0.1605,
+        "recall": 0.619,
+        "f1_score": 0.2549,
+        "key_terms_ratio": 0.5714,
+        "length_ratio": 0.2215
+      },
+      "response_time": 9.16,
+      "sources": [
+        "13ba97b2-5af7-490c-9d26-0caa8ebe1397.pdf",
+        "13ba97b2-5af7-490c-9d26-0caa8ebe1397.pdf",
+        "2bfc9ed0-606e-4df2-9e3d-7158665f89bf.pdf"
+      ]
+    },
+    {
+      "id": "test_002",
+      "question": "Wie funktioniert das Skillmanagement in rexx HR?",
+      "expected_answer": "Das Skillmanagement hilft dabei, Transparenz zu schaffen über vorhandene Skills im Unternehmen. Es beantwortet Fragen wie: Wer kann was? Wo fehlen Fähigkeiten? Wo lohnt sich Weiterbildung und wo Recruiting? So lassen sich Mitarbeitende besser entwickeln und interne Mobilität unterstützen.",
+      "generated_answer": "Das Skillmanagement in rexx HR ist ein instrumenteller Mechanismus, um die Fähigkeiten und Kompetenzen within an organization to be transparent and up-to-date. It allows for the creation of a skill tree, which displays the skills of each employee, and enables the management of skills through workflows and reminders.\n\nIn rexx HR, the skill management is based on the concept of \"Skillgroups\", which are collections of skills that are relevant to a particular project or department. These skillgroups can be created and managed by designated \"Skillmanagers\", who are responsible for maintaining the accuracy of the skills within their assigned groups.\n\nThe Skillmanagement role is a new addition to the rexx HR system, which was introduced with patches 80235 and 80236 in September 2025. As an Empfänger, the Skillmanagement can be defined as the personal responsible for managing the skills within a particular skillgroup. When a new skill is requested through the \"Skills (Portal)\" workflow type, the Skillmanager of the corresponding skillgroup is automatically pulled as the recipient.\n\nThe Skillmanagement role plays an important part in ensuring that the skills within an organization are up-to-date and accurately reflected. By designating specific individuals as Skillmanagers, rexx HR can provide a clear",
+      "category": "skillmanagement",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0438,
+        "precision": 0.0556,
+        "recall": 0.1714,
+        "f1_score": 0.0839,
+        "key_terms_ratio": 0.1364,
+        "length_ratio": 0.2201
+      },
+      "response_time": 12.62,
+      "sources": [
+        "166f343b-90ef-488e-9724-18f4e1972aa5.pdf",
+        "715515c0-5dae-4e77-a91f-d6946f61770b.pdf",
+        "4caf49e1-092f-48ea-aeda-f9d82bd12ed3.pdf"
+      ]
+    },
+    {
+      "id": "test_003",
+      "question": "Was ist das Whistleblowing Modul?",
+      "expected_answer": "Das Whistleblowing Modul bietet einen sicheren Kanal für Hinweisgeber im Unternehmen. Es gewährleistet Sicherheit und Datenschutz bei der Meldung von Missständen.",
+      "generated_answer": "Das Whistleblowing Modul ist ein integriertes Modul in der rexx HR Software, das es Unternehmen ermöglicht, Whistleblower-Meldungen zu verfolgen und zu bearbeiten. Das Modul bietet eine Benachrichtigungsfunktion für zuständige Personen, die sofort informiert werden, wenn eine neue Whistleblower-Meldung eingeht. Die Meldung wird in ein neues Menülement \"Whistleblowing\" im Modul \"Meine Aufgaben\" geöffnet und kann von den zuständigen Personen bearbeitet werden. Das Modul gewinnt einen Ticket-Charakter, um eine systematische Bearbeitung der Meldung zu ermöglichen. Gemäß HinSchG muss innerhalb der ersten 7 Tage nach Eingang der Meldung dessen Erhalt bestätigt werden. Die Meldung kann von den zuständigen Personen als verantwortliche zugewiesen werden, und es gibt die Option, die Rolle \"Beteiligte\" hinzuzufügen, um flexibel zu sein. Das Modul bietet auch die Funktion, die Meldung nach Ablauf einer bestimmten Zeit anonymisiert, um Rückschlüsse auf den Fall zu vermeiden.",
+      "category": "administration",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.2843,
+        "precision": 0.1494,
+        "recall": 0.619,
+        "f1_score": 0.2407,
+        "key_terms_ratio": 0.4615,
+        "length_ratio": 0.166
+      },
+      "response_time": 11.85,
+      "sources": [
+        "30b29c79-2953-4230-913a-811adf100727.pdf",
+        "30b29c79-2953-4230-913a-811adf100727.pdf",
+        "30b29c79-2953-4230-913a-811adf100727.pdf"
+      ]
+    },
+    {
+      "id": "test_004",
+      "question": "Wie konfiguriert man Entgelttabellen in rexx HR?",
+      "expected_answer": "Entgelttabellen können für Tarifverträge und Kollektivverträge konfiguriert werden. Die Pflege erfolgt über die Systemeinstellungen. Entgelttabellen können in Jobfamilien und Stellen für die Eingruppierung verwendet werden.",
+      "generated_answer": "In rexx HR, you can configure salary tables by following these steps:\n\n1. Log in to your rexx HR account and navigate to the \"Settings\" section.\n2. Click on \"Payroll\" and then select \"Salary Tables\" from the sub-menu.\n3. In the \"Salary Tables\" page, you can create a new salary table by clicking the \"New Salary Table\" button.\n4. Enter the name of the new salary table and select the desired payroll period (e.g., monthly, bi-monthly, etc.).\n5. Define the salary table structure by adding columns for the different payment components (e.g., basic salary, bonus, allowances, etc.).\n6. Configure the payroll taxes and deductions for each payment component.\n7. Set up the salary table formulas to calculate the total salary for each employee based on their individual payment components.\n8. Save and activate the new salary table.\n9. Update the salary table in the employee's personnel file by clicking the \"Update\" button next to the salary field.\n10. The updated salary table will be reflected in the employee's payroll records and will be used for future payments.\n\nNote: Depending on your rexx HR configuration, some steps may vary. It is recommended to consult",
+      "category": "administration",
+      "difficulty": "hard",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.013,
+        "precision": 0.0094,
+        "recall": 0.0556,
+        "f1_score": 0.0161,
+        "key_terms_ratio": 0.0,
+        "length_ratio": 0.1919
+      },
+      "response_time": 13.04,
+      "sources": [
+        "c4c4b74d-dbb9-4a3c-b922-b6132003b52c.pdf",
+        "8ab6987a-b35c-47f8-8127-4a5fd76f1df1.pdf",
+        "39b26c0a-097b-42c1-983a-d4ee3bd8eaa5.pdf"
+      ]
+    },
+    {
+      "id": "test_005",
+      "question": "Was sind digitale Signaturen in rexx?",
+      "expected_answer": "Digitale Signaturen ermöglichen elektronische Signaturen im Antragsprozess, sicheres Signieren von Dokumenten und Gesprächen sowie das Unterzeichnen von Arbeitsverträgen im Recruiting ohne externe Dienstleister.",
+      "generated_answer": "In rexx, digital signatures refer to the electronic signing of documents and conversations within the system. The term \"digitale Signaturen\" is used to describe the secure signing of documents and communications using electronic means, rather than traditional handwritten signatures. The rexx Suite offers the ability to create a digital signature without having to integrate external services, allowing for greater efficiency and security in the company's processes.\n\nThe digital signature offered by rexx is classified as a \"Fortgeschrittene Signatur (FES)\" which provides a higher level of security compared to a simple electronic signature (EES). The FES offers several features that enhance security, including:\n\n1. Unique association with a specific person: No other user can copy or manipulate this digital signature.\n2. Possible identification of the signer through login of the rexx user at the application, possibly extended by two-factor authentication.\n3. Detectable changes to the document due to natural variations (hash value).\n\nPreviously, the signature was uploaded as an image file in the corresponding field of the personal file. This field could be used as a placeholder in a form and the image-based signature could be inserted. However, this can make it obvious that the signature is a scanned one. The new feature allows the text of the image to be overwritten during the upload process, so that the signed document is stored in the personal file with",
+      "category": "documents",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0091,
+        "precision": 0.0148,
+        "recall": 0.1,
+        "f1_score": 0.0258,
+        "key_terms_ratio": 0.1333,
+        "length_ratio": 0.1431
+      },
+      "response_time": 12.53,
+      "sources": [
+        "357eb9f3-e968-4581-9fc2-e35e444b9c2e.pdf",
+        "ef9629a6-4f4f-4b9f-acc7-ac70964a3d43.pdf",
+        "29ce2fc7-8dd8-4c7a-bc25-f109909f99c9.pdf"
+      ]
+    },
+    {
+      "id": "test_006",
+      "question": "Wie funktioniert INTERAMT als Publizierungsziel?",
+      "expected_answer": "INTERAMT ist eine zentrale deutsche Online-Plattform für Stellenangebote im öffentlichen Dienst. rexx systems bietet eine Integration über eine Schnittstelle, die effizienten Datenaustausch ermöglicht.",
+      "generated_answer": "INTERAMT serves as a Publiziersgoal in rexx HR Software. It is a predefined target for the publication of vacancies, which can be selected from a dropdown menu when creating a new publication. By choosing INTERAMT as the publiziersgoal, you can automatically set the standard publication duration for the vacancy, which is stored in the system's database.\n\nThe INTERAMT target is prefilled with the Klasse Home, which can be modified or expanded as needed. Once the target is selected, the vacancy can be published by clicking on the \"Publizieren\" button in the top-level menu. The publication duration can be set for the vacancy, and additional publication costs can be added if necessary.\n\nThe INTERAMT target provides a standardized and efficient way to publish vacancies, as it automates many of the manual steps involved in the publication process. By using INTERAMT, you can save time and resources while ensuring that your vacancies are published consistently and in a timely manner.",
+      "category": "recruiting",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0229,
+        "precision": 0.0233,
+        "recall": 0.0909,
+        "f1_score": 0.037,
+        "key_terms_ratio": 0.0667,
+        "length_ratio": 0.203
+      },
+      "response_time": 10.28,
+      "sources": [
+        "3377fb8c-6ce1-42d1-bdb9-3db6d26c74d0.pdf",
+        "f0b6f0eb-52e6-4d58-8f17-50f7eed3c819.pdf",
+        "2bfc9ed0-606e-4df2-9e3d-7158665f89bf.pdf"
+      ]
+    },
+    {
+      "id": "test_007",
+      "question": "Was ist das 360° Feedback in rexx HR?",
+      "expected_answer": "Das 360° Feedback ermöglicht eine umfassende Bewertung von Mitarbeitenden durch verschiedene Perspektiven wie Vorgesetzte, Kollegen und Mitarbeiter selbst.",
+      "generated_answer": "Das 360° Feedback in rexx HR ist eine Funktion, die es Benutzerinnen und Benutzern ermöglicht, ihre Fähigkeiten und Stärken in verschiedenen Beurteilungstypen zu bewerten. Diese Bewertungen werden von Vorgesetzten, Kollegen und externen Personen durchgeführt und fließen in die Personalakte des Beurteilten ein. Das 360° Feedback bietet eine umfassende Einschätzung der Fähigkeiten und Stärken des Beurteilten und hilft dabei, die Potenzialität und das Wachstum des Beurteilten zu bewerten.\n\nIn rexx HR sind verschiedene Beurteilungstypen verfügbar, darunter Vorgesetztenbeurteilung, Teambeurteilung, Beurteilung durch Vorgesetzte, freie Gruppenbeurteilung, Selbstbeurteilung und externe Beurteilung. Diese Beurteilungstypen können je nach Bedarf und Anforderungen des Unternehmens ausgewählt werden und ermöglichen es den Beurteilten, ihre Fähigkeiten und Stärken in verschiedenen Aspekten zu bewerten.\n\nDas 360° Feedback in rexx HR ist ein wichtiger Bestandteil der Personalentwicklung und hilft",
+      "category": "skillmanagement",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.2554,
+        "precision": 0.1714,
+        "recall": 0.6667,
+        "f1_score": 0.2727,
+        "key_terms_ratio": 0.5833,
+        "length_ratio": 0.1555
+      },
+      "response_time": 12.45,
+      "sources": [
+        "776934d1-0d05-41fe-b51c-829b2f7c2fa5.pdf",
+        "30b29c79-2953-4230-913a-811adf100727.pdf",
+        "776934d1-0d05-41fe-b51c-829b2f7c2fa5.pdf"
+      ]
+    },
+    {
+      "id": "test_008",
+      "question": "Wie funktioniert Homeoffice per Antrag?",
+      "expected_answer": "Homeoffice kann über einen Workflow-Antrag beantragt werden. Die Homeoffice-Kalendertage werden erfasst und in der Zeiterfassung berücksichtigt.",
+      "generated_answer": "Homeoffice per Antrag ist eine Funktion, die von rexx Systems angeboten wird, um Mitarbeitern die Möglichkeit zu geben, spontan und unregelmäßig Homeoffice-Tage zu beantragen. This feature allows employees to request home office days in advance, giving them the flexibility to work from home at a time that suits them best.\n\nHere's how it works:\n\n1. An employee receives an announcement that a technician will be visiting their workplace between 8am and 2pm.\n2. The employee submits a home office application, specifying the dates they want to work from home.\n3. rexx Systems calculates the number of home office days based on the employee's request and the technician's visit schedule.\n4. The employee is notified of the approved home office days, and the change is reflected in their calendar.\n5. The home office days are calculated based on the employee's work schedule and any existing home office arrangements, taking into account working hours, absences, and holidays.\n6. The new feature allows for the calculation of home office days based on a new workflow type called \"Homeoffice / Mobiles Arbeiten\", which provides an additional way to document and manage home office days beyond the existing \"Homeoffice per Kalenderbuchung\" feature.\n7. The Homeoffice Ant",
+      "category": "time_management",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0771,
+        "precision": 0.0504,
+        "recall": 0.375,
+        "f1_score": 0.0889,
+        "key_terms_ratio": 0.3,
+        "length_ratio": 0.1137
+      },
+      "response_time": 12.67,
+      "sources": [
+        "4c144847-3d1e-4be5-a4ce-f46aca8d04a7.pdf",
+        "4c144847-3d1e-4be5-a4ce-f46aca8d04a7.pdf",
+        "4c144847-3d1e-4be5-a4ce-f46aca8d04a7.pdf"
+      ]
+    },
+    {
+      "id": "test_009",
+      "question": "Was ist Multiposting in rexx Recruiting?",
+      "expected_answer": "Multiposting ermöglicht das gleichzeitige Veröffentlichen von Stellenanzeigen auf mehreren Jobportalen und Plattformen aus dem rexx System heraus.",
+      "generated_answer": "Multiposting in rexx Recruiting refers to the ability to publish job openings on over 1000 job boards with just a few clicks. This feature is made possible through the integration of GOhiring's Multiposting tool, which allows users to easily create and manage multiple postings across different job boards without having to set up individual posts for each board.\n\nThe multiposting function in rexx Recruiting is free to use and does not require any additional setup or contracts with the job boards. Users can simply log in to their account, enter the job opening details, and select the desired job boards for publication. The system will automatically distribute the posting to the selected boards, and users can track the status of their publications in real-time.\n\nThe advantages of using multiposting in rexx Recruiting include:\n\n* Faster publication on target job boards\n* Automatic updates of content (changes are automatically transferred)\n* Support from rexx systems\n* No posting fees (also known as \"credits\")\n\nHowever, it's important to note that the rexx interfaces with job boards do come with setup costs and ongoing maintenance costs, whereas the GOhiring multipostings do not have these costs. Additionally, the original rexx interfaces with job boards remain in place and offer advantages such as faster publication and automatic updates of content",
+      "category": "recruiting",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0511,
+        "precision": 0.024,
+        "recall": 0.1765,
+        "f1_score": 0.0423,
+        "key_terms_ratio": 0.2,
+        "length_ratio": 0.1069
+      },
+      "response_time": 13.15,
+      "sources": [
+        "9c7ac0cd-c196-4bb6-bd16-a5c3c6eaee4e.pdf",
+        "45a793e4-a9aa-4571-832c-00c820bdd136.pdf",
+        "4caf49e1-092f-48ea-aeda-f9d82bd12ed3.pdf"
+      ]
+    },
+    {
+      "id": "test_010",
+      "question": "Wie funktioniert die Zeiterfassung via QR-Code?",
+      "expected_answer": "Die Zeiterfassung via QR-Code ermöglicht Mitarbeitenden das Ein- und Ausstempeln durch Scannen eines QR-Codes, zum Beispiel am Eingang des Unternehmens.",
+      "generated_answer": "Die Zeiterfassung via QR-Code funktioniert wie folgt:\n\n1. When a conversation is completed and the QR code in the footer of the document is scanned, the Scanmanager automatically creates a new contact entry in the digital file based on the settings in System Data > Conversation Types.\n2. The Scanmanager identifies the conversation based on the QR code and generates a contact entry with the corresponding conversation type according to the settings in System Data > Conversation Types.\n3. If no contact type is assigned to the conversation, the Scanmanager will not create an additional contact entry for the completed conversation. Instead, the conversation will be stored in the digital file without any additional information.\n4. The user can then view the completed conversation in the digital file, but it will not be listed chronologically among the contact entries of the digital file.\n5. The Scanmanager will automatically recognize the conversation based on the QR code and create a new contact entry with the corresponding conversation type.\n6. The user can then edit the contact entry as needed, including adding a signature if desired.\n\nIn summary, the Zeiterfassung via QR-Code works by automatically creating a new contact entry in the digital file based on the QR code in the footer of the document when the conversation is completed. The Scanmanager identifies the conversation based on the QR code and generates a",
+      "category": "time_management",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0651,
+        "precision": 0.0595,
+        "recall": 0.2381,
+        "f1_score": 0.0952,
+        "key_terms_ratio": 0.0909,
+        "length_ratio": 0.1061
+      },
+      "response_time": 12.13,
+      "sources": [
+        "c998f660-9abf-4e9f-962e-60ece80ad736.pdf",
+        "47b2751b-72c4-47c3-8c7e-3432b4ddf2fa.pdf",
+        "cd9710fc-c289-4a29-9234-74ee1bd5902a.pdf"
+      ]
+    },
+    {
+      "id": "test_011",
+      "question": "Was sind Workflows in rexx HR?",
+      "expected_answer": "Workflows in rexx HR sind konfigurierbare Prozessabläufe für verschiedene HR-Vorgänge wie Anträge, Genehmigungen und Freigaben. Sie können grafisch dargestellt und individuell angepasst werden.",
+      "generated_answer": "Workflows in rexx HR refer to the automated processes or series of tasks that are triggered by specific events or actions within the system. These workflows help streamline and manage various HR processes, such as job postings, candidate sourcing, and employee onboarding, among others.\n\nIn rexx HR, workflows can be created and managed through the \"Workflow\" module. Here, users can define and configure different types of workflows, including:\n\n1. Job Posting Workflow: This workflow automates the process of posting job openings to various channels, such as internal job boards, external job boards, or social media platforms.\n2. Candidate Sourcing Workflow: This workflow helps manage the sourcing and recruitment process for candidates, including the distribution of job postings, candidate evaluation, and interview scheduling.\n3. Onboarding Workflow: This workflow automates the process of onboarding new employees, including the creation of employee profiles, assignment of supervisors, and distribution of necessary documents and forms.\n4. Performance Management Workflow: This workflow helps manage the performance management process, including goal setting, evaluation, and development planning.\n5. Time Off Request Workflow: This workflow automates the process of requesting time off, including the submission of requests, approval workflows, and notification to managers and employees.\n\nBy",
+      "category": "workflows",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0546,
+        "precision": 0.0396,
+        "recall": 0.1818,
+        "f1_score": 0.065,
+        "key_terms_ratio": 0.0714,
+        "length_ratio": 0.1377
+      },
+      "response_time": 12.17,
+      "sources": [
+        "d1f29173-1955-4e95-a8cc-d7e06b79fe69.pdf",
+        "d1f29173-1955-4e95-a8cc-d7e06b79fe69.pdf",
+        "45a793e4-a9aa-4571-832c-00c820bdd136.pdf"
+      ]
+    },
+    {
+      "id": "test_012",
+      "question": "Wie funktioniert die Dokumenten Revision?",
+      "expected_answer": "Die Dokumenten Revision ermöglicht die Versionierung und Nachverfolgung von Änderungen an Dokumenten im System.",
+      "generated_answer": "Die Documenten Revision ist ein Werkzeug within the rexx Suite that helps to manage and organize HR documents in a more efficient and secure manner. The main goal of the revision is to streamline the process of reviewing and updating HR documents, while ensuring compliance with legal requirements for data retention and deletion.\n\nThe Documenten Revision works by allowing users to set a review date for each document, which determines how long the document must be retained before it can be deleted. The review date is based on the type of document and the legal requirements for retention, such as the amount of time after which sensitive health data can be deleted.\n\nThe system provides a list of documents that are due for revision, along with their current status and any actions that need to be taken. Users can then review and update the documents as needed, while ensuring that they comply with legal requirements for data retention and deletion.\n\nIn addition, the Documenten Revision includes features such as automatic notifications and reminders to ensure that documents are reviewed and updated in a timely manner. This helps to prevent documents from being lost or forgotten, and ensures that they are always up-to-date and accurate.\n\nOverall, the Documenten Revision is an important tool for HR departments to manage their documents and ensure compliance with legal requirements, while also streamlining the review and update process for",
+      "category": "documents",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0421,
+        "precision": 0.0339,
+        "recall": 0.3333,
+        "f1_score": 0.0615,
+        "key_terms_ratio": 0.2857,
+        "length_ratio": 0.0764
+      },
+      "response_time": 12.4,
+      "sources": [
+        "8f45995c-7b65-4519-9da4-4c397d392484.pdf",
+        "357eb9f3-e968-4581-9fc2-e35e444b9c2e.pdf",
+        "c998f660-9abf-4e9f-962e-60ece80ad736.pdf"
+      ]
+    },
+    {
+      "id": "test_013",
+      "question": "Was ist AI Hiring in rexx?",
+      "expected_answer": "AI Hiring nutzt künstliche Intelligenz zur Unterstützung im Recruiting-Prozess, zum Beispiel bei der Vorauswahl von Bewerbern.",
+      "generated_answer": "AI Hiring within rexx is an additional and cost-effective module that offers companies the opportunity to streamline their hiring process through the use of artificial intelligence. The module provides the following features:\n\n1. Enhanced CV Parsing: Automated, precise, and AI-supported analysis of job applications.\n2. Skill Tags for Vacancies and Applications: KI-supported assignment of relevant skills (Skill Tags) to vacancies and matching of applications accordingly.\n3. KI Score for Applications: Evaluation of applications based on AI-supported analyses.\n4. Expansion of Tag Management: Administration and utilization of Skill Tags in the Skill Tag Management.\n\nThe AI Hiring module is an optional feature that can be activated by companies that use the rexx career portal. By using this module, companies can benefit from faster and more accurate hiring processes, while also providing a modern and user-friendly experience for job seekers.",
+      "category": "recruiting",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0526,
+        "precision": 0.023,
+        "recall": 0.1176,
+        "f1_score": 0.0385,
+        "key_terms_ratio": 0.1,
+        "length_ratio": 0.1326
+      },
+      "response_time": 9.98,
+      "sources": [
+        "aa8f6486-8d63-4414-b8ef-d3329d729045.pdf",
+        "4caf49e1-092f-48ea-aeda-f9d82bd12ed3.pdf",
+        "45a793e4-a9aa-4571-832c-00c820bdd136.pdf"
+      ]
+    },
+    {
+      "id": "test_014",
+      "question": "Wie funktioniert das Bewerben mit WhatsApp?",
+      "expected_answer": "Bewerber können sich über WhatsApp auf Stellenangebote bewerben. Dies vereinfacht den Bewerbungsprozess besonders für mobile Nutzer.",
+      "generated_answer": "Das Bewerben via WhatsApp ist eine einfache und effektive Möglichkeit, um sich für einen Job bei Rexx Systems GmbH zu bewerben. Hier sind die Schritte, die du unternehmen musst, um eine Bewerbung per WhatsApp zu stellen:\n\n1. Stelle sicher, dass du das Rexx Recruitment hast, um die Funktion \"Bewerben via WhatsApp\" nutzen zu können. Das ist ein Voraussetzung für die Verwendung dieser Funktion.\n2. Öffne den WhatsApp-Chatbot von Rexx Systems GmbH und klicke auf \"Bewerben\".\n3. Fülle das Bewerbungsformular aus, das du für die Jobanzeige erstellt hast. Du kannst u. a. deine persönlichen Informationen, deine Bildung und Erfahrungen, sowie eine Short-Text-Beschreibung deiner Qualifikationen und Interessen eintragen.\n4. Klicke auf \"Abschicken\" und WhatsApp sendet die Bewerbung an das Rexx-System.\n5. Der Rexx-Chatbot übernimmt dann die Verbindung mit dir und beginnt, deine Bewerbung zu verfolgen. Wenn du Fragen hast oder Updates deiner Bewerbung benöt",
+      "category": "recruiting",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.1285,
+        "precision": 0.0769,
+        "recall": 0.4375,
+        "f1_score": 0.1308,
+        "key_terms_ratio": 0.3,
+        "length_ratio": 0.1384
+      },
+      "response_time": 13.16,
+      "sources": [
+        "e21d6731-6926-430b-8a32-11982da112a2.pdf",
+        "e21d6731-6926-430b-8a32-11982da112a2.pdf",
+        "e21d6731-6926-430b-8a32-11982da112a2.pdf"
+      ]
+    },
+    {
+      "id": "test_015",
+      "question": "Was sind Berechtigungsprofile in rexx HR?",
+      "expected_answer": "Berechtigungsprofile steuern die Zugriffsrechte von Benutzern im System. Administratoren können Profile anlegen und die Rechteverwaltung konfigurieren.",
+      "generated_answer": "In rexx HR, Berechtigungsprofilen refer to a set of permissions or rights that are assigned to an individual within the system. These profiles define what actions and functions a user is authorized to perform within the HR and Recruiting modules of the rexx Suite.\n\nBerechtigungsprofiles are used to organize and manage the different roles and responsibilities within an organization, and they play a crucial role in ensuring that the right people have access to the right functions and data within the system. By assigning specific permissions to users based on their roles and responsibilities, organizations can ensure that sensitive data and functions are protected from unauthorized access.\n\nIn rexx HR, there are two types of Berechtigungsprofilen:\n\n1. Unified Berechtigungsprofile: This type of profile combines the HR and Recruiting permissions into a single profile, eliminating the need for separate profiles for each module.\n2. Ergänzende Berechtigungen: These are additional permissions that can be assigned to users beyond their standard role-based permissions. They provide a way to customize the system to meet the specific needs of an organization.\n\nBy consolidating the HR and Recruiting permissions into a single profile, organizations can simplify the management of user rights and reduce the risk of errors or unauthorized access. Additionally,",
+      "category": "administration",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.031,
+        "precision": 0.0291,
+        "recall": 0.2,
+        "f1_score": 0.0508,
+        "key_terms_ratio": 0.2727,
+        "length_ratio": 0.1107
+      },
+      "response_time": 12.51,
+      "sources": [
+        "ceb92894-aea7-4c8f-aaad-3df69f8952f8.pdf",
+        "a8150a4a-c919-49b2-886e-23f4ce288e9e.pdf",
+        "a8150a4a-c919-49b2-886e-23f4ce288e9e.pdf"
+      ]
+    },
+    {
+      "id": "test_016",
+      "question": "Wie funktioniert das E-Learning in rexx?",
+      "expected_answer": "Das E-Learning Modul ermöglicht digitale Schulungen und Weiterbildungen für Mitarbeitende direkt im rexx System.",
+      "generated_answer": "Das E-Learning in rexx funktioniert durch die Verwendung der neueren Technologie xAPI. Mit diesem Format können Kurse einfacher erstellt und getrackt werden, da es eine bessere mobile Darstellung und Nutzung sowie eine geringere Fehleranfälligkeit bietet. Die xAPI-Kurse sind auch leichter zu erstellen und können in verschiedenen Kapiteln unterteilt sein. rexx unterstützt das Format \"cmi5\", das standardisierte Statusmeldungen definiert, die auf die Teilnehmensstatus projiziert werden können.\n\nDie vorherige Nutzung von SCORM wird ab dem 1. Januar 2021 nicht mehr möglich sein, da alle neuen Kurse nur noch im xAPI-Format erstellt werden können. Aktuelle Nutzer*innen von E-Learnings sollten daher alle aktiven SCORM-Kurse auch auf xAPI geändert haben und alle zukünftig eingestellten neuen Kurse ebenfalls im xAPI-Format hochladen. Der Support für bestehende SCORM-Kurse wird ab dem 1. Januar 2021 entfallen.",
+      "category": "skillmanagement",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.1184,
+        "precision": 0.0824,
+        "recall": 0.4667,
+        "f1_score": 0.14,
+        "key_terms_ratio": 0.1111,
+        "length_ratio": 0.1228
+      },
+      "response_time": 11.63,
+      "sources": [
+        "ce575b3e-5f44-4164-83e6-bb0ad6cea8cd.pdf",
+        "ce575b3e-5f44-4164-83e6-bb0ad6cea8cd.pdf",
+        "ce575b3e-5f44-4164-83e6-bb0ad6cea8cd.pdf"
+      ]
+    },
+    {
+      "id": "test_017",
+      "question": "Was ist das Ticketsystem in rexx?",
+      "expected_answer": "Das Ticketsystem dient zur Verwaltung von Support-Anfragen und internen Aufgaben. Tickets können erstellt, zugewiesen und nachverfolgt werden.",
+      "generated_answer": "Das Ticketsystem in rexx ist eine Funktion, die es Kunden ermöglicht, Support-Tickets zu erstellen und zu bearbeiten. Es gibt two ways to access the ticket system:\n\n1. Automatic login through the rexx application: If the customer is already logged in to the rexx application and has the necessary permissions, they can access the ticket system by clicking on the \"Admin\" menu and selecting \"Tickets\". From there, they can create a new ticket or view existing ones.\n2. Direct access via web: The ticket system can be accessed directly through the following link: <https://portal.rexx-server.com>. Customers can log in with their email address and password to access their tickets. If they forget their password, they can use the \"Forgot password\" function to reset it.\n\nThe ticket system provides a centralized platform for customers to submit support requests and track their progress. It includes various features such as filtering, sorting, and searching tickets, as well as the ability to assign tickets to different categories and priorities. Additionally, customers can view detailed information about each ticket, including the current status and any attachments or comments.\n\nThe ticket system is included in the rexx software free of charge for up to two users per installation. Additional users can be purchased for €1200 per year.",
+      "category": "administration",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0509,
+        "precision": 0.0391,
+        "recall": 0.2941,
+        "f1_score": 0.069,
+        "key_terms_ratio": 0.2308,
+        "length_ratio": 0.106
+      },
+      "response_time": 12.15,
+      "sources": [
+        "18bbd4ed-407f-4c60-853d-d80e077a3b38.pdf",
+        "ef9629a6-4f4f-4b9f-acc7-ac70964a3d43.pdf",
+        "ef9629a6-4f4f-4b9f-acc7-ac70964a3d43.pdf"
+      ]
+    },
+    {
+      "id": "test_018",
+      "question": "Wie funktioniert die Digitalisierung von Personalakten?",
+      "expected_answer": "rexx systems begleitet die Digitalisierung von Personalakten. Dokumente werden digital erfasst und zentral im System verwaltet.",
+      "generated_answer": "Die Digitalisierung von Personalakten bei rexx HR Software funktioniert durch die Verwendung von Digitale Signaturen. Diese ermöglichen es, eine eindeutige Identifizierung und Authentifizierung von Personen zu erreichen.\n\nBei der Digitalisierung von Personalakten werden die Originalunterlagen digitalisiert und mit einer Digitale Signatur versehen. Diese Signatur kann anschließend nicht editiert werden, um sicherzustellen, dass die Unterlagen originalgetreu sind und ihre Echtheit nicht gefährdet wird.\n\nDie Digitale Signatur wird durch einen eindeutigen Fingerprint nachvollziehbar und kann anschließend für eine Nachvollziehung verwendet werden. Dies ermöglicht es, die Identität der Person, die die Unterlagen signiert hat, zu bestätigen.\n\nIm rexx HR Software sind verschiedene Platzhalter verfügbar, um die Digitalisierung von Personalakten zu erleichtern. Diese Placeholders können verwendet werden, um die Signatur des Mitarbeiters oder Vorgesetzten im Personalaktendokumenten-Workflow zu erstellen und zu verifizieren.\n\nIn addition to the digital signatures, rexx HR Software also offers a range of workflows and placeholders to simplify the process of digitizing personnel files. These placeholders can be",
+      "category": "documents",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.3005,
+        "precision": 0.0938,
+        "recall": 0.5625,
+        "f1_score": 0.1607,
+        "key_terms_ratio": 0.3636,
+        "length_ratio": 0.1044
+      },
+      "response_time": 12.13,
+      "sources": [
+        "357eb9f3-e968-4581-9fc2-e35e444b9c2e.pdf",
+        "cd9710fc-c289-4a29-9234-74ee1bd5902a.pdf",
+        "cd9710fc-c289-4a29-9234-74ee1bd5902a.pdf"
+      ]
+    },
+    {
+      "id": "test_019",
+      "question": "Was sind Skill Anträge?",
+      "expected_answer": "Skill Anträge ermöglichen Mitarbeitenden, neue Skills zu beantragen oder vorhandene Skills aktualisieren zu lassen. In der Workflow-Konfiguration kann gesteuert werden, ob der Antrag für neue Skills, vorhandene Skills oder beides genutzt werden kann.",
+      "generated_answer": "Skill Anträge sind in diesem Kontext die Vorschläge für Veranstaltungen, die automaticell basierend auf den persönlichen Skills eines Mitarbeiters generiert werden können. Diese Anträge werden in der Skillliste bereitgestellt und können von den Benutzern ausgewählt werden, um passende Veranstaltungen zu finden, die ihre persönlichen Skills verbessern oder herstellen sollen.\n\nIn diesem Update wird ermöglicht, dass man über die Skillliste Veranstaltungen zur Verbesserung oder Herstellung der persönlichen Skills unabhängig von den Stellen-Skills finden kann. Dies bedeutet, dass Benutzer even if no job-related skills have been entered yet, they can still find suitable events by using the Skillliste. Additionally, the update allows for the consideration of skill decay when generating event suggestions, so that users can plan ahead and identify potential skill gaps before they become a problem.",
+      "category": "skillmanagement",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.2679,
+        "precision": 0.1064,
+        "recall": 0.4167,
+        "f1_score": 0.1695,
+        "key_terms_ratio": 0.25,
+        "length_ratio": 0.2775
+      },
+      "response_time": 10.08,
+      "sources": [
+        "d33e6260-f061-4220-80e6-4a62de4badb1.pdf",
+        "4caf49e1-092f-48ea-aeda-f9d82bd12ed3.pdf",
+        "715515c0-5dae-4e77-a91f-d6946f61770b.pdf"
+      ]
+    },
+    {
+      "id": "test_020",
+      "question": "Wie funktioniert die Vakanz Analyse?",
+      "expected_answer": "Die Vakanz Analyse bietet zentrale Auswertungen über offene Stellen und deren Publizierung auf verschiedenen Medien wie Jobportalen und der Karriereseite.",
+      "generated_answer": "Die Vakanzen Analyse ist ein eigenständiger Menüpunkt im rexx Recruiting, der es ermöglicht, die aktuellen und historischen Vakanzen in einem Unternehmen zu analysieren. Die Funktion basiert auf der zentralen Vakanz Analyse mit der Berechtigung 30339, die bestimmt, ob der Menüpunkt aufrufbar ist.\n\nBeim erstmaligen Aufruf der Vakanzen Analyse öffnet sich die GUI im Zero-Call. Der linke Filterbereich dient dazu, die Vakanzen zu selektieren, die als Grundlage der Betrachtung dienen. Hier können Optionen wie Vakanz, Job Kategorie, Karrierestufe, Org.Einheiten, Job Familie und Mandant ausgewählt werden. Der rechte Filterbereich ermöglicht die Auswahl von Publizierungszielen, die Festlegung der Betrachtungsdauer und die Durchführung von Gruppierungen.\n\nDie Ergebnisse der Filterung sind auf die eigenen Berechtigungen limitiert, bspw. sind nur Vakanzen für die Statistik auswählbar und werden herangezogen, auf welche ein Aktenzugriff exists. Die Vakanzen Analyse gibt eine detaillierte Darstellung der aktuellen und historischen Vakanzen, ein",
+      "category": "recruiting",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.2897,
+        "precision": 0.0787,
+        "recall": 0.3684,
+        "f1_score": 0.1296,
+        "key_terms_ratio": 0.1538,
+        "length_ratio": 0.1471
+      },
+      "response_time": 12.64,
+      "sources": [
+        "2bfc9ed0-606e-4df2-9e3d-7158665f89bf.pdf",
+        "2bfc9ed0-606e-4df2-9e3d-7158665f89bf.pdf",
+        "aa8f6486-8d63-4414-b8ef-d3329d729045.pdf"
+      ]
+    },
+    {
+      "id": "test_021",
+      "question": "Was ist RAI in rexx?",
+      "expected_answer": "RAI ist die KI im Forum und in der Suite von rexx systems. Sie unterstützt Benutzer mit intelligenten Funktionen.",
+      "generated_answer": "RAI stands for \"Rolling Annual Increment\" in rexx. It refers to the automatic annual increase in working hours that is applied to the schedules of employees who work in flexible, rolling shifts. The RAI is calculated based on the number of hours worked by the employee during the previous year, and it is used to adjust the employee's schedule for the upcoming year. This feature helps to ensure that the schedules of employees who work in flexible shifts are always up-to-date and reflective of their actual working hours.",
+      "category": "general",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0547,
+        "precision": 0.0566,
+        "recall": 0.1579,
+        "f1_score": 0.0833,
+        "key_terms_ratio": 0.0,
+        "length_ratio": 0.2161
+      },
+      "response_time": 7.16,
+      "sources": [
+        "39b26c0a-097b-42c1-983a-d4ee3bd8eaa5.pdf",
+        "bc30c4ad-9e8c-46c8-8474-5e192b92b9f7.pdf",
+        "30b29c79-2953-4230-913a-811adf100727.pdf"
+      ]
+    },
+    {
+      "id": "test_022",
+      "question": "Wie konfiguriert man Zeitzonen in rexx?",
+      "expected_answer": "Zeitzonen können in rexx eingestellt werden, um internationale Standorte und unterschiedliche Arbeitszeiten abzubilden.",
+      "generated_answer": "In rexx, you can configure time zones by following these steps:\n\n1. Log in to the rexx system as an authorized user.\n2. Navigate to the \"Admin\" menu and select \"Ticket\".\n3. Click on \"Support Ticket\" and select \"Configure Time Zones\".\n4. In the \"Time Zones\" section, you can add or remove time zones by clicking on the corresponding button.\n5. Once you have added or removed time zones, click on \"Save Changes\" to apply the changes.\n\nNote: The exact steps may vary depending on the version of rexx you are using and your specific configuration. It is recommended to consult the rexx documentation or contact the support team for more detailed instructions.",
+      "category": "administration",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0599,
+        "precision": 0.0286,
+        "recall": 0.1538,
+        "f1_score": 0.0482,
+        "key_terms_ratio": 0.0,
+        "length_ratio": 0.1817
+      },
+      "response_time": 8.02,
+      "sources": [
+        "18bbd4ed-407f-4c60-853d-d80e077a3b38.pdf",
+        "8ab6987a-b35c-47f8-8127-4a5fd76f1df1.pdf",
+        "aab73146-7fa6-4e49-939a-f87a2c7c079e.pdf"
+      ]
+    },
+    {
+      "id": "test_023",
+      "question": "Was ist genderneutrale Software bei rexx?",
+      "expected_answer": "rexx bietet genderneutrale Softwarefunktionen, um inklusiver Sprache in der HR-Software gerecht zu werden.",
+      "generated_answer": "Gender-neutral software refers to software that does not discriminate or make assumptions based on a person's gender or any other personal characteristic. In the context of rexx HR software, gender-neutral software would mean that the system does not favor one gender over the other in its functionality, features, or user interface.\n\nIn the case of rexx HR, gender-neutral software would imply that the system provides equal opportunities and access to all users, regardless of their gender or any other personal characteristic. This means that the system should be designed and implemented in a way that is inclusive and respectful of diversity, and that it does not perpetuate or reinforce gender-based discrimination or biases.\n\nIn practical terms, this could involve using gender-neutral language and imagery in the user interface, avoiding gendered assumptions or stereotypes in the system's algorithms or recommendations, and providing equal access to all users regardless of their gender or any other personal characteristic.\n\nBy implementing gender-neutral software, rexx HR can help promote a more inclusive and equitable workplace culture, where everyone has an equal opportunity to succeed and reach their full potential.",
+      "category": "general",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.1076,
+        "precision": 0.0417,
+        "recall": 0.2857,
+        "f1_score": 0.0727,
+        "key_terms_ratio": 0.125,
+        "length_ratio": 0.086
+      },
+      "response_time": 10.56,
+      "sources": [
+        "d1f29173-1955-4e95-a8cc-d7e06b79fe69.pdf",
+        "5a7f68d5-1e08-4c14-ad2f-2d58e290fd41.pdf",
+        "29ce2fc7-8dd8-4c7a-bc25-f109909f99c9.pdf"
+      ]
+    },
+    {
+      "id": "test_024",
+      "question": "Wie funktioniert das Gesprächsmodul?",
+      "expected_answer": "Das Gesprächsmodul ermöglicht die Planung, Durchführung und Dokumentation von Mitarbeitergesprächen im rexx System.",
+      "generated_answer": "Das Gesprächsmodul ist ein Optionen-Modul within the rexx HR Software that allows for the extension of the conversation process in companies. It offers various configuration options to support and optimize the conversation processes in different organizations. The module provides two new ways to involve additional instances in the conversations, such as project leads, personal departments, or other specialized business units. These instances can be integrated into the conversation process through two new roles: Gesprächsmanagement B/C and Gesprächsmanagement 2.\n\nGespruchsmanagement B/C are roles that provide a relatively informal way of involving additional instances in the conversation process. They are designed to facilitate the integration of further business units or departments into the conversation process without significantly altering the existing workflow. On the other hand, Gesprächsmanagement 2 is a more formalized role that is intended for organizations with highly structured and hierarchical communication processes.\n\nThe module offers two new ways to involve additional instances in the conversation process:\n\n1. Gespruchsmanagement B/C: These roles provide a relatively informal way of involving additional instances in the conversation process. They are designed to facilitate the integration of further business units or departments into the conversation process without significantly altering the existing workflow.\n2. Gesprächsmanagement 2: This role is intended for organizations with highly structured and hierarchical communication processes. It provides a",
+      "category": "skillmanagement",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0151,
+        "precision": 0.0316,
+        "recall": 0.2308,
+        "f1_score": 0.0556,
+        "key_terms_ratio": 0.1429,
+        "length_ratio": 0.0722
+      },
+      "response_time": 12.45,
+      "sources": [
+        "e8849358-84b5-45c8-9faf-eccc37b560c5.pdf",
+        "e8849358-84b5-45c8-9faf-eccc37b560c5.pdf",
+        "c998f660-9abf-4e9f-962e-60ece80ad736.pdf"
+      ]
+    },
+    {
+      "id": "test_025",
+      "question": "Was sind Teil-Workflows?",
+      "expected_answer": "Teil-Workflows sind wiederverwendbare Workflow-Komponenten, die in verschiedenen Hauptworkflows eingebunden werden können.",
+      "generated_answer": "Partial Workflows, also \"Teil-Workflows\", are a feature in rexx HR software that allows for the creation of a customized workflow for a specific HR process. A Partial Workflow is a subset of a larger Workflow, where only a portion of the steps in the main Workflow are included. This allows for greater flexibility and tailoring of the workflow to the specific needs of the organization.\n\nIn a Partial Workflow, the steps that are included are determined by the user, who can select the specific steps that are relevant to the process being automated. These steps are then linked together to create a customized workflow that can be used to automate the HR process. The main Workflow remains unchanged, and the Partial Workflow operates independently of it.\n\nThe benefits of using Partial Workflows in rexx HR software include:\n\n1. Greater flexibility: Users can create customized workflows that are tailored to their specific needs, rather than being limited to a pre-defined set of steps.\n2. Improved efficiency: By automating only the relevant steps in the process, Partial Workflows can help streamline the HR process and reduce manual effort.\n3. Enhanced user experience: Users can focus on the specific tasks that are relevant to them, rather than having to navigate through a long and complex workflow.\n4.",
+      "category": "workflows",
+      "difficulty": "hard",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.1032,
+        "precision": 0.0421,
+        "recall": 0.3077,
+        "f1_score": 0.0741,
+        "key_terms_ratio": 0.2222,
+        "length_ratio": 0.093
+      },
+      "response_time": 12.23,
+      "sources": [
+        "81bac74d-ab19-4ee5-9527-694d9dc875d9.pdf",
+        "81bac74d-ab19-4ee5-9527-694d9dc875d9.pdf",
+        "81bac74d-ab19-4ee5-9527-694d9dc875d9.pdf"
+      ]
+    },
+    {
+      "id": "test_026",
+      "question": "Wie funktioniert das Recruiting Skilltags System?",
+      "expected_answer": "Recruiting Skilltags ermöglichen die Verschlagwortung von Stellenanzeigen und Bewerberprofilen mit relevanten Fähigkeiten für besseres Matching.",
+      "generated_answer": "Das Recruiting Skilltags System von Rexx HR Software ist ein Modul, das es Benutzenden ermöglicht, Skilltags zu erstellen und sie im Skill Tree zu integrieren. Die Funktion wird durch das Skillmanagement-Modul gestellt, das in zwei verschiedenen Szenarien funktioniert:\n\n1. Die Skillgruppe existiert bereits im Skilltree: Wenn die Skillgruppe already exists in the Skill Tree, the skill will be created with the default values of the group.\n2. The Skillgroup does not exist in the Skilltree: If the Skillgroup does not exist in the Skill Tree, the system will suggest a new group and the user can choose to create the skill in that group or create a new group and assign the skill to it.\n\nThe system provides two ways to adopt skills:\n\n1. Direct adoption: The user can directly adopt the skill by clicking on the \"Adopt\" button in the Skilltag administration interface. This will transfer the skill to the suggested group without opening a popup. The user must then confirm the adoption and choose a qualification system for the skill.\n2. Indirect adoption: The user can also adopt the skill by clicking on the \"Skill overview\" button in the Skilltag administration interface. This will open a popup with information about the skill,",
+      "category": "recruiting",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0326,
+        "precision": 0.0495,
+        "recall": 0.3333,
+        "f1_score": 0.0862,
+        "key_terms_ratio": 0.2,
+        "length_ratio": 0.1168
+      },
+      "response_time": 12.44,
+      "sources": [
+        "166f343b-90ef-488e-9724-18f4e1972aa5.pdf",
+        "aa8f6486-8d63-4414-b8ef-d3329d729045.pdf",
+        "aa8f6486-8d63-4414-b8ef-d3329d729045.pdf"
+      ]
+    },
+    {
+      "id": "test_027",
+      "question": "Was ist die Risikobeurteilung bei Datenschutzverletzung?",
+      "expected_answer": "Die Risikobeurteilung bei Datenschutzverletzung hilft bei der Bewertung und Dokumentation von Datenschutzvorfällen gemäß DSGVO-Anforderungen.",
+      "generated_answer": "Die Risikobeurteilung bei Datenschutzverletzung ist ein wichtiger Schritt in der Behandlung von Datenpanosen. Es handelt sich dabei um eine systematische Einschätzung des Risikos, das durch die Verletzung des Datenschutzes entsteht. Dies kann beispielsweise durch unbefugte oder unrechtmäßige Verarbeitung, Offenlegung oder Zugriff auf personenbezogene Daten kommen.\n\nIn der Risikobeurteilung müssen die betroffenen Personen, die Art und Umfang des verletzten Datenschutzes, sowie die möglichen Schäden für diese ermittelt werden. Hierbei können verschiedene Kategorien von Datenschutzverletzungen unterschieden werden, wie z.B. \"Verletzung der Vertraulichkeit\", \"Verletzung der Integrität\" oder \"Verfügbarkeitsverletzung\".\n\nDie Risikobeurteilung erfolgt in Form einer Bewertung der Wahrscheinlichkeit und Schwere des Schadens, der durch die Datenschutzverletzung entsteht. Hierbei werden verschiedene Faktoren berücksichtigt, wie z.B. die Art der verletzten Daten, die Anzahl der betroffenen Personen, die Sensibilität der Daten und die Möglichkeit einer Diskriminierung oder",
+      "category": "administration",
+      "difficulty": "hard",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.2902,
+        "precision": 0.1,
+        "recall": 0.5714,
+        "f1_score": 0.1702,
+        "key_terms_ratio": 0.3333,
+        "length_ratio": 0.131
+      },
+      "response_time": 14.03,
+      "sources": [
+        "9c7ac0cd-c196-4bb6-bd16-a5c3c6eaee4e.pdf",
+        "634205c6-b1f7-469a-81bf-e246bcc3c1ab.pdf",
+        "f0b6f0eb-52e6-4d58-8f17-50f7eed3c819.pdf"
+      ]
+    },
+    {
+      "id": "test_028",
+      "question": "Wie funktioniert Mein Team in rexx?",
+      "expected_answer": "Mein Team bietet Führungskräften eine Übersicht über ihre direkten Mitarbeitenden mit relevanten Informationen und Aktionen.",
+      "generated_answer": "Mein Team in rexx refers to the team of support agents within rexx systems who are responsible for handling customer tickets. The team is trained to provide efficient and effective solutions to customers' problems, and they have access to a range of tools and resources to help them resolve issues quickly and accurately.\n\nThe team operates under a support agreement with the customer, which outlines the roles and responsibilities of both parties. The agreement typically names two main contact persons (such as administrators) within the customer's installation who are responsible for selecting and forwarding customer inquiries or issues to the rexx systems team. These contact persons have read-only access to the ticket system, allowing them to monitor the status of tickets but not create new ones or answer questions directly.\n\nTo access the ticket system, customers can use the auto-login feature provided by rexx systems. This allows customers to directly access the ticket system from an email sent by rexx systems, without the need for a separate login in the rexx application or the ticket system itself.\n\nOverall, Mein Team in rexx is designed to provide a streamlined and efficient support experience for customers, with clear roles and responsibilities defined between the customer and rexx systems.",
+      "category": "administration",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0361,
+        "precision": 0.0187,
+        "recall": 0.1333,
+        "f1_score": 0.0328,
+        "key_terms_ratio": 0.0,
+        "length_ratio": 0.0943
+      },
+      "response_time": 11.19,
+      "sources": [
+        "18bbd4ed-407f-4c60-853d-d80e077a3b38.pdf",
+        "7eaf17b6-ad5d-4edc-8131-b2feb793c381.pdf",
+        "aab73146-7fa6-4e49-939a-f87a2c7c079e.pdf"
+      ]
+    },
+    {
+      "id": "test_029",
+      "question": "Was sind flexible Workflow-Felder?",
+      "expected_answer": "Flexible Workflow-Felder ermöglichen die individuelle Anpassung von Formularfeldern in Workflows je nach Anforderung.",
+      "generated_answer": "Flexible Workflow-Felder sind Felder in einem Workflow-Prozess, die ihre Pflichtigkeit und Their Options for input can be individually configured for each workflow step. This means that the same field can be either a required field or an optional field in different workflow steps, depending on the configuration. This update allows for more flexibility in configuring fields and their behavior within a workflow, making it easier to create and manage complex workflows.",
+      "category": "workflows",
+      "difficulty": "hard",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.1954,
+        "precision": 0.1091,
+        "recall": 0.4286,
+        "f1_score": 0.1739,
+        "key_terms_ratio": 0.4444,
+        "length_ratio": 0.2489
+      },
+      "response_time": 5.96,
+      "sources": [
+        "d472a33a-4bc7-4a7b-b302-de05c1dd5a87.pdf",
+        "c4c4b74d-dbb9-4a3c-b922-b6132003b52c.pdf",
+        "715515c0-5dae-4e77-a91f-d6946f61770b.pdf"
+      ]
+    },
+    {
+      "id": "test_030",
+      "question": "Wie funktioniert der Talentbringer?",
+      "expected_answer": "Der Talentbringer unterstützt das Empfehlungsmanagement, bei dem Mitarbeitende Kandidaten für offene Stellen empfehlen können.",
+      "generated_answer": "Der Talentbringer ist ein zusätzliches System, das mit der rexx Bewerbermanagement Software verbunden werden kann. Mit dem Talentbringer können Sie die Beteiligung Ihrer Mitarbeiter bei der Suche nach geeigneten Bewerbern für Ihr Unternehmen im Vergleich zu klassischen, nicht digital-gestützten Programmen, um ein Vielfaches erhöhen.\n\nThe Talentbringer works by allowing your employees to recommend potential candidates for open positions within the company. The system allows them to easily share job postings with their personal network through email or social media, creating viral effects and reaching a wider audience. At the same time, the recommendations contribute to a positive employer branding for the company.\n\nThe Talentbringer and the rexx Bewerbermanagement Software offer an integrated management of both recommendation and candidate management, including extensive analyses, as well as gamification tools to support the evaluation and rewarding of recruiting recommendations from employees.\n\nWhen using the Talentbringer, you can create job postings that are easily shareable by your employees through their personal network. The system also allows for the creation of a viral effect, where employees can share job postings with their friends and contacts on social media, increasing the reach of the job posting and potentially attracting more candidates.\n\nIn addition, the Talentbringer offers a user",
+      "category": "recruiting",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0916,
+        "precision": 0.0534,
+        "recall": 0.5,
+        "f1_score": 0.0966,
+        "key_terms_ratio": 0.2222,
+        "length_ratio": 0.0887
+      },
+      "response_time": 13.21,
+      "sources": [
+        "45a793e4-a9aa-4571-832c-00c820bdd136.pdf",
+        "45a793e4-a9aa-4571-832c-00c820bdd136.pdf",
+        "45a793e4-a9aa-4571-832c-00c820bdd136.pdf"
+      ]
+    },
+    {
+      "id": "test_031",
+      "question": "Was sind Entwicklungsmaßnahmen in rexx HR?",
+      "expected_answer": "Entwicklungsmaßnahmen und Veranstaltungen dienen der Weiterbildung und Entwicklung von Mitarbeitenden. Sie können geplant und verwaltet werden.",
+      "generated_answer": "In rexx HR, the Whistleblowing Module, Developments refer to any updates, improvements, or new features that are added to the module to enhance its functionality and user experience. These developments may include:\n\n1. Improved user interface and user experience, making it easier for users to report incidents and access the module's features.\n2. Enhanced security measures to protect the identity of whistleblowers and prevent unauthorized access to the module.\n3. Addition of new categories or fields for reporting incidents, allowing users to provide more detailed information about their concerns.\n4. Integration with other rexx HR modules, such as performance management or compliance, to provide a more comprehensive solution for managing whistleblower reports.\n5. Automated workflows and escalation procedures to ensure that reports are handled promptly and efficiently.\n6. Improved reporting and analytics capabilities, allowing organizations to track and analyze whistleblower reports over time.\n7. Enhanced access controls and permissions management, ensuring that only authorized users can access the module and view reports.\n8. Integration with other systems or tools, such as HRIS or intranets, to provide a seamless user experience and improve the efficiency of whistleblower reporting.\n9. Improved support for multiple languages and locations, allowing organizations to use",
+      "category": "skillmanagement",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0,
+        "key_terms_ratio": 0.0,
+        "length_ratio": 0.103
+      },
+      "response_time": 12.92,
+      "sources": [
+        "30b29c79-2953-4230-913a-811adf100727.pdf",
+        "d1f29173-1955-4e95-a8cc-d7e06b79fe69.pdf",
+        "39b26c0a-097b-42c1-983a-d4ee3bd8eaa5.pdf"
+      ]
+    },
+    {
+      "id": "test_032",
+      "question": "Wie funktioniert die Schwerbehinderung Verwaltung?",
+      "expected_answer": "Das Modul zur Schwerbehinderung ermöglicht die Erfassung und Verwaltung von Schwerbehindertendaten gemäß gesetzlichen Anforderungen.",
+      "generated_answer": "Die Schwerbehinderung Verwaltung im Rexx HR Software funktioniert wie folgt:\n\n1. Aktivierung der Inklusions-Funktion: Die allgemeine Einstellung \"Schwerbehinderung & Gleichstellung\" wird aktiviert, um die Schwerbehinderung Verwaltung zu aktivieren.\n2. Feldbereich \"Schwerbehinderung\": Der neue Feldbereich \"Schwerbehinderung\" wird automatically created under Systemdata > Field Areas. This field area contains two new mandatory fields: \"Hint to Disability\" and \"Grade of Disability\".\n3. Hint to Disability: Bewerbende can voluntarily provide information about their disability in the application form. If they do not provide any information, the system will automatically detect hints of disability based on the information provided in the resume or cover letter.\n4. Grade of Disability: The system will automatically recognize and grade the severity of the disability based on the information provided by the Bewerber. This grade will be used to determine the appropriate accommodations and support for the Bewerber.\n5. Automatic Override: If the Bewerber has marked their application with a yellow badge indicating a possible disability, the system will automatically override any previous rejections or invalidations of the application based on the disability.\n6. Ver",
+      "category": "administration",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0586,
+        "precision": 0.0297,
+        "recall": 0.2143,
+        "f1_score": 0.0522,
+        "key_terms_ratio": 0.2222,
+        "length_ratio": 0.1039
+      },
+      "response_time": 13.18,
+      "sources": [
+        "665e0c9b-98a9-4394-ac22-57de2095c78e.pdf",
+        "665e0c9b-98a9-4394-ac22-57de2095c78e.pdf",
+        "665e0c9b-98a9-4394-ac22-57de2095c78e.pdf"
+      ]
+    },
+    {
+      "id": "test_033",
+      "question": "Was ist der Bewerbungsbooster?",
+      "expected_answer": "Der Bewerbungsbooster unterstützt internes Bewerben, bei dem Mitarbeitende sich schnell und einfach auf interne Stellenausschreibungen im Self Service Portal bewerben können.",
+      "generated_answer": "Der Bewerbungsbooster ist eine Funktion within the rexx HR software that enables internal recruitment and job recommendations for employees. It offers a built-in feature for internal job posting and recommendation management, without the need for additional job portals. The Bewerbungsbooster enhances employee engagement and motivation by encouraging them to share open positions within their network, which can lead to higher quality candidates and improved company culture. Additionally, it provides a centralized platform for employees to discover new career opportunities within the company, promoting internal mobility and development. The Bewerbungsbooster streamlines the internal recruitment process, making it more efficient and user-friendly, while also providing personalized recommendations based on the employee's profile and preferences. Overall, the Bewerbungsbooster is an essential tool for effective internal recruitment and career development within a company.",
+      "category": "recruiting",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0294,
+        "precision": 0.023,
+        "recall": 0.1,
+        "f1_score": 0.0374,
+        "key_terms_ratio": 0.0833,
+        "length_ratio": 0.1776
+      },
+      "response_time": 9.02,
+      "sources": [
+        "5696370f-4195-4cce-aa80-5f659c75bb7b.pdf",
+        "86a381e1-ed10-405c-8499-db8472011bd6.pdf",
+        "5696370f-4195-4cce-aa80-5f659c75bb7b.pdf"
+      ]
+    },
+    {
+      "id": "test_034",
+      "question": "Wie funktionieren Räume & Sitzpläne in rexx?",
+      "expected_answer": "Räume und Sitzpläne ermöglichen die Verwaltung von Büroräumen und Arbeitsplätzen im Unternehmen.",
+      "generated_answer": "Räume und Sitzpläne sind wichtige Funktionen within the rexx HR software. Here's how they work:\n\n1. Room Management: Each room within a location can have its own set of attributes, such as room number, floor number, and room type. These attributes are used to create a seating plan for the room, which can be edited and managed through the rexx system.\n2. Seating Plans: The seating plan is a visual representation of how employees are assigned to work in different rooms within a location. The plan can be created and managed through the rexx system, and it shows the layout of the room, including the location of workstations, meeting rooms, and other spaces.\n3. Room Search and List: The rexx system provides a search function for rooms, allowing employees to find specific rooms within a location based on various criteria such as room number, floor number, or room type. Additionally, there is a list view of all rooms within a location, which can be sorted and filtered based on various criteria.\n4. Room Plan Editing Mode: The rexx system provides an editing mode for room plans, allowing administrators to make changes to the seating plan directly within the system. This includes adding or removing workstations, changing the layout of the room, and assigning employees to specific rooms.\n5. Room Plan Visualization Mode: The rexx system also provides a visualization",
+      "category": "administration",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0191,
+        "precision": 0.0288,
+        "recall": 0.2727,
+        "f1_score": 0.0522,
+        "key_terms_ratio": 0.2857,
+        "length_ratio": 0.0698
+      },
+      "response_time": 13.03,
+      "sources": [
+        "aab73146-7fa6-4e49-939a-f87a2c7c079e.pdf",
+        "39b26c0a-097b-42c1-983a-d4ee3bd8eaa5.pdf",
+        "18bbd4ed-407f-4c60-853d-d80e077a3b38.pdf"
+      ]
+    },
+    {
+      "id": "test_035",
+      "question": "Was ist die Skillliste?",
+      "expected_answer": "Die Skillliste ist eine Übersicht aller im System definierten Skills, die für das Skillmanagement und Matching verwendet werden.",
+      "generated_answer": "Die Skillliste ist eine Funktion within the rexx HR software that allows users to find suitable training events for their employees based on their skills. The Skillliste provides a list of all available training events, and users can filter the list by selecting specific skills they want to improve or maintain. The system then suggests the most appropriate events for each employee based on their selected skills.\n\nThe Skillliste offers several advantages over traditional training event recommendations. Firstly, it allows users to search for events based on specific skills, rather than just relying on the default settings of the software. This ensures that employees are matched with events that are tailored to their individual needs and goals. Secondly, the Skillliste provides a more comprehensive overview of all available training events, allowing users to make informed decisions about which events to prioritize. Finally, the Skillliste can help organizations optimize their training budget by identifying the most cost-effective and efficient events for each employee.",
+      "category": "skillmanagement",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0808,
+        "precision": 0.0638,
+        "recall": 0.3529,
+        "f1_score": 0.1081,
+        "key_terms_ratio": 0.3,
+        "length_ratio": 0.1183
+      },
+      "response_time": 10.2,
+      "sources": [
+        "d33e6260-f061-4220-80e6-4a62de4badb1.pdf",
+        "d33e6260-f061-4220-80e6-4a62de4badb1.pdf",
+        "166f343b-90ef-488e-9724-18f4e1972aa5.pdf"
+      ]
+    },
+    {
+      "id": "test_036",
+      "question": "Wie funktioniert die Mehrsprachigkeit im Kundenforum?",
+      "expected_answer": "Das Kundenforum unterstützt Mehrsprachigkeit, sodass Inhalte in verschiedenen Sprachen bereitgestellt werden können.",
+      "generated_answer": "In rexx HR Software, the multilingual functionality in the customer forum works as follows:\n\n1. The system allows you to create and manage multiple languages for the forum.\n2. When a customer logs in to the forum, they are prompted to select their preferred language from a list of available languages.\n3. Once the customer has selected their preferred language, the forum will display all content, including posts, replies, and messages, in that language.\n4. The system also provides a feature to translate forum content on the fly, allowing customers to read and respond to posts in their preferred language.\n5. Additionally, the system includes a built-in spell checker for each language, ensuring that spelling mistakes are corrected in the customer's preferred language.\n6. The multilingual functionality is available for both the customer forum and the support tickets, allowing customers to communicate with the support team in their preferred language.\n7. The system also provides a feature to create custom roles for support agents, allowing them to respond to customers in their preferred language.\n8. The multilingual functionality is fully integrated with the rexx HR Software's core features, such as employee data management and time tracking, ensuring a seamless user experience for customers and support agents alike.",
+      "category": "general",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0443,
+        "precision": 0.0098,
+        "recall": 0.0833,
+        "f1_score": 0.0175,
+        "key_terms_ratio": 0.0,
+        "length_ratio": 0.087
+      },
+      "response_time": 12.34,
+      "sources": [
+        "e8849358-84b5-45c8-9faf-eccc37b560c5.pdf",
+        "e8849358-84b5-45c8-9faf-eccc37b560c5.pdf",
+        "c998f660-9abf-4e9f-962e-60ece80ad736.pdf"
+      ]
+    },
+    {
+      "id": "test_037",
+      "question": "Was sind Ausbildung und Lernpfade?",
+      "expected_answer": "Ausbildung und Lernpfade definieren strukturierte Entwicklungswege für Mitarbeitende mit aufeinander aufbauenden Schulungen.",
+      "generated_answer": "In rexx HR Software, \"Ausbildung\" and \"Lernpfade\" refer to two different concepts related to employee training and development. Here's a detailed explanation:\n\n1. Ausbildung: In rexx, \"Ausbildung\" refers to the overall training program for an employee. It includes all the skills, knowledge, and qualifications that an employee needs to acquire during their employment. The term \"Ausbildung\" encompasses various aspects of employee development, such as onboarding, job-specific training, leadership development, and continuous learning.\n2. Lernpfade: \"Lernpfade\" in rexx are specific training paths or modules that an employee needs to complete as part of their overall Ausbildung. These training paths are designed to help employees acquire specific skills or knowledge that are relevant to their job role or career progression. Each Lernpfad typically has a set duration and a series of learning objectives that must be completed in order for the employee to progress to the next level.\n\nIn summary, Ausbildung is the broader term that encompasses all aspects of employee training and development, while Lernpfade are specific training paths or modules that an employee needs to complete as part of their overall Ausbildung.",
+      "category": "skillmanagement",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.066,
+        "precision": 0.023,
+        "recall": 0.1667,
+        "f1_score": 0.0404,
+        "key_terms_ratio": 0.2222,
+        "length_ratio": 0.1011
+      },
+      "response_time": 12.03,
+      "sources": [
+        "67da454c-be89-4f1a-932a-a63c4ca8e989.pdf",
+        "67da454c-be89-4f1a-932a-a63c4ca8e989.pdf",
+        "67da454c-be89-4f1a-932a-a63c4ca8e989.pdf"
+      ]
+    },
+    {
+      "id": "test_038",
+      "question": "Wie funktioniert das Org.Management in rexx?",
+      "expected_answer": "Das Org.Management ermöglicht die Verwaltung der Organisationsstruktur einschließlich Abteilungen, Jobfamilien und Stellen.",
+      "generated_answer": "Das Organizational Management (Org.Management) in rexx ist ein Bestandteil der rexx Bewerbermanagement Software und ermöglicht die administrativeren Aspekte des Empfehlungsmanagements. Es gibt zwei Hauptvarianten des Org.Management:\n\n1. Klassisches Empfehlungsmanagement: Dieses Variant wird genutzt, wenn die rexx Suite (rexx ER und rexx HR) verwendet wird. Hierbei werden die Empfehlungen von Mitarbeitern über das Self Service Portal oder per E-Mail/sozialen Medien teilweise oder vollständig abgewickelt.\n2. Talentbringer: Diese Variante wird genutzt, wenn die rexx ER Stand-Alone (ohne rexx HR) verwendet wird. Hierbei können Mitarbeiter direkt über den Self Service Portal Empfehlungen für Stellenausschreibungen abgeben, ohne dass sie sich anmelden müssen.\n\nBeide Varianten des Org.Management bieten die Möglichkeit, die Beteiligung der Mitarbeiter am Empfehlungsmanagement zu erhöhen und gleichzeitig das nachhaltig positive Employer Branding des Unternehmens zu stärken. Die rexx Software unterstützt eine integrierte Verwaltung des Empfehlungs- und Bewerbermanagements",
+      "category": "administration",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.2478,
+        "precision": 0.086,
+        "recall": 0.6154,
+        "f1_score": 0.1509,
+        "key_terms_ratio": 0.375,
+        "length_ratio": 0.1141
+      },
+      "response_time": 12.85,
+      "sources": [
+        "d1f29173-1955-4e95-a8cc-d7e06b79fe69.pdf",
+        "1476ef67-1bc2-4562-921b-7c60de29ba72.pdf",
+        "48b5f371-ed17-4806-99bf-c1e69b30c0c8.pdf"
+      ]
+    },
+    {
+      "id": "test_039",
+      "question": "Was ist FTE-Basis in rexx HR?",
+      "expected_answer": "FTE-Basis (Full Time Equivalent) definiert die Grundlage für die Berechnung von Vollzeitäquivalenten im System.",
+      "generated_answer": "In rexx HR, FTE stands for Full-Time Equivalent. It refers to the number of full-time employees that are equivalent to the number of part-time or temporary employees in a particular period. In other words, it's a way to convert the number of part-time or temporary workers into a full-time equivalent workforce.\n\nFor example, if an organization has 10 part-time employees working 20 hours per week each, and they want to know the FTE equivalent of that workforce, they can multiply the total hours worked by those part-time employees by the number of weeks in a year (52) to get the FTE equivalent.\n\nIn rexx HR, FTE is used to calculate various HR metrics such as headcount, employee turnover rates, and productivity measures. It's an important concept in HR analytics and workforce planning, as it allows organizations to compare their full-time and part-time workforces on a level playing field.",
+      "category": "administration",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.137,
+        "precision": 0.0476,
+        "recall": 0.2857,
+        "f1_score": 0.0816,
+        "key_terms_ratio": 0.1429,
+        "length_ratio": 0.1237
+      },
+      "response_time": 9.7,
+      "sources": [
+        "45a793e4-a9aa-4571-832c-00c820bdd136.pdf",
+        "aab73146-7fa6-4e49-939a-f87a2c7c079e.pdf",
+        "4caf49e1-092f-48ea-aeda-f9d82bd12ed3.pdf"
+      ]
+    },
+    {
+      "id": "test_040",
+      "question": "Wie funktioniert die Felderkonfiguration für Personal?",
+      "expected_answer": "Die Felderkonfiguration ermöglicht die Anpassung von Datenfeldern in Personalstammdaten nach individuellen Anforderungen.",
+      "generated_answer": "Die Felderkonfiguration für Personal in rexx HR refers to the customization of fields and sections within the personnel module. The personnel module is where you can define and manage the fields and sections that are relevant to your organization's HR processes.\n\nIn rexx HR, you can add, edit, and delete fields and sections for personal data, such as name, address, contact information, and job-related details. You can also configure the field types, such as text, date, or dropdown menu, to suit your organization's needs.\n\nThe fields and sections are organized into different categories, such as personal data, employment history, education, skills, and certifications. You can add new fields and sections to these categories, or you can delete existing ones that are no longer needed.\n\nOnce you have configured the fields and sections for personal data, you can use them to create new personnel records or update existing ones. The fields and sections will be displayed in a structured format, making it easier to manage and analyze your organization's HR data.\n\nIn addition to configuring fields and sections, rexx HR also provides tools for managing employee data, such as importing and exporting data, creating reports, and generating analytics. These tools can help you make informed decisions about your organization's HR strategies and policies.",
+      "category": "administration",
+      "difficulty": "hard",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0348,
+        "precision": 0.0275,
+        "recall": 0.2727,
+        "f1_score": 0.05,
+        "key_terms_ratio": 0.1429,
+        "length_ratio": 0.0892
+      },
+      "response_time": 11.68,
+      "sources": [
+        "1476ef67-1bc2-4562-921b-7c60de29ba72.pdf",
+        "67da454c-be89-4f1a-932a-a63c4ca8e989.pdf",
+        "e7b01105-09e4-42ea-a403-8e513e5bd0ea.pdf"
+      ]
+    },
+    {
+      "id": "test_041",
+      "question": "Was ist die neue Datenstruktur Beziehungen?",
+      "expected_answer": "Die Datenstruktur Beziehungen ermöglicht die Abbildung von Verbindungen zwischen verschiedenen Datensätzen wie Personal und Stellen.",
+      "generated_answer": "Die neue Datenstruktur \"Beziehungen\" ist eine neue Möglichkeit, beliebige Verknüpfungen zwischen Leuten (Personal) untereinander, Personen (aus den rexx \"Häusern\") untereinander oder Personen zu Personal zu hinterlegen. Diese Verknüpfungen können auf verschiedenen Ebenen wie \"Ehegatten\", \"Eltern/Kind\", \"Freundschaften\", \"gemeinsame Mitgliedschaften in Vereinen\" usw. basieren. Die neue Datenstruktur ermöglicht es, diese Beziehungen zu verwalten und zu analysieren, was im Vergleich zu vorherigen Möglichkeiten eine verbesserte Einbindung von Personaldaten in die Corporate Governance und Personalentwicklung bietet.",
+      "category": "administration",
+      "difficulty": "hard",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.2817,
+        "precision": 0.1818,
+        "recall": 0.7143,
+        "f1_score": 0.2899,
+        "key_terms_ratio": 0.6,
+        "length_ratio": 0.2136
+      },
+      "response_time": 8.42,
+      "sources": [
+        "e7b01105-09e4-42ea-a403-8e513e5bd0ea.pdf",
+        "67da454c-be89-4f1a-932a-a63c4ca8e989.pdf",
+        "9c7ac0cd-c196-4bb6-bd16-a5c3c6eaee4e.pdf"
+      ]
+    },
+    {
+      "id": "test_042",
+      "question": "Wie funktioniert die Zusammenführung der Berechtigungsprofile?",
+      "expected_answer": "Recruiting und HR Berechtigungsprofile können zusammengeführt werden, um eine einheitliche Rechteverwaltung zu ermöglichen.",
+      "generated_answer": "Die Zusammenführung der Berechtigungsprofile erfolgt in Rexx HR Software durch die Verwendung von Profilen. Each profile represents a set of rights and permissions that are assigned to a user based on their role within the organization. When a user has multiple roles, their profiles are combined to reflect the overall set of rights and permissions they have.\n\nIn Rexx HR Software, the combination of profiles is done by taking the values from each profile and combining them using a logical AND operation. This means that if a user has multiple profiles with conflicting values, the final value will be the one that is specified in the last profile.\n\nFor example, let's say a user has two profiles: Profile A and Profile B. Profile A has the rights \"Right X\" set to \"Yes\", while Profile B has the right \"Right Y\" set to \"No\". If the user has both profiles combined, the final value for Right Y will be \"No\", because the last profile (Profile B) overrides the earlier one (Profile A).\n\nIt's important to note that the combination of profiles is done in a hierarchical manner. This means that if a user has multiple roles with different levels of authorization, the final set of rights and permissions will reflect the highest level of authorization.\n\nIn addition, Rexx HR Software provides the ability to edit the profiles directly from the Personal Record, allowing for easy management",
+      "category": "administration",
+      "difficulty": "hard",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0181,
+        "precision": 0.019,
+        "recall": 0.1538,
+        "f1_score": 0.0339,
+        "key_terms_ratio": 0.125,
+        "length_ratio": 0.0887
+      },
+      "response_time": 12.03,
+      "sources": [
+        "1476ef67-1bc2-4562-921b-7c60de29ba72.pdf",
+        "1476ef67-1bc2-4562-921b-7c60de29ba72.pdf",
+        "ceb92894-aea7-4c8f-aaad-3df69f8952f8.pdf"
+      ]
+    },
+    {
+      "id": "test_043",
+      "question": "Was ist die Darstellung neuer Rollen in rexx?",
+      "expected_answer": "Neue Rollen können im System dargestellt und konfiguriert werden, um verschiedene Benutzergruppen abzubilden.",
+      "generated_answer": "Die Darstellung neuer Rollen in rexx refers to the display of new roles within the software. According to the context, the following roles can be displayed in the OrgTree and Organogram:\n\n1. Brandschutz\n2. Ersthilfe\n3. Andere Rollen, die vom Kunden hinzugefügt wurden\n\nThese roles will be displayed in the OrgTree and Organogram, but they will not be visible on a personal level. This means that the user will only see the role assignments on an organizational level, without being able to view the individual assignments for each employee.\n\nThe update also allows for the display of new roles in the Ticketsystem, which can be accessed through the rexx application or directly via the web link <https://portal.rexx-server.com>. The user can log in with their email address and password to access the Ticketsystem. If the password is forgotten, the system provides a function to reset the password.",
+      "category": "administration",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0178,
+        "precision": 0.0215,
+        "recall": 0.1538,
+        "f1_score": 0.0377,
+        "key_terms_ratio": 0.2222,
+        "length_ratio": 0.1214
+      },
+      "response_time": 9.12,
+      "sources": [
+        "6dc584bb-6e95-49ed-b763-344453cffca6.pdf",
+        "18bbd4ed-407f-4c60-853d-d80e077a3b38.pdf",
+        "ef9629a6-4f4f-4b9f-acc7-ac70964a3d43.pdf"
+      ]
+    },
+    {
+      "id": "test_044",
+      "question": "Wie funktioniert die grafische Ansicht des Workflow Prozesses?",
+      "expected_answer": "Der Workflow Designer bietet eine grafische Ansicht zur Visualisierung und Konfiguration von Unternehmensprozessen. Prozessschritte können visuell dargestellt werden.",
+      "generated_answer": "Die grafische Ansicht des Workflow Prozesses im Workflow Designer von rexx systems GmbH ist eine benutzerfreundliche und übersichtliche Möglichkeit, den Workflowprozess zu erstellen und zu konfigurieren. Die Workflowschritte werden als Rauten dargestellt, die per Drag'n Drop in den Prozess eingebaut werden können. Der Workflowprozess wird in einem Flow Chart dargestellt, der den echten Workflowablauf repräsentiert.\n\nIn der grafischen Ansicht können die Benutzer parallel und seriell angeordnete Schritte einrichten. Parallele Schritte werden nebeneinander in einer Gruppe angezeigt, während serielle Schritte untereinander dargestellt werden. Wenn neue Schritte eingebaut werden müssen, können diese per Drag'n Drop von der linken Seitenleiste in den Prozess gezogen und an dem Punkt eingefügt werden, der den Vorschritt markiert.\n\nZusätzlich zu den Workflowschritten wird auch die Historie des Workflows in der grafischen Ansicht angezeigt. Der Benutzer kann zwischen der Standardansicht und der grafischen Ansicht des Workflow Designers switchen, um den Prozess zu erstellen oder zu bearbeiten.\n\nInsgesamt bietet",
+      "category": "workflows",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.2959,
+        "precision": 0.1379,
+        "recall": 0.6667,
+        "f1_score": 0.2286,
+        "key_terms_ratio": 0.6154,
+        "length_ratio": 0.1485
+      },
+      "response_time": 11.83,
+      "sources": [
+        "6e41e464-7101-41d6-b379-03ef66f4d5e7.pdf",
+        "6e41e464-7101-41d6-b379-03ef66f4d5e7.pdf",
+        "715515c0-5dae-4e77-a91f-d6946f61770b.pdf"
+      ]
+    },
+    {
+      "id": "test_045",
+      "question": "Was sind Meine Aufgaben in rexx HR?",
+      "expected_answer": "Meine Aufgaben ist eine Aufgabenverwaltung im Stil eines Kanban-Boards, die agiles Arbeiten in HR ermöglicht.",
+      "generated_answer": "In rexx HR, \"Meine Aufgaben\" refers to the personalized tasks and responsibilities assigned to each employee within the system. These tasks can include but are not limited to:\n\n* Viewing and managing your own work schedule\n* Submitting leave requests and managing your absences\n* Tracking your working hours and calculating your pay\n* Managing your benefits and compensation packages\n* Accessing online help and support resources\n* Updating your personal information and profile\n\nThe \"Meine Aufgaben\" section provides a centralized location for employees to manage their work-related tasks and responsibilities, ensuring they have all the necessary tools and resources at their fingertips.",
+      "category": "administration",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0521,
+        "precision": 0.058,
+        "recall": 0.25,
+        "f1_score": 0.0941,
+        "key_terms_ratio": 0.2222,
+        "length_ratio": 0.1582
+      },
+      "response_time": 7.62,
+      "sources": [
+        "8ab6987a-b35c-47f8-8127-4a5fd76f1df1.pdf",
+        "aab73146-7fa6-4e49-939a-f87a2c7c079e.pdf",
+        "373e4b17-5231-4a9c-b44e-125b3cd4d63c.pdf"
+      ]
+    },
+    {
+      "id": "test_046",
+      "question": "Wie funktioniert die Online-Hilfe in rexx?",
+      "expected_answer": "Die Online-Hilfe bietet kontextbezogene Unterstützung und Dokumentation direkt im System.",
+      "generated_answer": "Die Online-Hilfe in rexx ist ein integraler Bestandteil der Software und bietet Mitarbeitern eine umfassende Unterstützung bei Bedarf. Die Hilfe wird durch verschiedene Funktionen unterstützt:\n\n1. Nachrichten & Statistiken: Hier können Mitarbeiter die letzten Aktivitäten und Nachrichten in den verschiedenen Bereichen des Systems ansehen.\n2. Benutzerakte: Die Online-Hilfe bietet einen Überblick über den aktuellen Zustand der Benutzerakte, einschließlich der letzen Änderungen und Anpassungen.\n3. Logout: Mitarbeiter können sich leicht aus dem System ausloggen, indem sie auf das Logout-Button klicken.\n4. Einstellungen: Hier können Mitarbeiter ihre persönlichen Einstellungen anpassen, wie z.B. das Passwort oder die Benutzereinstellungen.\n5. Service Portals: Die Online-Hilfe bietet einen direkten Zugriff auf den Self-Service-Portal, wo Mitarbeiter ihre Aufgaben und Anträge bearbeiten können.\n6. Foxy-Navigation: Die Foxy-Navigation ist eine einfache und schnelle Möglichkeit, um zwischen den verschiedenen Bereichen des Systems zu navigieren.",
+      "category": "general",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.2822,
+        "precision": 0.0737,
+        "recall": 0.6364,
+        "f1_score": 0.1321,
+        "key_terms_ratio": 0.625,
+        "length_ratio": 0.0848
+      },
+      "response_time": 9.44,
+      "sources": [
+        "8ab6987a-b35c-47f8-8127-4a5fd76f1df1.pdf",
+        "373e4b17-5231-4a9c-b44e-125b3cd4d63c.pdf",
+        "ef9629a6-4f4f-4b9f-acc7-ac70964a3d43.pdf"
+      ]
+    },
+    {
+      "id": "test_047",
+      "question": "Was ist das Kundenforum?",
+      "expected_answer": "Das Kundenforum ist eine Plattform für rexx-Kunden zum Austausch und zur Unterstützung.",
+      "generated_answer": "Das Kundenforum ist eine Plattform within the rexx HR Software where customers can exchange information and discuss current topics related to the software. All rexx users are automatically connected to the forum and have the ability to read and post messages. The rexx Customer Success Manager also participates in the forum to address customer questions and concerns. All update information about the software development is published in the forum's \"Update Info\" section. This is the place where you can find the latest update information!",
+      "category": "general",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0837,
+        "precision": 0.1111,
+        "recall": 0.4615,
+        "f1_score": 0.1791,
+        "key_terms_ratio": 0.4,
+        "length_ratio": 0.1608
+      },
+      "response_time": 5.82,
+      "sources": [
+        "86a381e1-ed10-405c-8499-db8472011bd6.pdf",
+        "9ec0c679-7fd4-4054-82c3-17ab85b856e7.pdf",
+        "9a815c35-c207-480a-872b-55a02c8d0b54.pdf"
+      ]
+    },
+    {
+      "id": "test_048",
+      "question": "Wie funktionieren Vorlagen in rexx HR?",
+      "expected_answer": "Vorlagen ermöglichen die Standardisierung von Dokumenten und Prozessen im System.",
+      "generated_answer": "In rexx HR, the new \"Dokument\" workflow type introduces a flexible and modular approach to creating documents. Unlike the previous \"Arbeitszeugnis\" module, which was limited to creating works certificates, the \"Dokument\" workflow allows for the creation of any type of document.\n\nTo create a document using the \"Dokument\" workflow, you can use pre-defined text building blocks (called \"Textbausteine\") and form templates (called \"Formschreiben\"). The Textbausteine are flexible content elements that can be used to create different types of documents, while the Formschreiben provide a framework for organizing the document's structure.\n\nThe system recognizes the Textbausteine within a Formschreiben based on placeholder markers, and makes them available for use in the workflow process. You can also add directly written text within the Formschreiben, which can be adapted later in the workflow process if needed.\n\nTo use Vorlagen (templates) in rexx HR, you can create a new Formschreiben based on an existing template. Once the new Formschreiben is created, you can fill it with the appropriate Textbausteine to create the desired document. The system will recognize the Placeholder markers and make the corresponding Textbausteine available for use in the workflow process.\n\nFor example, if you want",
+      "category": "documents",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0171,
+        "precision": 0.0204,
+        "recall": 0.2,
+        "f1_score": 0.037,
+        "key_terms_ratio": 0.3333,
+        "length_ratio": 0.0621
+      },
+      "response_time": 12.93,
+      "sources": [
+        "c4c4b74d-dbb9-4a3c-b922-b6132003b52c.pdf",
+        "aab73146-7fa6-4e49-939a-f87a2c7c079e.pdf",
+        "9a815c35-c207-480a-872b-55a02c8d0b54.pdf"
+      ]
+    },
+    {
+      "id": "test_049",
+      "question": "Was sind Typen-Administration?",
+      "expected_answer": "Die Typen-Administration ermöglicht die Konfiguration verschiedener Kategorien und Typen für Systemdaten.",
+      "generated_answer": "Das rexx Empfehlungsmanagement ist ein Instrument zur Bewerberfindung, das auf Empfehlungen von Mitarbeitern basiert. Es gibt zwei Varianten des Empfehlungsmanagements, die von der rexx Software angeboten werden:\n\n1. Klassisches Empfehlungsmanagement: Dieses ist einsetzbar, wenn die rexx Suite (rexx ER und rexx HR) genutzt wird. Hierbei können Mitarbeiter durch das Einreichen von Empfehlungen für Bewerber eine Beteiligung am Recruiting-Prozess haben.\n2. Talentbringer: Diese Variante des Empfehlungsmanagements ist speziell für das rexx ER Stand-Alone (ohne rexx HR) entwickelt worden. Hierbei können Mitarbeiter durch das Einreichen von Empfehlungen für Bewerber Talente für das Unternehmen identifizieren und empfehlen.\n\nIn both cases, the rexx software supports the integration of employee recommendations into the recruiting process, which can lead to a higher success rate and lower costs compared to traditional, non-digital programs. By using the rexx Empfehlungsmanagement and the rexx Bewerbermanagement Software together, data can be easily transferred between the two systems, allowing for a more efficient and effective recruiting process.",
+      "category": "administration",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0717,
+        "precision": 0.0286,
+        "recall": 0.3,
+        "f1_score": 0.0522,
+        "key_terms_ratio": 0.0,
+        "length_ratio": 0.0909
+      },
+      "response_time": 12.72,
+      "sources": [
+        "d1f29173-1955-4e95-a8cc-d7e06b79fe69.pdf",
+        "b1e48b4b-b4b9-4d15-8928-5b02356c9a7d.pdf",
+        "1476ef67-1bc2-4562-921b-7c60de29ba72.pdf"
+      ]
+    },
+    {
+      "id": "test_050",
+      "question": "Wie funktioniert das Personal/User Setup?",
+      "expected_answer": "Das Personal/User Setup ermöglicht die Konfiguration von Benutzerkonten und Personalstammdaten im System.",
+      "generated_answer": "Das Personal/User Setup ist ein wichtiger Bestandteil von rexx HR Software, um die Benutzerdaten für den Erstdatenimport zu konfigurieren. Das Personal/User Setup ermöglicht es, bestimmte Felder in der Importdatei automatisch zu befüllen. Hier sind die Schritte, um das Personal/User Setup anzulegen:\n\n1. Öffnen Sie das Top-Level-Menü und klicken Sie auf \"Personal/User Setup\".\n2. Klicken Sie auf \"Neues Personal/User Setup anlegen\".\n3. Im Feldbereich \"Workflows\" können Sie die Berechtigungsprofile für die Benutzer anpassen. Hier können Sie auch das Standard-Mail-Schema und den Telefon Workflow festlegen.\n4. Im Bereich \"Arbeitszeiten\" können Sie die Arbeitszeiten des Benutzers anpassen, während im Bereich \"Urlaubsansprüche\" die Urlaubsgrundlagen festgelegt werden können.\n5. In der Gruppe \"Feiertagsgruppen\" können Sie die Feiertage des Benutzers anpassen.\n6. Wenn Sie neue Felder hinzufügen möchten, können Sie das Feld \"Zusatzfelder\" anklicken und weitere Felder hinzufügen.",
+      "category": "administration",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.3419,
+        "precision": 0.1084,
+        "recall": 0.6923,
+        "f1_score": 0.1875,
+        "key_terms_ratio": 0.4286,
+        "length_ratio": 0.1069
+      },
+      "response_time": 12.27,
+      "sources": [
+        "b1e48b4b-b4b9-4d15-8928-5b02356c9a7d.pdf",
+        "67da454c-be89-4f1a-932a-a63c4ca8e989.pdf",
+        "1476ef67-1bc2-4562-921b-7c60de29ba72.pdf"
+      ]
+    }
+  ]
+}
