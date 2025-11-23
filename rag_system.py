@@ -1,13 +1,13 @@
 """
 RAG System for Rexx HR Q&A
-Uses MiniLM-L6-v2 for retrieval and TinyLlama for generation
+Uses MiniLM-L6-v2 for retrieval and Ollama llama2 for generation
 """
 
 import json
 import os
 import sys
 import time
-import torch
+import requests
 from typing import List, Dict, Tuple
 import numpy as np
 
@@ -19,20 +19,19 @@ from sentence_transformers import SentenceTransformer
 import chromadb
 from chromadb.config import Settings
 
-# LLM Generation
-from transformers import AutoModelForCausalLM, AutoTokenizer
-
 # Force unbuffered output
 sys.stdout.reconfigure(line_buffering=True)
 
+OLLAMA_URL = "http://localhost:11434/api/generate"
+
 
 class RAGSystem:
-    """RAG system with MiniLM retriever and TinyLlama generator."""
+    """RAG system with MiniLM retriever and Ollama llama2 generator."""
 
     def __init__(
         self,
         embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2",
-        generator_model: str = "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+        generator_model: str = "llama2",
         collection_name: str = "rexx_docs",
         persist_directory: str = "./chroma_db"
     ):
@@ -42,8 +41,6 @@ class RAGSystem:
         self.persist_directory = persist_directory
 
         self.embedding_model = None
-        self.generator_model = None
-        self.tokenizer = None
         self.chroma_client = None
         self.collection = None
 
@@ -54,20 +51,16 @@ class RAGSystem:
         print("Embedding model loaded!", flush=True)
 
     def load_generator_model(self):
-        """Load TinyLlama for generation."""
-        print(f"Loading generator model: {self.generator_model_name}", flush=True)
-
-        self.tokenizer = AutoTokenizer.from_pretrained(self.generator_model_name)
-        self.tokenizer.pad_token = self.tokenizer.eos_token
-
-        self.generator_model = AutoModelForCausalLM.from_pretrained(
-            self.generator_model_name,
-            torch_dtype=torch.float32,
-            trust_remote_code=True,
-            low_cpu_mem_usage=True
-        )
-        self.generator_model.eval()
-        print("Generator model loaded!", flush=True)
+        """Check Ollama is available."""
+        print(f"Using Ollama generator: {self.generator_model_name}", flush=True)
+        try:
+            response = requests.get("http://localhost:11434/api/tags", timeout=5)
+            if response.status_code == 200:
+                print("Ollama connection OK!", flush=True)
+            else:
+                print("WARNING: Ollama not responding properly", flush=True)
+        except:
+            print("WARNING: Could not connect to Ollama. Make sure it's running.", flush=True)
 
     def init_vector_store(self, reset: bool = False):
         """Initialize ChromaDB vector store."""
@@ -208,47 +201,45 @@ class RAGSystem:
         return retrieved
 
     def generate_answer(self, question: str, context: str, max_new_tokens: int = 300) -> str:
-        """Generate answer using TinyLlama with retrieved context."""
-        if self.generator_model is None:
-            self.load_generator_model()
+        """Generate answer using Ollama llama2 with retrieved context."""
+        # Truncate context to avoid overwhelming the model
+        context_words = context.split()[:400]
+        context_truncated = " ".join(context_words)
 
-        prompt = f"""### Instruction:
-Beantworte die folgende Frage über rexx HR Software präzise und auf Deutsch.
-Nutze den bereitgestellten Kontext für deine Antwort.
+        prompt = f"""Du bist ein Experte für rexx HR Software. Beantworte die Frage basierend auf dem Kontext.
 
-### Context:
-{context}
+Kontext:
+{context_truncated}
 
-### Question:
-{question}
+Frage: {question}
 
-### Answer:
-"""
+Antwort (auf Deutsch, präzise):"""
 
-        inputs = self.tokenizer(prompt, return_tensors="pt", truncation=True, max_length=1024)
-
-        with torch.no_grad():
-            outputs = self.generator_model.generate(
-                **inputs,
-                max_new_tokens=max_new_tokens,
-                temperature=0.3,
-                do_sample=True,
-                pad_token_id=self.tokenizer.eos_token_id,
-                eos_token_id=self.tokenizer.eos_token_id,
-                repetition_penalty=1.1
+        try:
+            response = requests.post(
+                OLLAMA_URL,
+                json={
+                    "model": self.generator_model_name,
+                    "prompt": prompt,
+                    "stream": False,
+                    "options": {
+                        "temperature": 0.3,
+                        "num_predict": max_new_tokens
+                    }
+                },
+                timeout=120
             )
 
-        full_response = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
+            if response.status_code == 200:
+                result = response.json()
+                return result.get("response", "").strip()
+            else:
+                return f"Error: Ollama returned status {response.status_code}"
 
-        # Extract answer
-        if "### Answer:" in full_response:
-            answer = full_response.split("### Answer:")[-1].strip()
-            if "###" in answer:
-                answer = answer.split("###")[0].strip()
-        else:
-            answer = full_response
-
-        return answer
+        except requests.exceptions.Timeout:
+            return "Error: Ollama request timed out"
+        except Exception as e:
+            return f"Error: {str(e)}"
 
     def query(self, question: str, top_k: int = 3) -> Tuple[str, List[Dict]]:
         """Full RAG pipeline: retrieve and generate."""
@@ -269,10 +260,10 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     pdf_dir = os.path.join(script_dir, "rexx_pdfs")
 
-    # Initialize RAG system
+    # Initialize RAG system with Ollama llama2
     rag = RAGSystem(
         embedding_model="sentence-transformers/all-MiniLM-L6-v2",
-        generator_model="TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+        generator_model="llama2",
         persist_directory=os.path.join(script_dir, "chroma_db")
     )
 

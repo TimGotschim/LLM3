@@ -26,11 +26,11 @@ def main():
         print("ERROR: RAG index not found. Run 'python rag_system.py' first to build the index.", flush=True)
         return
 
-    # Initialize RAG system
+    # Initialize RAG system with Ollama llama2
     print("Initializing RAG system...", flush=True)
     rag = RAGSystem(
         embedding_model="sentence-transformers/all-MiniLM-L6-v2",
-        generator_model="TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+        generator_model="llama2",
         persist_directory=chroma_path
     )
 
@@ -113,9 +113,9 @@ def main():
     # Save results
     output = {
         "metadata": {
-            "model": "TinyLlama-1.1B + RAG",
+            "model": "llama2 + RAG",
             "embedding_model": "all-MiniLM-L6-v2",
-            "generator_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "generator_model": "llama2 (Ollama)",
             "retrieval_top_k": 3,
             "rag_enabled": True,
             "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S"),
@@ -156,7 +156,7 @@ def main():
             baseline = json.load(f)
 
         print("\n" + "=" * 60, flush=True)
-        print("COMPARISON: BASELINE (TinyLlama) vs RAG (TinyLlama + MiniLM)", flush=True)
+        print("COMPARISON: BASELINE vs RAG (llama2 + MiniLM)", flush=True)
         print("=" * 60, flush=True)
 
         baseline_agg = baseline['aggregate_metrics']
