@@ -201,7 +201,7 @@ def main():
             baseline = json.load(f)
 
         print("\n" + "=" * 60, flush=True)
-        print("COMPARISON: BASELINE (llama2) vs FINE-TUNED (TinyLlama)", flush=True)
+        print("COMPARISON: BASELINE (TinyLlama) vs FINE-TUNED (TinyLlama)", flush=True)
         print("=" * 60, flush=True)
 
         baseline_agg = baseline['aggregate_metrics']
