@@ -3,699 +3,411 @@
     "model": "TinyLlama-1.1B-finetuned",
     "base_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
     "finetuned": true,
-    "timestamp": "2025-11-23T19:32:47",
+    "timestamp": "2025-11-23T20:26:35",
     "num_questions": 50
   },
   "aggregate_metrics": {
-    "avg_cosine_similarity": 0.0688,
-    "avg_precision": 0.1438,
-    "avg_recall": 0.0952,
-    "avg_f1_score": 0.102,
-    "avg_key_terms_ratio": 0.0608,
+    "avg_cosine_similarity": 0.1713,
+    "avg_precision": 0.1693,
+    "avg_recall": 0.3701,
+    "avg_f1_score": 0.2155,
+    "avg_key_terms_ratio": 0.2412,
     "by_category": {
-      "recruiting": 0.0872,
-      "skillmanagement": 0.0938,
-      "administration": 0.0988,
-      "documents": 0.1344,
-      "time_management": 0.0227,
-      "workflows": 0.1162,
-      "general": 0.1482
+      "recruiting": 0.1571,
+      "skillmanagement": 0.2043,
+      "administration": 0.2222,
+      "documents": 0.1872,
+      "time_management": 0.2613,
+      "workflows": 0.2808,
+      "general": 0.2668
     },
-    "total_time_seconds": 1348.86,
-    "avg_response_time": 26.98
+    "total_time_seconds": 588.35,
+    "avg_response_time": 11.77
   },
   "results": [
     {
       "id": "test_001",
       "question": "Was ist der Jobportal-Konfigurator in rexx?",
       "expected_answer": "Der Jobportal-Konfigurator ermöglicht einfaches und effektives Anpassen des Jobportals nach den eigenen Vorstellungen. Er bietet Einstellungen für Schriftarten, Farben und Layout.",
-      "generated_answer": "Einstellungen für Benutzergruppen können mithilfe",
+      "generated_answer": "Der Jobportal-Konfigurator in rexx ist ein Programm, das für den Aufbau einer Webseite für die Vergabe von Arbeitsplätzen verantwortlich ist.",
       "category": "recruiting",
       "difficulty": "easy",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.1054,
-        "precision": 0.4,
-        "recall": 0.0952,
-        "f1_score": 0.1538,
-        "key_terms_ratio": 0.0714,
-        "length_ratio": 0.2737
+        "cosine_similarity": 0.1427,
+        "precision": 0.2632,
+        "recall": 0.2381,
+        "f1_score": 0.25,
+        "key_terms_ratio": 0.1429,
+        "length_ratio": 0.7877
       },
-      "response_time": 28.93
+      "response_time": 4.95
     },
     {
       "id": "test_002",
       "question": "Wie funktioniert das Skillmanagement in rexx HR?",
       "expected_answer": "Das Skillmanagement hilft dabei, Transparenz zu schaffen über vorhandene Skills im Unternehmen. Es beantwortet Fragen wie: Wer kann was? Wo fehlen Fähigkeiten? Wo lohnt sich Weiterbildung und wo Recruiting? So lassen sich Mitarbeitende besser entwickeln und interne Mobilität unterstützen.",
-      "generated_answer": "Die Personale",
+      "generated_answer": "Das Skillmanagement in rexx HR ist einfach zu verwenden, da es eine einfache Syntax verwendet. Es gibt zwei Arten von Skills:\n\n1. Standardskills: Diese sind standardmäßig vorhanden und können von jedem Benutzer benutzt werden.\n2. Customized Skills: Sie können eigene Skills erstellen, die nur für einen bestimmten Bereich oder einen bestimmten Kunden definiert sind.\n\nDas Skillmanagement in rexx HR ermöglicht es Ihnen, neue Skills zu erstellen und zu verwalten. Sie können auch Skills löschen, wenn sie nicht mehr benötigt werden. Die Skills können mit dem Skillmanager-Tool erstellt und verwaltet werden.\n\nBeispiel:\n\n```\ncreate skill \"Customer Service\"\n    description \"Provides excellent customer service to clients.\"\n    level 5\nend\n\ncreate skill \"Marketing\"\n    description \"Knows how to promote products and services effectively.\"\n    level 4\nend\n\ncreate skill \"Finance\"\n    description \"Understands financial concepts and can analyze data effectively.\"\n    level 3\nend\n\nadd skill \"Customer Service\"\n    name \"Customer Service\"\n    level 5\nend\n\nadd skill \"Marketing\"\n    name \"Marketing\"",
       "category": "skillmanagement",
       "difficulty": "medium",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1_score": 0,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.045
+        "cosine_similarity": 0.0963,
+        "precision": 0.0638,
+        "recall": 0.1714,
+        "f1_score": 0.093,
+        "key_terms_ratio": 0.0909,
+        "length_ratio": 0.2644
       },
-      "response_time": 27.82
+      "response_time": 27.91
     },
     {
       "id": "test_003",
       "question": "Was ist das Whistleblowing Modul?",
       "expected_answer": "Das Whistleblowing Modul bietet einen sicheren Kanal für Hinweisgeber im Unternehmen. Es gewährleistet Sicherheit und Datenschutz bei der Meldung von Missständen.",
-      "generated_answer": "Der Whistleblow",
+      "generated_answer": "Das Whistleblowing Modul bietet Ihnen eine Möglichkeit, Ihre Vorteile zu ermitteln, um Ihren Umgang mit der Firma zu verbessern. Sie können Ihre Bedenken und Angriffe an den Aufsichtsbehörden senden, um Ihre Erfahrungen zu dokumentieren und Ihr Wissen zu sammeln. Das Whistleblowing Modul kann Ihnen dabei helfen, Ihre eigenen Vorteile zu ermitteln und Ihre Beziehungen zu Ihrer Arbeitgeberin zu verbessern.",
       "category": "administration",
       "difficulty": "easy",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0911,
-        "precision": 0.5,
-        "recall": 0.0476,
-        "f1_score": 0.087,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.0926
+        "cosine_similarity": 0.1143,
+        "precision": 0.1538,
+        "recall": 0.2857,
+        "f1_score": 0.2,
+        "key_terms_ratio": 0.2308,
+        "length_ratio": 0.398
       },
-      "response_time": 27.6
+      "response_time": 11.85
     },
     {
       "id": "test_004",
       "question": "Wie konfiguriert man Entgelttabellen in rexx HR?",
       "expected_answer": "Entgelttabellen können für Tarifverträge und Kollektivverträge konfiguriert werden. Die Pflege erfolgt über die Systemeinstellungen. Entgelttabellen können in Jobfamilien und Stellen für die Eingruppierung verwendet werden.",
-      "generated_answer": "Die folgenden Daten sind erforderlich für eine Kostenrechnung:\n\n- Zeitraum\n- Rechenzeitraum\n- Kostenart\n- Kostenarten\n- Kostensteuername\n- Kostensteuer\n- Kostenausgabe\n- Kostenausgabename\n- Kostenausgabebetrag\n- Kostenausgabefaktura\n- Kostenausgabefakturenatz\n- Kostenausgabefaktur",
+      "generated_answer": "Entgelttabellen kann man in der folgenden Reihenfolge konfigurieren:\n1. Tabellendefinition (Tabelle)\n2. Tabellenkennung\n3. Tabelldatenbank\n4. Tabelldatenbanken\n5. Tabellenausgabe\n6. Ausgabenamen\n7. Ausgabenformat\n8. Ausgabenformatzeilen\n9. Ausgabenformatzeilen mit Spalten\n10. Ausgabenformatzeilen mit Spalten mit Zeilennummern\n11. Ausgabenformatzeilen mit Spalten mit Zeilennummern mit Spalten\n12. Ausgabenformatzeilen mit Spalten mit Zeilennummern mit Spalten mit Zeilennummern mit Spalten\n13. Ausgabenformatzeilen mit Spalten mit Zeilennummern mit Spalten mit Zeilennummern mit Spalten mit Zeilennummern mit Spalten\n14. Ausgabenformatzeilen mit Spalten mit Zeilennummern mit Spalten mit Zeilennummern mit Spalten mit Zeilennummern mit Spalten mit Zeilennummern mit Spalten\n15. Ausgabenformatzeilen mit Spalten mit Zeilennummern mit Spalten mit Zeilennummern mit Spalten mit Ze",
       "category": "administration",
       "difficulty": "hard",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0987,
-        "precision": 0.1,
+        "cosine_similarity": 0.0059,
+        "precision": 0.0556,
         "recall": 0.1111,
-        "f1_score": 0.1053,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.7936
+        "f1_score": 0.0741,
+        "key_terms_ratio": 0.0769,
+        "length_ratio": 0.2537
       },
-      "response_time": 27.74
+      "response_time": 27.53
     },
     {
       "id": "test_005",
       "question": "Was sind digitale Signaturen in rexx?",
       "expected_answer": "Digitale Signaturen ermöglichen elektronische Signaturen im Antragsprozess, sicheres Signieren von Dokumenten und Gesprächen sowie das Unterzeichnen von Arbeitsverträgen im Recruiting ohne externe Dienstleister.",
-      "generated_answer": "Eine Signatur- und Signaturstatusdatei kann in",
+      "generated_answer": "Digitale Signaturen sind eine Art von elektronischen Signatur, die digital signiert werden können. Sie ermöglichen es, ein Dokument oder ein anderes elektronisches Objekt zu signieren, ohne dass es sich um eine physische Signatur handelt. Digitale Signaturen können als Teil eines elektronischen Signaturverfahrens verwendet werden, um eine digitale Signatur zu erstellen und sie dann für den Signaturanbieter zu verwenden.",
       "category": "documents",
       "difficulty": "medium",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0404,
+        "cosine_similarity": 0.1467,
         "precision": 0.1667,
-        "recall": 0.05,
-        "f1_score": 0.0769,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.218
+        "recall": 0.35,
+        "f1_score": 0.2258,
+        "key_terms_ratio": 0.2667,
+        "length_ratio": 0.4988
       },
-      "response_time": 28.05
+      "response_time": 9.16
     },
     {
       "id": "test_006",
       "question": "Wie funktioniert INTERAMT als Publizierungsziel?",
       "expected_answer": "INTERAMT ist eine zentrale deutsche Online-Plattform für Stellenangebote im öffentlichen Dienst. rexx systems bietet eine Integration über eine Schnittstelle, die effizienten Datenaustausch ermöglicht.",
-      "generated_answer": "Man kann ein Formular in den Kundenkonto-Manager hochladen, indem man das Formular im Webbrowser öffnet und es dann",
+      "generated_answer": "INTERAMT ist ein Publizierungsziel für ReXX-Programme, das von der ReXX-Software GmbH entwickelt wurde. Es ermöglicht es, ReXX-Projekte in einer integrierten Entwicklungsumgebung (IDE) zu verwalten und zu veröffentlichen, ohne dass man eine eigene IDE benötigt. Die Inhalte werden automatisch in eine ReXX-Datei geschrieben, die dann in den ReXX-Projekten eingebaut wird. Dadurch kann man ReXX-Projekte schnell und einfach verwalten und veröffentlichen.",
       "category": "recruiting",
       "difficulty": "medium",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0196,
-        "precision": 0.0588,
-        "recall": 0.0455,
-        "f1_score": 0.0513,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.5721
+        "cosine_similarity": 0.1905,
+        "precision": 0.1489,
+        "recall": 0.3182,
+        "f1_score": 0.2029,
+        "key_terms_ratio": 0.1333,
+        "length_ratio": 0.4437
       },
-      "response_time": 27.67
+      "response_time": 12.09
     },
     {
       "id": "test_007",
       "question": "Was ist das 360° Feedback in rexx HR?",
       "expected_answer": "Das 360° Feedback ermöglicht eine umfassende Bewertung von Mitarbeitenden durch verschiedene Perspektiven wie Vorgesetzte, Kollegen und Mitarbeiter selbst.",
-      "generated_answer": "Die Vorteile des 360° Feedback in rexx",
+      "generated_answer": "Das 360° Feedback in rexx HR ist ein Software-Tool, mit dem Sie Ihre Mitarbeiter beraten können. Es ermöglicht Ihnen, alle Mitarbeiters zu beraten und ihre Kompetenz und Fähigkeiten zu bewerten. Mit dem 360° Feedback können Sie Ihre Mitarbeiter beraten, um ihre Fähigkeiten zu verbessern und sich selbst zu verstehen.",
       "category": "skillmanagement",
       "difficulty": "easy",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.1001,
-        "precision": 0.2857,
-        "recall": 0.1111,
-        "f1_score": 0.16,
-        "key_terms_ratio": 0.0833,
-        "length_ratio": 0.2452
+        "cosine_similarity": 0.1678,
+        "precision": 0.2188,
+        "recall": 0.3889,
+        "f1_score": 0.28,
+        "key_terms_ratio": 0.3333,
+        "length_ratio": 0.489
       },
-      "response_time": 27.55
+      "response_time": 9.48
     },
     {
       "id": "test_008",
       "question": "Wie funktioniert Homeoffice per Antrag?",
       "expected_answer": "Homeoffice kann über einen Workflow-Antrag beantragt werden. Die Homeoffice-Kalendertage werden erfasst und in der Zeiterfassung berücksichtigt.",
-      "generated_answer": "Die Daten für das Personalverfahren sind Name, Vorname, Geburtsdatum, E-Mail-Adresse, Telefonnummer, Kontaktinformationen, Lebenslauf, Berufserfahrung, Ausbildung, Abschluss, Bildungsstand, Qualifikationen, Prüfungsvorbereitung, Prüfungsamt, Prüfungsprüfer, Prüfungsbericht, Prüfungsbewertung, Prüfungsdatenbank, Prüfungsdaten, Prüfungsplan, Prüfungsplan, Prüfungsplan, Prüfungsplan, Prüfungsplan, Prüfungsplan, Prüfungsplan, Prüfungsplan,",
+      "generated_answer": "Homeoffice kann mit Hilfe von Antragsstellen erreicht werden, um einen Antrag zu stellen. Der Antrag kann dann an den jeweiligen Behörden gesendet werden. Die Antragsstelle legt das Angebot vor und sendet es an die entsprechende Behörde. Die Behörde prüft das Angebot und antragstellt dann eine Antwort.",
       "category": "time_management",
       "difficulty": "easy",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0115,
-        "precision": 0.0357,
-        "recall": 0.0625,
-        "f1_score": 0.0455,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.328
+        "cosine_similarity": 0.2956,
+        "precision": 0.2286,
+        "recall": 0.5,
+        "f1_score": 0.3137,
+        "key_terms_ratio": 0.4,
+        "length_ratio": 0.4752
       },
-      "response_time": 29.51
+      "response_time": 8.08
     },
     {
       "id": "test_009",
       "question": "Was ist Multiposting in rexx Recruiting?",
       "expected_answer": "Multiposting ermöglicht das gleichzeitige Veröffentlichen von Stellenanzeigen auf mehreren Jobportalen und Plattformen aus dem rexx System heraus.",
-      "generated_answer": "Das Standardposting-Modul funktioniert wie ein Standardposting.",
+      "generated_answer": "Multiposting in rexx Recruiting ist eine Funktion, mit der Sie mehrere Postings gleichzeitig an verschiedene Kandidaten senden können.",
       "category": "recruiting",
       "difficulty": "easy",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0427,
-        "precision": 0.1667,
-        "recall": 0.0588,
-        "f1_score": 0.087,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.4315
+        "cosine_similarity": 0.0613,
+        "precision": 0.1111,
+        "recall": 0.1176,
+        "f1_score": 0.1143,
+        "key_terms_ratio": 0.1,
+        "length_ratio": 0.9178
       },
-      "response_time": 27.88
+      "response_time": 3.24
     },
     {
       "id": "test_010",
       "question": "Wie funktioniert die Zeiterfassung via QR-Code?",
       "expected_answer": "Die Zeiterfassung via QR-Code ermöglicht Mitarbeitenden das Ein- und Ausstempeln durch Scannen eines QR-Codes, zum Beispiel am Eingang des Unternehmens.",
-      "generated_answer": "Meine Interviews können Sie in der Kandidatenverwaltung ansehen.\n\n##",
+      "generated_answer": "Die Zeiterfassung via QR-Code ist eine Möglichkeit, den Zeitraum zu ermitteln, in dem ein Benutzer einen Job oder eine Aufgabe abgeschlossen hat. Bei der QR-Code-Zeiterfassung wird ein QR-Code generiert, welches einem Reader zugeordnet werden muss. Der Benutzer kann diesen Code mit seinem Handy oder Smartphone anklicken, um den Zeitraum zu ermitteln. Die Zeiterfassung erfolgt sofort und ohne zusätzliche Software.",
       "category": "time_management",
       "difficulty": "easy",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1_score": 0,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.4474
+        "cosine_similarity": 0.2386,
+        "precision": 0.1522,
+        "recall": 0.3333,
+        "f1_score": 0.209,
+        "key_terms_ratio": 0.0909,
+        "length_ratio": 0.3654
       },
-      "response_time": 27.55
+      "response_time": 10.98
     },
     {
       "id": "test_011",
       "question": "Was sind Workflows in rexx HR?",
       "expected_answer": "Workflows in rexx HR sind konfigurierbare Prozessabläufe für verschiedene HR-Vorgänge wie Anträge, Genehmigungen und Freigaben. Sie können grafisch dargestellt und individuell angepasst werden.",
-      "generated_answer": "Sie können ein Workflow automatisch gestartet werden, indem Sie den Workflow ausführen.",
+      "generated_answer": "Workflows in rexx HR sind eine Methode, um den Prozess von Aufgaben zu automatisieren. Sie werden verwendet, um einen bestimmten Vorgang oder eine Reihenfolge von Vorgängen zu definieren, damit diese automatisch durchgeführt werden können.",
       "category": "workflows",
       "difficulty": "medium",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.1089,
-        "precision": 0.3,
-        "recall": 0.1364,
-        "f1_score": 0.1875,
-        "key_terms_ratio": 0.1429,
-        "length_ratio": 0.4508
+        "cosine_similarity": 0.1716,
+        "precision": 0.2759,
+        "recall": 0.3636,
+        "f1_score": 0.3137,
+        "key_terms_ratio": 0.2143,
+        "length_ratio": 0.8075
       },
-      "response_time": 27.52
+      "response_time": 5.67
     },
     {
       "id": "test_012",
       "question": "Wie funktioniert die Dokumenten Revision?",
       "expected_answer": "Die Dokumenten Revision ermöglicht die Versionierung und Nachverfolgung von Änderungen an Dokumenten im System.",
-      "generated_answer": "E",
+      "generated_answer": "Die Dokumente Revision ist ein Feature von rexx HR Software, das Ihnen hilft, Ihre Dokumente zu verwalten und zu verfolgen. Sie können Dokumente in Ihrem Repository speichern, bearbeiten, löschen oder anzeigen. Mit der Dokumenten Revision können Sie auch die Änderungen in Ihren Dokumenten nachverfolgen und sicherstellen, dass alle Änderungen korrekt gemacht wurden.",
       "category": "documents",
       "difficulty": "medium",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1_score": 0,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.009
+        "cosine_similarity": 0.2697,
+        "precision": 0.1463,
+        "recall": 0.5,
+        "f1_score": 0.2264,
+        "key_terms_ratio": 0.4286,
+        "length_ratio": 0.3025
       },
-      "response_time": 27.94
+      "response_time": 9.53
     },
     {
       "id": "test_013",
       "question": "Was ist AI Hiring in rexx?",
       "expected_answer": "AI Hiring nutzt künstliche Intelligenz zur Unterstützung im Recruiting-Prozess, zum Beispiel bei der Vorauswahl von Bewerbern.",
-      "generated_answer": "Ein AI Hiring-System bietet Ihnen die Möglichkeit, eine effiziente und sichere Mitarbeitersuche durchzuführen. Außerdem können Sie die Qualifikationen von Mitarbeitern überprüfen, um",
+      "generated_answer": "AI Hiring in rexx ist ein komplettes System, das Ihre Hiring-Prozesse automatisiert. Es bietet eine schnelle und effiziente Methode für die Suche nach neuen Mitarbeitern, die Ihre Unternehmen bewerben können. Mit AI Hiring in rexx können Sie Ihren Hiring-Team direkt anzeigen, was sie bei Ihrem Unternehmen suchen müssen, und Sie können Ihre eigenen Kriterien verwenden, um die besten Mitarbeiter zu finden.",
       "category": "recruiting",
       "difficulty": "medium",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0795,
-        "precision": 0.1364,
+        "cosine_similarity": 0.0906,
+        "precision": 0.0638,
         "recall": 0.1765,
-        "f1_score": 0.1538,
+        "f1_score": 0.0937,
         "key_terms_ratio": 0.1,
-        "length_ratio": 0.6923
+        "length_ratio": 0.3096
       },
-      "response_time": 28.69
+      "response_time": 10.92
     },
     {
       "id": "test_014",
       "question": "Wie funktioniert das Bewerben mit WhatsApp?",
       "expected_answer": "Bewerber können sich über WhatsApp auf Stellenangebote bewerben. Dies vereinfacht den Bewerbungsprozess besonders für mobile Nutzer.",
-      "generated_answer": "Sie können meine Kundend",
+      "generated_answer": "Das Bewerben mit WhatsApp funktioniert wie folgt:\n1. Klicken Sie auf den Link \"Bewerbung\" im WhatsApp-Konto.\n2. Geben Sie Ihre E-Mail-Adresse ein, damit wir Ihre Bewerbung an uns senden können.\n3. Schreiben Sie eine kurze und interessante Bewerbungsschlüsselwort-Liste, um unsere Mitarbeiter zu unterstützen.\n4. Wählen Sie die Option \"Hinzufügen\" aus, um weitere Informationen hinzuzufügen.\n5. Füllen Sie alle weiteren Felder aus, und klicken Sie dann auf \"Schließen\".\n6. Nach Abschluss der Bewerbung werden Sie von unserem Mitarbeiter kontaktiert, um weitere Informationen zu erhalten.",
       "category": "recruiting",
       "difficulty": "easy",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0687,
-        "precision": 0.25,
-        "recall": 0.0625,
-        "f1_score": 0.1,
-        "key_terms_ratio": 0.1,
-        "length_ratio": 0.1818
+        "cosine_similarity": 0.079,
+        "precision": 0.0746,
+        "recall": 0.3125,
+        "f1_score": 0.1205,
+        "key_terms_ratio": 0.3,
+        "length_ratio": 0.2253
       },
-      "response_time": 27.61
+      "response_time": 17.74
     },
     {
       "id": "test_015",
       "question": "Was sind Berechtigungsprofile in rexx HR?",
       "expected_answer": "Berechtigungsprofile steuern die Zugriffsrechte von Benutzern im System. Administratoren können Profile anlegen und die Rechteverwaltung konfigurieren.",
-      "generated_answer": "Eine Berechtigung kann durch das Hinzufügen einer Berecht",
+      "generated_answer": "Berechtigungsprofile sind eine Reihe von Berechtigungen, die einen Benutzer oder ein Team für bestimmte Aufgaben erteilt. Sie werden durch das System definiert und können vom Benutzer oder dem Team verwendet werden.",
       "category": "administration",
       "difficulty": "medium",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1_score": 0,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.3775
+        "cosine_similarity": 0.1603,
+        "precision": 0.2222,
+        "recall": 0.4,
+        "f1_score": 0.2857,
+        "key_terms_ratio": 0.2727,
+        "length_ratio": 0.7023
       },
-      "response_time": 27.77
+      "response_time": 5.04
     },
     {
       "id": "test_016",
       "question": "Wie funktioniert das E-Learning in rexx?",
       "expected_answer": "Das E-Learning Modul ermöglicht digitale Schulungen und Weiterbildungen für Mitarbeitende direkt im rexx System.",
-      "generated_answer": "Ein Lehrplan kann gelöscht werden, indem es in der rexx-Website geöffnet wird.",
+      "generated_answer": "Das E-Learning in rexx ermöglicht es Ihnen, eine Rechenleistung zu erwerben, ohne sich selbst einen Computer oder ein Internetverbindung anstellen zu müssen. Es ist eine Online-Lernplattform, die Sie mit den Rechnerinhalten des Systems verbindet. Sie können Ihre eigenen Lernergebnisse nachprüfen, um zu bestätigen, dass Sie Ihre Kenntnisse und Fähigkeiten erhöht haben. Mit dem E-Learning in rexx können Sie Ihr eigenes Training durchführen und Ihren Erfolg als Benutzer von rexx verbessern.",
       "category": "skillmanagement",
       "difficulty": "easy",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.039,
-        "precision": 0.0769,
-        "recall": 0.0667,
-        "f1_score": 0.0714,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.6964
+        "cosine_similarity": 0.1331,
+        "precision": 0.1053,
+        "recall": 0.4,
+        "f1_score": 0.1667,
+        "key_terms_ratio": 0.2222,
+        "length_ratio": 0.2276
       },
-      "response_time": 29.32
+      "response_time": 13.16
     },
     {
       "id": "test_017",
       "question": "Was ist das Ticketsystem in rexx?",
       "expected_answer": "Das Ticketsystem dient zur Verwaltung von Support-Anfragen und internen Aufgaben. Tickets können erstellt, zugewiesen und nachverfolgt werden.",
-      "generated_answer": "Ein Benutzer kann ein Ticket verlassen, indem er es im T",
+      "generated_answer": "Das Ticketsystem in rexx ist ein Softwaresystem, das für die Verwaltung von Rechnungsdaten und -ausgaben zuständig ist.",
       "category": "administration",
       "difficulty": "easy",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1_score": 0,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.3944
+        "cosine_similarity": 0.2142,
+        "precision": 0.3333,
+        "recall": 0.2941,
+        "f1_score": 0.3125,
+        "key_terms_ratio": 0.1538,
+        "length_ratio": 0.838
       },
-      "response_time": 27.77
+      "response_time": 3.31
     },
     {
       "id": "test_018",
       "question": "Wie funktioniert die Digitalisierung von Personalakten?",
       "expected_answer": "rexx systems begleitet die Digitalisierung von Personalakten. Dokumente werden digital erfasst und zentral im System verwaltet.",
-      "generated_answer": "Die Digitalisierung von Personalakten stellt einen wesentlichen Beitrag zur Mitarbeiterführung dar, da sie die Datenverwaltung vereinfacht und die Mitarbeiterinformationen verbess",
+      "generated_answer": "Die Digitalisierung von Personalakten erfolgt in der Regel durch das Umsetzen des elektronischen Lebenslaufs (ELL) in eine digitalen Form, wie z.B. ein PDF-Datei oder eine Webseite. Die Daten werden dann in einer Datenbank gespeichert, um sie später für die Auswahl eines passenden Mitarbeiters zu verwenden. Die digitale Personalakte kann auch als Online-Portal oder App zur Verfügung gestellt werden, um den Mitarbeitern die Möglichkeit zu geben, ihre Daten selbständig zu bearbeiten und zu verändern.",
       "category": "documents",
       "difficulty": "medium",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.2177,
-        "precision": 0.2778,
-        "recall": 0.3125,
-        "f1_score": 0.2941,
-        "key_terms_ratio": 0.1818,
-        "length_ratio": 0.7095
+        "cosine_similarity": 0.15,
+        "precision": 0.0968,
+        "recall": 0.375,
+        "f1_score": 0.1538,
+        "key_terms_ratio": 0.2727,
+        "length_ratio": 0.2525
       },
-      "response_time": 27.6
+      "response_time": 12.53
     },
     {
       "id": "test_019",
       "question": "Was sind Skill Anträge?",
       "expected_answer": "Skill Anträge ermöglichen Mitarbeitenden, neue Skills zu beantragen oder vorhandene Skills aktualisieren zu lassen. In der Workflow-Konfiguration kann gesteuert werden, ob der Antrag für neue Skills, vorhandene Skills oder beides genutzt werden kann.",
-      "generated_answer": "Prüfungsbereiche werden durch die Prüfungsauswahl (PAS) ermittelt",
+      "generated_answer": "Skill Anträge sind die Qualifikationen, die Sie in Ihrer beruflichen Ausbildung oder im Berufsschulstudium erworben haben. Sie werden von Ihnen selbst bewertet und bei der Beratung des beruflichen Entwicklungsdienstes (BED) von der Hochschule oder dem Arbeitsmarktbeirat (AMB) geprüft.",
       "category": "skillmanagement",
       "difficulty": "medium",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0521,
-        "precision": 0.1429,
-        "recall": 0.0417,
-        "f1_score": 0.0645,
-        "key_terms_ratio": 0.0625,
-        "length_ratio": 0.26
+        "cosine_similarity": 0.1367,
+        "precision": 0.1875,
+        "recall": 0.25,
+        "f1_score": 0.2143,
+        "key_terms_ratio": 0.1875,
+        "length_ratio": 0.8772
       },
-      "response_time": 27.75
+      "response_time": 27.66
     },
     {
       "id": "test_020",
       "question": "Wie funktioniert die Vakanz Analyse?",
       "expected_answer": "Die Vakanz Analyse bietet zentrale Auswertungen über offene Stellen und deren Publizierung auf verschiedenen Medien wie Jobportalen und der Karriereseite.",
-      "generated_answer": "Die Profilerstellung ermöglicht es Ihnen, den Job nachzuvollziehen, indem Sie die erforderlichen Kompetenzen und Voraussetzungen für das jeweilige Positionskatalog anzeigen.",
+      "generated_answer": "Die Vakanz Analyse ist ein wichtiger Bestandteil der Rexx HR Software. Sie ermöglicht Ihnen, die Vorkommen von Arbeitsplätzen zu ermitteln, die nicht besetzt sind. Die Vorkommen werden in einer Liste angezeigt, wobei für jede Position eine Zeile mit den folgenden Informationen enthalten ist:\n- Name des Arbeitspflegers\n- Name der Position\n- Anzahl der Vorkommen\n\nDiese Informationen können verwendet werden, um zu ermitteln, ob eine Position frei ist oder nicht. Wenn eine Position frei ist, kann sie von anderen Mitarbeitern besetzt werden. Wenn eine Position nicht besetzt ist, muss sie freigegeben werden.\n\nUm die Vorkommen zu ermitteln, müssen Sie die Rexx-Dateien verwalten, die die Vorkommen enthalten. Diese Dateien befinden sich im Ordner \"Rexx/HR/Vacancies\". Sie können diese Dateien aus dem Rexx-Manager öffnen und dann in das Rexx-Profil kopieren.\n\nDas Rexx HR Software bietet auch die Möglichkeit, die Vorkommen zu aktualisieren, wenn neue Positionen hinzugefügt werden. Dies kann beispielsweise bei einem Umzug oder einem Neubau eines Büros vorgenommen werden",
       "category": "recruiting",
       "difficulty": "medium",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.1037,
-        "precision": 0.1053,
-        "recall": 0.1053,
-        "f1_score": 0.1053,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.8902
+        "cosine_similarity": 0.1035,
+        "precision": 0.0682,
+        "recall": 0.3158,
+        "f1_score": 0.1121,
+        "key_terms_ratio": 0.2308,
+        "length_ratio": 0.1435
       },
-      "response_time": 27.97
+      "response_time": 27.67
     },
     {
       "id": "test_021",
       "question": "Was ist RAI in rexx?",
       "expected_answer": "RAI ist die KI im Forum und in der Suite von rexx systems. Sie unterstützt Benutzer mit intelligenten Funktionen.",
-      "generated_answer": "Die RAI-Kriterien sind die Kriterien für die Simulationsbereitschaft.",
+      "generated_answer": "RAI (Reversible Automatic Increment) in rexx ist ein Programmierkonstrukt, welches die Reihenfolge der Ausführung von Codeblocks ändert. Durch das RAI-Programm wird eine Reihe von Codeblocks in einer bestimmten Reihenfolge ausgeführt.",
       "category": "general",
       "difficulty": "medium",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.1374,
-        "precision": 0.3333,
-        "recall": 0.1053,
-        "f1_score": 0.16,
+        "cosine_similarity": 0.2232,
+        "precision": 0.2692,
+        "recall": 0.3684,
+        "f1_score": 0.3111,
         "key_terms_ratio": 0.0,
-        "length_ratio": 0.6106
+        "length_ratio": 0.4829
       },
-      "response_time": 27.64
+      "response_time": 6.32
     },
     {
       "id": "test_022",
       "question": "Wie konfiguriert man Zeitzonen in rexx?",
       "expected_answer": "Zeitzonen können in rexx eingestellt werden, um internationale Standorte und unterschiedliche Arbeitszeiten abzubilden.",
-      "generated_answer": "Zeitzonen können mit dem Befehl \"add\" hinzugefügt werden.",
-      "category": "administration",
-      "difficulty": "medium",
-      "metrics": {
-        "exact_match": 0.0,
-        "cosine_similarity": 0.1753,
-        "precision": 0.375,
-        "recall": 0.2308,
-        "f1_score": 0.2857,
-        "key_terms_ratio": 0.3333,
-        "length_ratio": 0.479
-      },
-      "response_time": 28.4
-    },
-    {
-      "id": "test_023",
-      "question": "Was ist genderneutrale Software bei rexx?",
-      "expected_answer": "rexx bietet genderneutrale Softwarefunktionen, um inklusiver Sprache in der HR-Software gerecht zu werden.",
-      "generated_answer": "Genderneutrale Software wird in meiner Organisation eingesetzt, um unterschiedliche Geschlechterrollen in den Programmen zu",
-      "category": "general",
-      "difficulty": "easy",
-      "metrics": {
-        "exact_match": 0.0,
-        "cosine_similarity": 0.2577,
-        "precision": 0.3846,
-        "recall": 0.3571,
-        "f1_score": 0.3704,
-        "key_terms_ratio": 0.25,
-        "length_ratio": 0.8618
-      },
-      "response_time": 27.88
-    },
-    {
-      "id": "test_024",
-      "question": "Wie funktioniert das Gesprächsmodul?",
-      "expected_answer": "Das Gesprächsmodul ermöglicht die Planung, Durchführung und Dokumentation von Mitarbeitergesprächen im rexx System.",
-      "generated_answer": "Die Benachrichtigungsfunktion ermöglicht die Übermittlung von Nachrichten, Anfragen, Änderungen oder andere Informationsmeldungen an alle angemeldeten Benutzer.",
-      "category": "skillmanagement",
-      "difficulty": "medium",
-      "metrics": {
-        "exact_match": 0.0,
-        "cosine_similarity": 0.1539,
-        "precision": 0.2,
-        "recall": 0.2308,
-        "f1_score": 0.2143,
-        "key_terms_ratio": 0.1429,
-        "length_ratio": 0.7188
-      },
-      "response_time": 28.31
-    },
-    {
-      "id": "test_025",
-      "question": "Was sind Teil-Workflows?",
-      "expected_answer": "Teil-Workflows sind wiederverwendbare Workflow-Komponenten, die in verschiedenen Hauptworkflows eingebunden werden können.",
-      "generated_answer": "Das Löschen eines Teil-Workflows erfolgt durch Klicken auf den Link \"Löschen\". Dieses Werkzeug wird automatisch zum Löschen des Teil-Workflows verwendet.",
-      "category": "workflows",
-      "difficulty": "hard",
-      "metrics": {
-        "exact_match": 0.0,
-        "cosine_similarity": 0.1103,
-        "precision": 0.1111,
-        "recall": 0.1538,
-        "f1_score": 0.129,
-        "key_terms_ratio": 0.1111,
-        "length_ratio": 0.7974
-      },
-      "response_time": 27.47
-    },
-    {
-      "id": "test_026",
-      "question": "Wie funktioniert das Recruiting Skilltags System?",
-      "expected_answer": "Recruiting Skilltags ermöglichen die Verschlagwortung von Stellenanzeigen und Bewerberprofilen mit relevanten Fähigkeiten für besseres Matching.",
-      "generated_answer": "Das Profiling-System kann zur Personaleinspektion eingesetzt werden, indem Sie die Qualifikationen von Mitarbeitern filtern",
-      "category": "recruiting",
-      "difficulty": "medium",
-      "metrics": {
-        "exact_match": 0.0,
-        "cosine_similarity": 0.0723,
-        "precision": 0.1333,
-        "recall": 0.1333,
-        "f1_score": 0.1333,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.8542
-      },
-      "response_time": 27.96
-    },
-    {
-      "id": "test_027",
-      "question": "Was ist die Risikobeurteilung bei Datenschutzverletzung?",
-      "expected_answer": "Die Risikobeurteilung bei Datenschutzverletzung hilft bei der Bewertung und Dokumentation von Datenschutzvorfällen gemäß DSGVO-Anforderungen.",
-      "generated_answer": "Die Qualität kontrolli",
-      "category": "administration",
-      "difficulty": "hard",
-      "metrics": {
-        "exact_match": 0.0,
-        "cosine_similarity": 0.0787,
-        "precision": 0.3333,
-        "recall": 0.0714,
-        "f1_score": 0.1176,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.156
-      },
-      "response_time": 27.6
-    },
-    {
-      "id": "test_028",
-      "question": "Wie funktioniert Mein Team in rexx?",
-      "expected_answer": "Mein Team bietet Führungskräften eine Übersicht über ihre direkten Mitarbeitenden mit relevanten Informationen und Aktionen.",
-      "generated_answer": "Personalinformationen können gelöscht werden",
-      "category": "administration",
-      "difficulty": "easy",
-      "metrics": {
-        "exact_match": 0.0,
-        "cosine_similarity": 0.0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1_score": 0,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.3548
-      },
-      "response_time": 27.58
-    },
-    {
-      "id": "test_029",
-      "question": "Was sind flexible Workflow-Felder?",
-      "expected_answer": "Flexible Workflow-Felder ermöglichen die individuelle Anpassung von Formularfeldern in Workflows je nach Anforderung.",
-      "generated_answer": "Ein Workflow kann gelöscht werden, indem Sie ihn aus der Liste der Workflows entfernen.",
-      "category": "workflows",
-      "difficulty": "hard",
-      "metrics": {
-        "exact_match": 0.0,
-        "cosine_similarity": 0.0724,
-        "precision": 0.1538,
-        "recall": 0.1429,
-        "f1_score": 0.1481,
-        "key_terms_ratio": 0.2222,
-        "length_ratio": 0.7436
-      },
-      "response_time": 28.12
-    },
-    {
-      "id": "test_030",
-      "question": "Wie funktioniert der Talentbringer?",
-      "expected_answer": "Der Talentbringer unterstützt das Empfehlungsmanagement, bei dem Mitarbeitende Kandidaten für offene Stellen empfehlen können.",
-      "generated_answer": "Die",
-      "category": "recruiting",
-      "difficulty": "medium",
-      "metrics": {
-        "exact_match": 0.0,
-        "cosine_similarity": 0.0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1_score": 0,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.0238
-      },
-      "response_time": 27.57
-    },
-    {
-      "id": "test_031",
-      "question": "Was sind Entwicklungsmaßnahmen in rexx HR?",
-      "expected_answer": "Entwicklungsmaßnahmen und Veranstaltungen dienen der Weiterbildung und Entwicklung von Mitarbeitenden. Sie können geplant und verwaltet werden.",
-      "generated_answer": "Entwicklungsmaßnahmen werden in rexx HR durch die Dokumentation von Entwicklungsprojekten dokumentiert.",
-      "category": "skillmanagement",
-      "difficulty": "medium",
-      "metrics": {
-        "exact_match": 0.0,
-        "cosine_similarity": 0.1087,
-        "precision": 0.2727,
-        "recall": 0.2143,
-        "f1_score": 0.24,
-        "key_terms_ratio": 0.2,
-        "length_ratio": 0.7203
-      },
-      "response_time": 27.73
-    },
-    {
-      "id": "test_032",
-      "question": "Wie funktioniert die Schwerbehinderung Verwaltung?",
-      "expected_answer": "Das Modul zur Schwerbehinderung ermöglicht die Erfassung und Verwaltung von Schwerbehindertendaten gemäß gesetzlichen Anforderungen.",
-      "generated_answer": "In der Arbeitszeiteingabe können Sie meine Arbeitszeiten im Timeplan löschen.",
-      "category": "administration",
-      "difficulty": "medium",
-      "metrics": {
-        "exact_match": 0.0,
-        "cosine_similarity": 0.0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1_score": 0,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.5833
-      },
-      "response_time": 30.39
-    },
-    {
-      "id": "test_033",
-      "question": "Was ist der Bewerbungsbooster?",
-      "expected_answer": "Der Bewerbungsbooster unterstützt internes Bewerben, bei dem Mitarbeitende sich schnell und einfach auf interne Stellenausschreibungen im Self Service Portal bewerben können.",
-      "generated_answer": "Ja, wir bieten einen kostenlosen Testversion an.",
-      "category": "recruiting",
-      "difficulty": "medium",
-      "metrics": {
-        "exact_match": 0.0,
-        "cosine_similarity": 0.0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1_score": 0,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.2759
-      },
-      "response_time": 27.81
-    },
-    {
-      "id": "test_034",
-      "question": "Wie funktionieren Räume & Sitzpläne in rexx?",
-      "expected_answer": "Räume und Sitzpläne ermöglichen die Verwaltung von Büroräumen und Arbeitsplätzen im Unternehmen.",
-      "generated_answer": "Räumendaten werden mit dem rexx-Datenbankmanager verwaltet. Das bedeutet, dass alle Änderungen an Räumen und ihre Daten automatisch gespeichert",
-      "category": "administration",
-      "difficulty": "easy",
-      "metrics": {
-        "exact_match": 0.0,
-        "cosine_similarity": 0.0679,
-        "precision": 0.0526,
-        "recall": 0.0909,
-        "f1_score": 0.0667,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.6713
-      },
-      "response_time": 27.46
-    },
-    {
-      "id": "test_035",
-      "question": "Was ist die Skillliste?",
-      "expected_answer": "Die Skillliste ist eine Übersicht aller im System definierten Skills, die für das Skillmanagement und Matching verwendet werden.",
-      "generated_answer": "Zur Verfügung stehen:\n1. Kundenkontakt\n2. Mitarbeiterkontakt\n3. Mitarbeiterverwaltung\n4. Kundenermittlung\n5. Mitarbeiterauswahl\n6. Mitarbeiterprofil\n7. Mitarbeiteraktivitäten\n8. Mitarbeiterüberwachung\n9. Mitarbeiterübertragung\n10. Mitarbeiteraktionsplanung\n11. Mitarbeitermanagement\n12. Mitarbeiterberatung\n13. Mitarbeiterentwicklung\n14. Mitarbeiterbewertung\n15. Mitarbeiterbewertungsplanung\n16. Mitarbeiterbewertungsbericht\n17. Mitarbeiterbewertungsmodell\n18. Mitarbeiterbewertungsdatenbank\n19. Mitarbeiterbewertungsnachrichten\n20. Mitarbeiterbewertungsausgabe\n21. Mitarbeiterbewertungsaktion\n22. Mitarbeiterbe",
-      "category": "skillmanagement",
-      "difficulty": "easy",
-      "metrics": {
-        "exact_match": 0.0,
-        "cosine_similarity": 0.0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1_score": 0,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.2095
-      },
-      "response_time": 27.56
-    },
-    {
-      "id": "test_036",
-      "question": "Wie funktioniert die Mehrsprachigkeit im Kundenforum?",
-      "expected_answer": "Das Kundenforum unterstützt Mehrsprachigkeit, sodass Inhalte in verschiedenen Sprachen bereitgestellt werden können.",
-      "generated_answer": "Um meine Unterhaltungsgruppen zu erstellen, navigiere ich zum Menü „Support“ > “Administration” > “Kunden” > “Unterhaltungseinstellungen”. Hier",
-      "category": "general",
-      "difficulty": "easy",
-      "metrics": {
-        "exact_match": 0.0,
-        "cosine_similarity": 0.0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1_score": 0,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.8112
-      },
-      "response_time": 27.47
-    },
-    {
-      "id": "test_037",
-      "question": "Was sind Ausbildung und Lernpfade?",
-      "expected_answer": "Ausbildung und Lernpfade definieren strukturierte Entwicklungswege für Mitarbeitende mit aufeinander aufbauenden Schulungen.",
-      "generated_answer": "Personalqual",
-      "category": "skillmanagement",
-      "difficulty": "medium",
-      "metrics": {
-        "exact_match": 0.0,
-        "cosine_similarity": 0.0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1_score": 0,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.0968
-      },
-      "response_time": 27.66
-    },
-    {
-      "id": "test_038",
-      "question": "Wie funktioniert das Org.Management in rexx?",
-      "expected_answer": "Das Org.Management ermöglicht die Verwaltung der Organisationsstruktur einschließlich Abteilungen, Jobfamilien und Stellen.",
-      "generated_answer": "Gruppenmitgliedschaften können durch das Hinzufügen, Entfernen oder Akt",
+      "generated_answer": "Man kann Zeitzonen mit dem Befehl \"timezone\" konfigurieren.",
       "category": "administration",
       "difficulty": "medium",
       "metrics": {
@@ -704,226 +416,514 @@
         "precision": 0.125,
         "recall": 0.0769,
         "f1_score": 0.0952,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.5772
+        "key_terms_ratio": 0.1111,
+        "length_ratio": 0.4958
       },
-      "response_time": 28.06
+      "response_time": 1.95
+    },
+    {
+      "id": "test_023",
+      "question": "Was ist genderneutrale Software bei rexx?",
+      "expected_answer": "rexx bietet genderneutrale Softwarefunktionen, um inklusiver Sprache in der HR-Software gerecht zu werden.",
+      "generated_answer": "Genderneutrale Software in rexx bedeutet, dass alle Personen gleichermaßen behandelt werden. Dies kann sowohl für die Ausführung als auch für die Benutzung von rexx-Programmen verwendet werden.",
+      "category": "general",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.1919,
+        "precision": 0.2174,
+        "recall": 0.3571,
+        "f1_score": 0.2703,
+        "key_terms_ratio": 0.375,
+        "length_ratio": 0.5492
+      },
+      "response_time": 4.49
+    },
+    {
+      "id": "test_024",
+      "question": "Wie funktioniert das Gesprächsmodul?",
+      "expected_answer": "Das Gesprächsmodul ermöglicht die Planung, Durchführung und Dokumentation von Mitarbeitergesprächen im rexx System.",
+      "generated_answer": "Das Gesprächsmodul ist eine Funktion, die in rexx HR Software für die Kommunikation zwischen Mitarbeitern in einer Organisation verwendet wird. Es ermöglicht es, Mitarbeiter zu kommunizieren, die sich in verschiedenen Bereichen der Organisation befinden. Die Kommunikation kann über Telefon, E-Mail oder andere Medien erfolgen. Das Gesprächsmodul bietet den Mitarbeitern einen schnellen und einfachen Weg zum Austausch von Informationen, Bewertungen und Kommentaren.",
+      "category": "skillmanagement",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.2417,
+        "precision": 0.14,
+        "recall": 0.5385,
+        "f1_score": 0.2222,
+        "key_terms_ratio": 0.2857,
+        "length_ratio": 0.2468
+      },
+      "response_time": 11.08
+    },
+    {
+      "id": "test_025",
+      "question": "Was sind Teil-Workflows?",
+      "expected_answer": "Teil-Workflows sind wiederverwendbare Workflow-Komponenten, die in verschiedenen Hauptworkflows eingebunden werden können.",
+      "generated_answer": "Partial Workflows sind eine Methode, um den Prozess zu organisieren, der für den jeweiligen Arbeitsprozess erforderlich ist. Sie werden verwendet, wenn ein Prozess mehrere Schritte hat, die nicht in einer einzelnen Workflow-Seite zusammengefasst werden können. Teil-Workflows bieten eine Möglichkeit, diese Schritte in kleinere Teile zu zerlegen, um sie als Einzelschritte zu verarbeiten.",
+      "category": "workflows",
+      "difficulty": "hard",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.2219,
+        "precision": 0.186,
+        "recall": 0.6154,
+        "f1_score": 0.2857,
+        "key_terms_ratio": 0.4444,
+        "length_ratio": 0.3144
+      },
+      "response_time": 9.79
+    },
+    {
+      "id": "test_026",
+      "question": "Wie funktioniert das Recruiting Skilltags System?",
+      "expected_answer": "Recruiting Skilltags ermöglichen die Verschlagwortung von Stellenanzeigen und Bewerberprofilen mit relevanten Fähigkeiten für besseres Matching.",
+      "generated_answer": "Das Recruiting Skilltags System ist ein kompakter, intuitiver und einfach zu verwendenes Tool für die Erstellung von Skills-Tags. Mit diesem Tool können Sie Ihre Kandidaten nach ihren jeweiligen Interessen und Vorlieben filtern, um eine effiziente Suche zu erzielen. Die Skills-Tags werden automatisch in ReXX geschrieben und können dann in Ihren Jobbeschreibungen eingebaut werden. Dadurch wird Ihr Unternehmen bei der Suche nach Kandidaten gefunden, die diese Voraussetzungen erfüllen.",
+      "category": "recruiting",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.1712,
+        "precision": 0.1296,
+        "recall": 0.4667,
+        "f1_score": 0.2029,
+        "key_terms_ratio": 0.2,
+        "length_ratio": 0.2957
+      },
+      "response_time": 11.93
+    },
+    {
+      "id": "test_027",
+      "question": "Was ist die Risikobeurteilung bei Datenschutzverletzung?",
+      "expected_answer": "Die Risikobeurteilung bei Datenschutzverletzung hilft bei der Bewertung und Dokumentation von Datenschutzvorfällen gemäß DSGVO-Anforderungen.",
+      "generated_answer": "Die Risikobeurteilung bei Datenschutzverletzung ist ein wichtiger Bestandteil der Datenschutzmaßnahmen. Sie umfasst den Schutz vor Datenverlusten, den Schutz von Datenvolumen und den Schutz von Daten in Verbindung mit anderen Systemen. Die Risikobewertung erfolgt im Rahmen einer Risikoanalyse, wobei Risiken für die Datensicherheit berücksichtigt werden. Die Risikobewertung kann durch eine Risikomanagementstrategie (Risk Management Strategy) oder durch einen Risikomanagementplan (Risk Management Plan) vorgenommen werden.",
+      "category": "administration",
+      "difficulty": "hard",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.189,
+        "precision": 0.1429,
+        "recall": 0.5,
+        "f1_score": 0.2222,
+        "key_terms_ratio": 0.2222,
+        "length_ratio": 0.2686
+      },
+      "response_time": 12.62
+    },
+    {
+      "id": "test_028",
+      "question": "Wie funktioniert Mein Team in rexx?",
+      "expected_answer": "Mein Team bietet Führungskräften eine Übersicht über ihre direkten Mitarbeitenden mit relevanten Informationen und Aktionen.",
+      "generated_answer": "Meine Teammitglieder arbeiten in einer Rexx-Anwendung, die meiner Organisation zugeordnet ist. Die Anwendung verfügt über eine integrierte Benutzerauthentifizierung und einfache Benutzerzugriffssteuerung. Jeder Benutzer kann sich mit einem eigenen Kennwort anmelden und mit den für seine Rolle ausgewählten Berechtigungen ausgeben.",
+      "category": "administration",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.1283,
+        "precision": 0.1111,
+        "recall": 0.2667,
+        "f1_score": 0.1569,
+        "key_terms_ratio": 0.0,
+        "length_ratio": 0.3746
+      },
+      "response_time": 8.61
+    },
+    {
+      "id": "test_029",
+      "question": "Was sind flexible Workflow-Felder?",
+      "expected_answer": "Flexible Workflow-Felder ermöglichen die individuelle Anpassung von Formularfeldern in Workflows je nach Anforderung.",
+      "generated_answer": "Flexible Workflow-Felder bieten eine Möglichkeit, Workflows zu erstellen, die sich an unterschiedliche Arbeitsschritte anpassen können. Dies bedeutet, dass Workflows für verschiedene Aufgaben oder Prozesse konzipiert werden können. Bei der Verwendung von Workflows kann es bei der Erstellung eines Workflows erforderlich sein, dass die Felder in einem Workflow flexibler sind als andere Felder.",
+      "category": "workflows",
+      "difficulty": "hard",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.2703,
+        "precision": 0.1667,
+        "recall": 0.5,
+        "f1_score": 0.25,
+        "key_terms_ratio": 0.4444,
+        "length_ratio": 0.297
+      },
+      "response_time": 9.99
+    },
+    {
+      "id": "test_030",
+      "question": "Wie funktioniert der Talentbringer?",
+      "expected_answer": "Der Talentbringer unterstützt das Empfehlungsmanagement, bei dem Mitarbeitende Kandidaten für offene Stellen empfehlen können.",
+      "generated_answer": "Der Talentbringer ist ein Software-Dienst, mit dem Sie in weniger als 30 Minuten eine passende Mitarbeiterin oder Mitarbeiter finden können. Der Dienst bietet eine umfassende Suche nach Qualifikationen, Kundeninformationen, CV-Vorlagen und vieles mehr. Mit dem Talentbringer können Sie Ihre Mitarbeitersuche problemlos durchführen und schnell einen passenden Mitarbeiter finden.",
+      "category": "recruiting",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.1459,
+        "precision": 0.1026,
+        "recall": 0.2857,
+        "f1_score": 0.1509,
+        "key_terms_ratio": 0.2222,
+        "length_ratio": 0.3333
+      },
+      "response_time": 9.84
+    },
+    {
+      "id": "test_031",
+      "question": "Was sind Entwicklungsmaßnahmen in rexx HR?",
+      "expected_answer": "Entwicklungsmaßnahmen und Veranstaltungen dienen der Weiterbildung und Entwicklung von Mitarbeitenden. Sie können geplant und verwaltet werden.",
+      "generated_answer": "Entwicklungsmaßnahmen in rexx HR umfassen die Planung, Entwicklung, Testing, Bereitstellung und Unterstützung von Rexx-Programmen für verschiedene Anwendungen.",
+      "category": "skillmanagement",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.1784,
+        "precision": 0.2353,
+        "recall": 0.2857,
+        "f1_score": 0.2581,
+        "key_terms_ratio": 0.2,
+        "length_ratio": 0.8994
+      },
+      "response_time": 4.24
+    },
+    {
+      "id": "test_032",
+      "question": "Wie funktioniert die Schwerbehinderung Verwaltung?",
+      "expected_answer": "Das Modul zur Schwerbehinderung ermöglicht die Erfassung und Verwaltung von Schwerbehindertendaten gemäß gesetzlichen Anforderungen.",
+      "generated_answer": "Die Schwerbehinderung Verwaltung wird durch die ReXX-Software erstellt, die in der ReXX-Komponente von RHEL/CentOS installiert werden kann. Die ReXX-Software ist eine Rechenzentrumskomponente für den Systemdiensteanbieter Red Hat Enterprise Linux (RHEL) oder CentOS. Sie bietet eine Rechnerbasierte Sprache mit einer eigenen Syntax, die die Schwerbehinderten behandelt. Die Schwerbehinderung Verwaltung dient dazu, die Schwerbehinderten zu unterstützen, die ihre Anforderungen an das System erfüllen müssen.",
+      "category": "administration",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.2298,
+        "precision": 0.1224,
+        "recall": 0.4286,
+        "f1_score": 0.1905,
+        "key_terms_ratio": 0.3333,
+        "length_ratio": 0.2604
+      },
+      "response_time": 14.04
+    },
+    {
+      "id": "test_033",
+      "question": "Was ist der Bewerbungsbooster?",
+      "expected_answer": "Der Bewerbungsbooster unterstützt internes Bewerben, bei dem Mitarbeitende sich schnell und einfach auf interne Stellenausschreibungen im Self Service Portal bewerben können.",
+      "generated_answer": "Der Bewerbungsbooster ist ein Programm, das bei den Rechenzentren von Rexx HR Software eingesetzt wird. Es ermöglicht Ihnen, eine schnelle und effektive Anwendung für Ihre Bewerbungen zu finden.",
+      "category": "recruiting",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.0866,
+        "precision": 0.1429,
+        "recall": 0.2,
+        "f1_score": 0.1667,
+        "key_terms_ratio": 0.0833,
+        "length_ratio": 0.8969
+      },
+      "response_time": 5.01
+    },
+    {
+      "id": "test_034",
+      "question": "Wie funktionieren Räume & Sitzpläne in rexx?",
+      "expected_answer": "Räume und Sitzpläne ermöglichen die Verwaltung von Büroräumen und Arbeitsplätzen im Unternehmen.",
+      "generated_answer": "Rexx unterstützt das Erstellen von Räumen und Sitzplänen, um die Verteilung von Benutzern und Arbeitsstätten zu regelen. Ein Raum ist ein physisches Objekt, das eine bestimmte Anzahl von Benutzern oder Arbeitsstätten enthält. Ein Sitzplatz ist ein virtuelles Objekt, das einen bestimmten Platz im Raum veranschaulicht. Sie können Räume und Sitzplätze manuell erstellen oder mithilfe von Befehlen definieren. Mit dem Befehl \"Create Room\" (Raum erstellen) können Sie ein neues Raumobjekt erstellen. Mit dem Befehl \"Create Seat\" (Sitzplatz erstellen) können Sie ein neues Sitzplatzobjekt erstellen.",
+      "category": "administration",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.1494,
+        "precision": 0.102,
+        "recall": 0.4545,
+        "f1_score": 0.1667,
+        "key_terms_ratio": 0.1429,
+        "length_ratio": 0.1613
+      },
+      "response_time": 15.57
+    },
+    {
+      "id": "test_035",
+      "question": "Was ist die Skillliste?",
+      "expected_answer": "Die Skillliste ist eine Übersicht aller im System definierten Skills, die für das Skillmanagement und Matching verwendet werden.",
+      "generated_answer": "Die Skillliste enthält alle verfügbaren Funktionen von rexx HR Software, z.B. Die Möglichkeit zum Erstellen von Arbeitszeiten, der Verkauf von Arbeitszeitplänen, das Löschen von Arbeitszeiten, die Erstellung von Arbeitszeitplänen, die Anpassung von Arbeitszeiten an den Arbeitszeitplan, die Anzeige von Arbeitszeiten in der Arbeitszeiteingabe, die Erstellung von Arbeitszeitsatzlisten, die Erstellung von Arbeitszeitsatzlisten mit Buchungsdaten, die Erstellung von Arbeitszeitsatzlisten mit Buchungsdaten und Arbeitszeitsatzlisten mit Buchungsdaten und Arbeitszeitsatzlisten mit Buchungsdaten und Buchungsdaten, die Erstellung von Arbeitszeitsatzlisten mit Buchungsdaten und Arbeitszeitsatzlisten mit Buchungsdaten und Buchungsdaten, die Erstellung von Arbeitszeitsatzlisten mit Buchungsdaten und Arbeitszeitsatzlisten mit Buchungsdaten und Buchungsdaten, die Erstellung von Arbeitszeitsatzlisten mit Buchungsdaten und Arbeitszeitsatzlisten mit Buchungsdaten und Buchungsdaten, die Erstellung von Arbeitszeitsatzlisten mit Buchungsdaten und Arbeitszeitsatzlisten mit Buchungsdaten und Buchungsdaten, die Erstellung von Arbeitszeitsatzlisten mit Buchungsdaten und Arbeitszeitsatzlisten mit Buchungsdaten und Buchungsdaten, die",
+      "category": "skillmanagement",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.1454,
+        "precision": 0.1212,
+        "recall": 0.2353,
+        "f1_score": 0.16,
+        "key_terms_ratio": 0.1,
+        "length_ratio": 0.1045
+      },
+      "response_time": 27.71
+    },
+    {
+      "id": "test_036",
+      "question": "Wie funktioniert die Mehrsprachigkeit im Kundenforum?",
+      "expected_answer": "Das Kundenforum unterstützt Mehrsprachigkeit, sodass Inhalte in verschiedenen Sprachen bereitgestellt werden können.",
+      "generated_answer": "Die Mehrsprachigkeit in dem Kundenforum wird durch die Unterstützung von mehreren Sprachen ermöglicht. Durch das Hinzufügen neuer Sprachen zu den verfügbaren Sprachvarianten, kann der Kunde seine Sprache wählen oder einen anderen Sprachausdruck verwenden, wenn er nicht mit der vorgesehenen Sprache konfrontiert ist. Die meisten Sprachvarianten werden von der Software automatisch unterstützt, aber man kann auch eigene Sprachvarianten hinzufügen, um die Anpassung an bestimmte Sprachen zu erleichtern.",
+      "category": "general",
+      "difficulty": "easy",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.1554,
+        "precision": 0.1373,
+        "recall": 0.5833,
+        "f1_score": 0.2222,
+        "key_terms_ratio": 0.5,
+        "length_ratio": 0.2311
+      },
+      "response_time": 12.27
+    },
+    {
+      "id": "test_037",
+      "question": "Was sind Ausbildung und Lernpfade?",
+      "expected_answer": "Ausbildung und Lernpfade definieren strukturierte Entwicklungswege für Mitarbeitende mit aufeinander aufbauenden Schulungen.",
+      "generated_answer": "Ausbildung und Lernpfade sind die Möglichkeiten, um einen Beruf zu erlernen oder zu lernen.",
+      "category": "skillmanagement",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.1229,
+        "precision": 0.2308,
+        "recall": 0.25,
+        "f1_score": 0.24,
+        "key_terms_ratio": 0.2222,
+        "length_ratio": 0.7339
+      },
+      "response_time": 2.65
+    },
+    {
+      "id": "test_038",
+      "question": "Wie funktioniert das Org.Management in rexx?",
+      "expected_answer": "Das Org.Management ermöglicht die Verwaltung der Organisationsstruktur einschließlich Abteilungen, Jobfamilien und Stellen.",
+      "generated_answer": "In Rexx, das Org.Management-Funktion ist einfach zu verwenden. Sie können Ihre Organisation mit den folgenden Befehlen erstellen, bearbeiten oder löschen:\n\n```\norg create orgname\norg add user1 firstname lastname email\norg add group1 name\norg add role1 name\norg add user2 firstname2 lastname email\norg add group2 name\norg add role2 name\n```\n\nDiese Befehle werden direkt im ReXX-Interpreter ausgeführt, ohne dass eine Konsole geöffnet werden muss.\n\nDas Org.Management-Modul kann auch über die `rexx` -Befehle verwendet werden:\n\n```\norg create orgname\norg add user1 firstname lastname email\norg add group1 name\norg add role1 name\norg add user2 firstname2 lastname email\norg add group2 name\norg add role2 name\n```\n\nDieser Modus ermöglicht es Ihnen, die Organisation und Gruppen zu erstellen, zu bearbeiten und zu löschen, ohne einen Konsole geöffnet zu haben.",
+      "category": "administration",
+      "difficulty": "medium",
+      "metrics": {
+        "exact_match": 0.0,
+        "cosine_similarity": 0.1741,
+        "precision": 0.0938,
+        "recall": 0.4615,
+        "f1_score": 0.1558,
+        "key_terms_ratio": 0.25,
+        "length_ratio": 0.1439
+      },
+      "response_time": 23.4
     },
     {
       "id": "test_039",
       "question": "Was ist FTE-Basis in rexx HR?",
       "expected_answer": "FTE-Basis (Full Time Equivalent) definiert die Grundlage für die Berechnung von Vollzeitäquivalenten im System.",
-      "generated_answer": "Um eine FTE-Basis zu speichern, müssen Sie das System verw",
+      "generated_answer": "FTE-Basis steht für \"Full Time Employee Basis\".",
       "category": "administration",
       "difficulty": "medium",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.125,
-        "precision": 0.2727,
-        "recall": 0.2143,
-        "f1_score": 0.24,
-        "key_terms_ratio": 0.2857,
-        "length_ratio": 0.5225
+        "cosine_similarity": 0.324,
+        "precision": 0.7143,
+        "recall": 0.3571,
+        "f1_score": 0.4762,
+        "key_terms_ratio": 0.1429,
+        "length_ratio": 0.4234
       },
-      "response_time": 28.22
+      "response_time": 1.48
     },
     {
       "id": "test_040",
       "question": "Wie funktioniert die Felderkonfiguration für Personal?",
       "expected_answer": "Die Felderkonfiguration ermöglicht die Anpassung von Datenfeldern in Personalstammdaten nach individuellen Anforderungen.",
-      "generated_answer": "Sie kann in der Berechtigungsverwaltung berechtigt werden. Die Berechtigungsverwaltung ermöglicht",
+      "generated_answer": "Die Felderkonfiguration für Personal in rexx HR Software ermöglicht es Ihnen, die Einstellungen für jeden Benutzer zu definieren, beispielsweise die Kürzel, das Passwort, die E-Mailadresse, die Telefonnummer usw. Sie können auch Gruppen von Benutzern erstellen, die dann alle Einstellungen gemeinsam verwenden können. Die Felderkonfiguration kann auch für die Erstellung von Berichten verwendet werden, um die Daten für bestimmte Zeiträume oder für bestimmte Personen zu filtern.",
       "category": "administration",
       "difficulty": "hard",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.1879,
-        "precision": 0.3333,
-        "recall": 0.2727,
-        "f1_score": 0.3,
-        "key_terms_ratio": 0.1429,
-        "length_ratio": 0.8017
+        "cosine_similarity": 0.3413,
+        "precision": 0.1064,
+        "recall": 0.4545,
+        "f1_score": 0.1724,
+        "key_terms_ratio": 0.2857,
+        "length_ratio": 0.2526
       },
-      "response_time": 27.65
+      "response_time": 11.7
     },
     {
       "id": "test_041",
       "question": "Was ist die neue Datenstruktur Beziehungen?",
       "expected_answer": "Die Datenstruktur Beziehungen ermöglicht die Abbildung von Verbindungen zwischen verschiedenen Datensätzen wie Personal und Stellen.",
-      "generated_answer": "Die folgenden Features sind verfügbar:\n- Bewerbergruppen\n- Bewerbungsstatus\n- Bewerberliste\n- Bewerberauswahl\n- Bewerberübersicht\n- Bewerberkarte\n- Bewerberprofil\n- Bewerberinformationen\n- Bewerberanforderung\n- Bewerberverwaltung\n- Bewerberausschluss\n- Bewerberausschlussstatus\n- Bewerberausschlussplan\n- Bewerberausschlussplanlaufzeit\n- Bewerberausschlussplanstatus\n- Bewerberausschlussplanausgaben\n- Bewerberausschlussplanausgabenstatus\n- Bewerberausschlussplanausgabenplan\n- Bewerberausschlussplanausgabenplanstatus\n- Bewerberausschlussplanausgabenplanlaufzeit\n- Bewerberausschlussplanausgabenplanstatuslaufzeit\n-",
+      "generated_answer": "Die neue Datenstruktur Beziehungen bietet eine einfache und effiziente Möglichkeit, die Verknüpfung von Daten zwischen verschiedenen Systemen zu erstellen. Sie ermöglicht es Ihnen, Daten aus verschiedenen Quellen in eine einheitliche Form zu verschieben, ohne dass Sie mit der Entwicklung eines neuen Systems oder einer neuen Anwendung beginnen müssen. Die neue Datenstruktur Beziehungen bietet eine einfachere und effizientere Möglichkeit, die Verknüpfung von Daten zwischen verschiedenen Systemen zu erstellen.",
       "category": "administration",
       "difficulty": "hard",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0517,
-        "precision": 0.0385,
-        "recall": 0.0714,
-        "f1_score": 0.05,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.2143
+        "cosine_similarity": 0.3176,
+        "precision": 0.186,
+        "recall": 0.5714,
+        "f1_score": 0.2807,
+        "key_terms_ratio": 0.5,
+        "length_ratio": 0.2578
       },
-      "response_time": 28.02
+      "response_time": 11.47
     },
     {
       "id": "test_042",
       "question": "Wie funktioniert die Zusammenführung der Berechtigungsprofile?",
       "expected_answer": "Recruiting und HR Berechtigungsprofile können zusammengeführt werden, um eine einheitliche Rechteverwaltung zu ermöglichen.",
-      "generated_answer": "Die Zusammenführung ermöglicht es, Berechtigungsprofile zu verwalten, die von mehreren Organisationen gemeinsam verwendet werden.",
+      "generated_answer": "Die Zusammenführung der Berechtigungsprofile erfolgt in der ReXX-Hilfe mit dem Befehl `join`. Dieses Befehl verbindet zwei oder mehr Berechtigungsprofile miteinander, um eine neue berechtigte Profile zu erstellen.\n\nBeispiel:\n```\n% Beispiel 1: Zusammenführen von Berechtigungen für mehrere Berechtigungsprofile\n\n% Erstelle zwei Berechtigungsprofile\ncreate profile \"Administrator\"\n    with name = \"Administrator\",\n         access_level = \"administrator\",\n         description = \"Administratorrolle\";\n\ncreate profile \"User\"\n    with name = \"User\",\n         access_level = \"user\",\n         description = \"Benutzerrolle\";\n\n% Zusammenführen von Berechtigungen für beide Berechtigungsprofile\njoin profile \"Administrator\" profile \"User\"\n    into profile \"Administrator_User\";\n\n% Prüft, ob die Zusammenführung erfolgreich war\ndisplay \"Berechtigungsprofile zusammengeführt\";\n```\n\nBeispiel 2: Zusammenführen von Berechtigungen für ein einzelnes Profil\n\n```\n% Beispiel 2: Zusammenführen von Berechtigungen für ein einzelnes Profil\n\n% Erstelle ein Profil\ncreate profile \"Administrator\"",
       "category": "administration",
       "difficulty": "hard",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.1174,
-        "precision": 0.2308,
-        "recall": 0.2308,
-        "f1_score": 0.2308,
+        "cosine_similarity": 0.0916,
+        "precision": 0.0909,
+        "recall": 0.3846,
+        "f1_score": 0.1471,
         "key_terms_ratio": 0.25,
-        "length_ratio": 0.9535
+        "length_ratio": 0.1147
       },
-      "response_time": 2.86
+      "response_time": 27.83
     },
     {
       "id": "test_043",
       "question": "Was ist die Darstellung neuer Rollen in rexx?",
       "expected_answer": "Neue Rollen können im System dargestellt und konfiguriert werden, um verschiedene Benutzergruppen abzubilden.",
-      "generated_answer": "Die Darstellung neuer Rollen in rexx bietet eine Möglichkeit, Rollen zu erstellen und zu verwalten.",
+      "generated_answer": "Die Darstellung neuer Rollen in rexx ermöglicht es Ihnen, neue Rollen zu erstellen, zu löschen oder zu aktualisieren. Sie können auch Rollen hinzufügen, um neue Rollen zu erstellen oder vorhandene Rollen zu ändern.",
       "category": "administration",
       "difficulty": "medium",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.1078,
-        "precision": 0.1538,
-        "recall": 0.1538,
-        "f1_score": 0.1538,
-        "key_terms_ratio": 0.1111,
-        "length_ratio": 0.9083
+        "cosine_similarity": 0.1719,
+        "precision": 0.1818,
+        "recall": 0.3077,
+        "f1_score": 0.2286,
+        "key_terms_ratio": 0.2222,
+        "length_ratio": 0.5093
       },
-      "response_time": 2.82
+      "response_time": 6.03
     },
     {
       "id": "test_044",
       "question": "Wie funktioniert die grafische Ansicht des Workflow Prozesses?",
       "expected_answer": "Der Workflow Designer bietet eine grafische Ansicht zur Visualisierung und Konfiguration von Unternehmensprozessen. Prozessschritte können visuell dargestellt werden.",
-      "generated_answer": "Das Arbeitsblatt ist ein Arbeitsbereich,",
+      "generated_answer": "Die grafische Ansicht des Workflow Prozesses ist einfach zu nutzen, da sie eine Darstellung der verschiedenen Arbeitsschritte und Ereignisse bietet. Die Arbeitsschritte werden als Line-of-Business (LOB)-Steuerelemente dargestellt, um den Benutzern eine intuitive Darstellung zu ermöglichen. Die Ereignisse werden in einem Diagramm angezeigt, das sich nach dem Verlauf des Workflows erweitert. Wenn Sie einen bestimmten Ereignisstatus verfolgen möchten, können Sie die Ereignistabelle anzeigen, um die Details zu sehen.",
       "category": "workflows",
       "difficulty": "medium",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1_score": 0,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.241
+        "cosine_similarity": 0.1617,
+        "precision": 0.1818,
+        "recall": 0.5556,
+        "f1_score": 0.274,
+        "key_terms_ratio": 0.5385,
+        "length_ratio": 0.3205
       },
-      "response_time": 27.55
+      "response_time": 13.55
     },
     {
       "id": "test_045",
       "question": "Was sind Meine Aufgaben in rexx HR?",
       "expected_answer": "Meine Aufgaben ist eine Aufgabenverwaltung im Stil eines Kanban-Boards, die agiles Arbeiten in HR ermöglicht.",
-      "generated_answer": "Die Arbeitszeittabelle dient als Quelle für die Überwachung der Arbeitszeitabrechnung. Die Arbeitszeittabelle wird regelmäßig aktualisiert und überprüft. Wenn ein Fehler festgestellt wird, kann man die Tabelle bearbeiten oder einen neuen Fehler erkennen und korrigieren.",
+      "generated_answer": "Meine Aufgaben in rexx HR sind:\n- Erstellen von Arbeitszeiten\n- Bearbeiten von Arbeitszeiten\n- Ermitteln von Arbeitszeitverläufen\n- Ermitteln von Arbeitszeitauslastungen\n- Ermitteln von Arbeitszeitunterschieden\n- Ermitteln von Arbeitszeitüberschreitungen\n- Ermitteln von Arbeitszeitstunden\n- Ermitteln von Arbeitszeitmitgliedern\n- Ermitteln von Arbeitszeitgruppen\n- Ermitteln von Arbeitszeiteinträgen\n- Ermitteln von Arbeitszeitabschlüssen\n- Ermitteln von Arbeitszeitausschlusses\n- Ermitteln von Arbeitszeitausschlussunterlagen\n- Ermitteln von Arbeitszeitausschlussstunden\n- Ermitteln von Arbeitszeitausschlussmitgliedern\n- Ermitteln von Arbeitszeitausschlussgruppen\n- Ermitteln von Arbeitszeitausschlussabschlüssen\n- Ermitteln von Arbeitszeitausschlussabschlüssen unterlagen",
       "category": "administration",
       "difficulty": "easy",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0757,
-        "precision": 0.037,
-        "recall": 0.0625,
-        "f1_score": 0.0465,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.4037
+        "cosine_similarity": 0.0219,
+        "precision": 0.1481,
+        "recall": 0.25,
+        "f1_score": 0.186,
+        "key_terms_ratio": 0.2222,
+        "length_ratio": 0.1406
       },
-      "response_time": 28.43
+      "response_time": 22.33
     },
     {
       "id": "test_046",
       "question": "Wie funktioniert die Online-Hilfe in rexx?",
       "expected_answer": "Die Online-Hilfe bietet kontextbezogene Unterstützung und Dokumentation direkt im System.",
-      "generated_answer": "Das Online-Helpdesk ist ein Online-Supportsystem, das Anwendungsentwickler und Benutzer bei der Verwendung der Software unterstützt. Es bietet eine Möglichkeit zum Einreichen von Feedback, Problembehandlungen und Fragen an die Softwareentwickler.",
+      "generated_answer": "Die Online-Hilfe in rexx ist ein Feature, das von der Software für die Kommunikation zwischen den Benutzern und dem Programm verwendet wird. Sie ermöglicht es, Fragen zu beantworten, die nicht direkt im Programm selbst auftreten können. Die Hilfe kann über die Webseite oder über einen E-Mail an das Supportteam gesendet werden. Die Hilfe kann auch per Telefon erfolgen, wenn das Supportteam nicht zur Verfügung steht.",
       "category": "general",
       "difficulty": "easy",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.1732,
-        "precision": 0.1481,
-        "recall": 0.3636,
-        "f1_score": 0.2105,
-        "key_terms_ratio": 0.25,
-        "length_ratio": 0.3618
+        "cosine_similarity": 0.2397,
+        "precision": 0.1132,
+        "recall": 0.5455,
+        "f1_score": 0.1875,
+        "key_terms_ratio": 0.375,
+        "length_ratio": 0.2129
       },
-      "response_time": 27.87
+      "response_time": 10.95
     },
     {
       "id": "test_047",
       "question": "Was ist das Kundenforum?",
       "expected_answer": "Das Kundenforum ist eine Plattform für rexx-Kunden zum Austausch und zur Unterstützung.",
-      "generated_answer": "Ein K",
+      "generated_answer": "Das Kundenforum ist ein Online-Kundenkonto, in dem Kunden ihre Anfragen, Fragen und Feedback zu Rexx HR Software an uns melden können.",
       "category": "general",
       "difficulty": "easy",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1_score": 0,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.0575
+        "cosine_similarity": 0.2197,
+        "precision": 0.2727,
+        "recall": 0.4615,
+        "f1_score": 0.3429,
+        "key_terms_ratio": 0.4,
+        "length_ratio": 0.6493
       },
-      "response_time": 27.46
+      "response_time": 3.96
     },
     {
       "id": "test_048",
       "question": "Wie funktionieren Vorlagen in rexx HR?",
       "expected_answer": "Vorlagen ermöglichen die Standardisierung von Dokumenten und Prozessen im System.",
-      "generated_answer": "Die Benutzer",
+      "generated_answer": "Rexx HR Software bietet Vorlagen, die Sie für Ihre Organisation speziell konfigurieren können. Sie können Vorlagen verwenden, um eine Reihe von Einstellungen zu definieren, z.B. Benutzergruppen, Rollen oder Berechtigungen. Die Vorlage kann dann automatisch verwendet werden, wenn ein neuer Benutzer hinzugefügt wird.\n\nDas Konfigurieren von Vorlagen ist einfach. Sie erstellen eine Vorlage, füllen sie aus mit den erforderlichen Informationen und speichern sie. Danach können Sie diese Vorlage verwenden, wenn Sie neue Benutzer hinzufügen.\n\nWeitere Informationen finden Sie unter \"Vorlagen\" im Rexx HR Software-Handbuch.",
       "category": "documents",
       "difficulty": "easy",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.1338,
-        "precision": 0.5,
-        "recall": 0.1,
-        "f1_score": 0.1667,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.1481
+        "cosine_similarity": 0.1406,
+        "precision": 0.0833,
+        "recall": 0.5,
+        "f1_score": 0.1429,
+        "key_terms_ratio": 0.1667,
+        "length_ratio": 0.1309
       },
-      "response_time": 27.48
+      "response_time": 16.36
     },
     {
       "id": "test_049",
       "question": "Was sind Typen-Administration?",
       "expected_answer": "Die Typen-Administration ermöglicht die Konfiguration verschiedener Kategorien und Typen für Systemdaten.",
-      "generated_answer": "Um einen Benutzer zu erstellen, müssen Sie ein neues Element mit dem Namen \"Benutzer\" erstellen. Sie können",
+      "generated_answer": "Typen-Administration ist eine Funktion in der ReXX-Software, die für Administratoren geeignet ist, zu verwalten und zu verwalten von Benutzern und Gruppen im System.",
       "category": "administration",
       "difficulty": "medium",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1_score": 0,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.9813
+        "cosine_similarity": 0.2311,
+        "precision": 0.2381,
+        "recall": 0.5,
+        "f1_score": 0.3226,
+        "key_terms_ratio": 0.2857,
+        "length_ratio": 0.6364
       },
-      "response_time": 28.27
+      "response_time": 4.38
     },
     {
       "id": "test_050",
       "question": "Wie funktioniert das Personal/User Setup?",
       "expected_answer": "Das Personal/User Setup ermöglicht die Konfiguration von Benutzerkonten und Personalstammdaten im System.",
-      "generated_answer": "Benutzer",
+      "generated_answer": "Das Personal/User Setup funktioniert mit dem ReXX-Human Resource Software, welches von ReXX HR Software entwickelt wurde. Das ReXX-Human Resource Software bietet eine einfache und effiziente Methode für die Personal/User Setup, um Ihre Organisation zu organisieren und zu verwalten.",
       "category": "administration",
       "difficulty": "medium",
       "metrics": {
         "exact_match": 0.0,
-        "cosine_similarity": 0.0,
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1_score": 0,
-        "key_terms_ratio": 0.0,
-        "length_ratio": 0.0762
+        "cosine_similarity": 0.2557,
+        "precision": 0.2333,
+        "recall": 0.5385,
+        "f1_score": 0.3256,
+        "key_terms_ratio": 0.2857,
+        "length_ratio": 0.3723
       },
-      "response_time": 29.29
+      "response_time": 8.27
     }
   ]
 }
