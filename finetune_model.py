@@ -108,7 +108,7 @@ def main():
             padding="max_length"
         )
 
-    tokenized_dataset = train_dataset.map(tokenize_function, batched=True)
+    tokenized_dataset = train_dataset.map(tokenize_function, batched=True, remove_columns=["text"])
 
     # Training arguments - optimized for CPU/MPS
     training_args = TrainingArguments(
