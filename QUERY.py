@@ -10,5 +10,5 @@ rag_system = RexxRAGSystem(pdf_folder)
 rag_system.process_pdfs()
 
 # Ask your question
-response = rag_system.query("Can two users have the same User Name in Rexx?")
+response = rag_system.query("What is Rexx Systems?")
 print(response["answer"])
