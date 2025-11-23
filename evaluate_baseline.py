@@ -1,78 +1,86 @@
 """
 Baseline Evaluation Script for Rexx HR Q&A System
-Evaluates llama2 model performance on test dataset
+Evaluates TinyLlama model (without fine-tuning) on test dataset
 """
 
 import json
-import requests
+import sys
 import time
-from typing import List, Dict
+from typing import Dict
 from datetime import datetime
 import os
+import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 # Metrics
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import re
 
+# Force unbuffered output
+sys.stdout.reconfigure(line_buffering=True)
+
 
 class BaselineEvaluator:
     """Evaluate LLM baseline performance on Q&A dataset."""
 
-    def __init__(self, model_name: str = "llama2", ollama_url: str = "http://localhost:11434"):
+    def __init__(self, model_name: str = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"):
         self.model_name = model_name
-        self.ollama_url = ollama_url
         self.results = []
+        self.model = None
+        self.tokenizer = None
 
-    def check_ollama(self) -> bool:
-        """Check if Ollama is running."""
-        try:
-            response = requests.get(f"{self.ollama_url}/api/tags", timeout=5)
-            return response.status_code == 200
-        except:
-            return False
+    def load_model(self):
+        """Load TinyLlama model from HuggingFace."""
+        print(f"Loading model: {self.model_name}", flush=True)
 
-    def query_model(self, question: str, use_context: bool = False, context: str = "") -> str:
-        """Send question to Ollama model."""
-        if use_context:
-            prompt = f"""Du bist ein Experte für rexx HR Software. Beantworte die folgende Frage basierend auf dem Kontext.
+        self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
+        self.tokenizer.pad_token = self.tokenizer.eos_token
 
-Kontext:
-{context}
+        self.model = AutoModelForCausalLM.from_pretrained(
+            self.model_name,
+            torch_dtype=torch.float32,
+            trust_remote_code=True,
+            low_cpu_mem_usage=True
+        )
+        self.model.eval()
+        print("Model loaded!", flush=True)
 
-Frage: {question}
+    def query_model(self, question: str, max_new_tokens: int = 300) -> str:
+        """Generate answer using TinyLlama."""
+        prompt = f"""### Instruction:
+Beantworte die folgende Frage über rexx HR Software präzise und auf Deutsch.
 
-Antwort:"""
-        else:
-            # Baseline without RAG context
-            prompt = f"""Du bist ein Experte für rexx HR Software. Beantworte die folgende Frage kurz und präzise auf Deutsch.
+### Question:
+{question}
 
-Frage: {question}
+### Answer:
+"""
+        inputs = self.tokenizer(prompt, return_tensors="pt", truncation=True, max_length=512)
 
-Antwort:"""
-
-        try:
-            response = requests.post(
-                f"{self.ollama_url}/api/generate",
-                json={
-                    "model": self.model_name,
-                    "prompt": prompt,
-                    "stream": False,
-                    "options": {
-                        "temperature": 0.3,
-                        "num_predict": 256
-                    }
-                },
-                timeout=120
+        with torch.no_grad():
+            outputs = self.model.generate(
+                **inputs,
+                max_new_tokens=max_new_tokens,
+                temperature=0.3,
+                do_sample=True,
+                pad_token_id=self.tokenizer.eos_token_id,
+                eos_token_id=self.tokenizer.eos_token_id,
+                repetition_penalty=1.1
             )
 
-            if response.status_code == 200:
-                return response.json().get('response', '').strip()
-            else:
-                return f"ERROR: Status {response.status_code}"
+        full_response = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-        except Exception as e:
-            return f"ERROR: {str(e)}"
+        # Extract only the answer part
+        if "### Answer:" in full_response:
+            answer = full_response.split("### Answer:")[-1].strip()
+            # Stop at next ### if model starts repeating
+            if "###" in answer:
+                answer = answer.split("###")[0].strip()
+        else:
+            answer = full_response
+
+        return answer
 
     def calculate_metrics(self, generated: str, expected: str) -> Dict:
         """Calculate evaluation metrics between generated and expected answer."""
@@ -120,18 +128,21 @@ Antwort:"""
             "length_ratio": round(length_ratio, 4)
         }
 
-    def evaluate_dataset(self, dataset_path: str, use_rag: bool = False, rag_system=None) -> Dict:
+    def evaluate_dataset(self, dataset_path: str) -> Dict:
         """Run evaluation on test dataset."""
+
+        # Load model if not loaded
+        if self.model is None:
+            self.load_model()
 
         # Load dataset
         with open(dataset_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
 
         test_questions = data['test']
-        print(f"\nEvaluating {len(test_questions)} test questions...")
-        print(f"Model: {self.model_name}")
-        print(f"RAG enabled: {use_rag}")
-        print("=" * 60)
+        print(f"\nEvaluating {len(test_questions)} test questions...", flush=True)
+        print(f"Model: {self.model_name}", flush=True)
+        print("=" * 60, flush=True)
 
         self.results = []
         start_time = time.time()
@@ -140,17 +151,11 @@ Antwort:"""
             question = item['question']
             expected = item['expected_answer']
 
-            print(f"\n[{i+1}/{len(test_questions)}] {question[:50]}...")
-
-            # Get context from RAG if enabled
-            context = ""
-            if use_rag and rag_system:
-                retrieved = rag_system.retrieve(question, n_results=3)
-                context = "\n".join([chunk['text'] for chunk in retrieved])
+            print(f"\n[{i+1}/{len(test_questions)}] {question[:50]}...", flush=True)
 
             # Query model
             q_start = time.time()
-            generated = self.query_model(question, use_context=use_rag, context=context)
+            generated = self.query_model(question)
             q_time = time.time() - q_start
 
             # Calculate metrics
@@ -168,7 +173,7 @@ Antwort:"""
             }
             self.results.append(result)
 
-            print(f"   Cosine Sim: {metrics['cosine_similarity']:.2f} | F1: {metrics['f1_score']:.2f} | Time: {q_time:.1f}s")
+            print(f"   Cosine Sim: {metrics['cosine_similarity']:.2f} | F1: {metrics['f1_score']:.2f} | Time: {q_time:.1f}s", flush=True)
 
         total_time = time.time() - start_time
 
@@ -180,7 +185,7 @@ Antwort:"""
         return {
             "metadata": {
                 "model": self.model_name,
-                "rag_enabled": use_rag,
+                "finetuned": False,
                 "timestamp": datetime.now().isoformat(),
                 "num_questions": len(test_questions)
             },
@@ -232,58 +237,52 @@ Antwort:"""
         """Save evaluation results to JSON file."""
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(evaluation_results, f, ensure_ascii=False, indent=2)
-        print(f"\nResults saved to: {output_path}")
+        print(f"\nResults saved to: {output_path}", flush=True)
 
     def print_summary(self, evaluation_results: Dict):
         """Print evaluation summary."""
         agg = evaluation_results['aggregate_metrics']
 
-        print("\n" + "=" * 60)
-        print("EVALUATION SUMMARY")
-        print("=" * 60)
-        print(f"Model: {evaluation_results['metadata']['model']}")
-        print(f"RAG Enabled: {evaluation_results['metadata']['rag_enabled']}")
-        print(f"Questions Evaluated: {evaluation_results['metadata']['num_questions']}")
-        print(f"Total Time: {agg.get('total_time_seconds', 0)}s")
-        print(f"Avg Response Time: {agg.get('avg_response_time', 0)}s")
+        print("\n" + "=" * 60, flush=True)
+        print("BASELINE EVALUATION SUMMARY", flush=True)
+        print("=" * 60, flush=True)
+        print(f"Model: {evaluation_results['metadata']['model']}", flush=True)
+        print(f"Fine-tuned: {evaluation_results['metadata']['finetuned']}", flush=True)
+        print(f"Questions Evaluated: {evaluation_results['metadata']['num_questions']}", flush=True)
+        print(f"Total Time: {agg.get('total_time_seconds', 0)}s", flush=True)
+        print(f"Avg Response Time: {agg.get('avg_response_time', 0)}s", flush=True)
 
-        print("\n--- Overall Metrics ---")
-        print(f"Avg Cosine Similarity: {agg['avg_cosine_similarity']:.4f}")
-        print(f"Avg Precision: {agg['avg_precision']:.4f}")
-        print(f"Avg Recall: {agg['avg_recall']:.4f}")
-        print(f"Avg F1 Score: {agg['avg_f1_score']:.4f}")
-        print(f"Avg Key Terms Ratio: {agg['avg_key_terms_ratio']:.4f}")
+        print("\n--- Overall Metrics ---", flush=True)
+        print(f"Avg Cosine Similarity: {agg['avg_cosine_similarity']:.4f}", flush=True)
+        print(f"Avg Precision: {agg['avg_precision']:.4f}", flush=True)
+        print(f"Avg Recall: {agg['avg_recall']:.4f}", flush=True)
+        print(f"Avg F1 Score: {agg['avg_f1_score']:.4f}", flush=True)
+        print(f"Avg Key Terms Ratio: {agg['avg_key_terms_ratio']:.4f}", flush=True)
 
-        print("\n--- F1 Score by Category ---")
+        print("\n--- F1 Score by Category ---", flush=True)
         for cat, score in agg.get('by_category', {}).items():
-            print(f"  {cat}: {score:.4f}")
+            print(f"  {cat}: {score:.4f}", flush=True)
 
-        print("\n--- F1 Score by Difficulty ---")
+        print("\n--- F1 Score by Difficulty ---", flush=True)
         for diff, score in agg.get('by_difficulty', {}).items():
-            print(f"  {diff}: {score:.4f}")
+            print(f"  {diff}: {score:.4f}", flush=True)
 
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     dataset_path = os.path.join(script_dir, "rexx_qa_dataset_curated.json")
 
-    # Initialize evaluator
-    evaluator = BaselineEvaluator(model_name="llama2")
+    # Initialize evaluator with TinyLlama
+    evaluator = BaselineEvaluator(model_name="TinyLlama/TinyLlama-1.1B-Chat-v1.0")
 
-    # Check Ollama
-    if not evaluator.check_ollama():
-        print("ERROR: Ollama is not running!")
-        print("Please start Ollama with: ollama serve")
-        return
+    print("Starting TinyLlama baseline evaluation...", flush=True)
 
-    print("Ollama is running. Starting baseline evaluation...")
+    # Run baseline evaluation
+    print("\n" + "=" * 60, flush=True)
+    print("BASELINE EVALUATION (TinyLlama without fine-tuning)", flush=True)
+    print("=" * 60, flush=True)
 
-    # Run baseline evaluation (without RAG)
-    print("\n" + "=" * 60)
-    print("BASELINE EVALUATION (without RAG)")
-    print("=" * 60)
-
-    results = evaluator.evaluate_dataset(dataset_path, use_rag=False)
+    results = evaluator.evaluate_dataset(dataset_path)
 
     # Save results
     output_path = os.path.join(script_dir, "baseline_results.json")

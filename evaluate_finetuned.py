@@ -41,7 +41,7 @@ def load_finetuned_model(model_path: str):
     return model, tokenizer
 
 
-def generate_answer(model, tokenizer, question: str, max_new_tokens: int = 200) -> str:
+def generate_answer(model, tokenizer, question: str, max_new_tokens: int = 300) -> str:
     """Generate answer using the fine-tuned model."""
     prompt = f"""### Instruction:
 Beantworte die folgende Frage über rexx HR Software präzise und auf Deutsch.
@@ -61,7 +61,8 @@ Beantworte die folgende Frage über rexx HR Software präzise und auf Deutsch.
             temperature=0.3,
             do_sample=True,
             pad_token_id=tokenizer.eos_token_id,
-            eos_token_id=tokenizer.eos_token_id
+            eos_token_id=tokenizer.eos_token_id,
+            repetition_penalty=1.1
         )
 
     full_response = tokenizer.decode(outputs[0], skip_special_tokens=True)
@@ -69,6 +70,9 @@ Beantworte die folgende Frage über rexx HR Software präzise und auf Deutsch.
     # Extract only the answer part
     if "### Answer:" in full_response:
         answer = full_response.split("### Answer:")[-1].strip()
+        # Stop at next ### if model starts repeating
+        if "###" in answer:
+            answer = answer.split("###")[0].strip()
     else:
         answer = full_response
 
