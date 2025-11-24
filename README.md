@@ -5,13 +5,14 @@ LLM-based Q&A system for Rexx HR Software documentation (German language).
 ## Overview
 
 This project evaluates different approaches for a domain-specific Q&A system:
-- **Baseline**: LLM without domain knowledge (Qwen2.5-1.5B-Instruct)
+- **Baseline**: LLM without domain knowledge (Qwen2.5-1.5B-Instruct / LittleLlama)
 - **Fine-Tuning**: LoRA fine-tuning on Rexx-specific data
 - **RAG**: Retrieval-Augmented Generation with PDF documents
 
-We compared multiple models on the same test dataset to evaluate their performance:
+For RAG we compared multiple models on the same test dataset to evaluate their performance:
 - **Generators**: tinyllama (1.1B), llama2 (7B), gemma2:2b (2B)
-- **Embeddings**: MiniLM-L6-v2 (English), Multilingual-MiniLM-L12-v2 (German support)
+- **Embeddings**: MiniLM-L6-v2 (English/German), Multilingual-MiniLM-L12-v2 (German support), 
+all-mpet-base-v2 (all)
 
 ## Setup
 
@@ -73,12 +74,14 @@ python app.py
 
 ## Results
 
-All results are saved as JSON:
-- `qwen25_baseline_results.json`
-- `qwen25_finetuned_results.json`
-- `rag_results.json`
-- `rag_model_comparison.json`
-- `embedding_comparison.json`
+All results are saved in `result exports/`:
+- `littleLlama_baseline_results.json` - TinyLlama baseline evaluation
+- `littleLlama_finetuned_results.json` - TinyLlama fine-tuned evaluation
+- `littleLlama_miniLM_rag_results.json` - TinyLlama RAG evaluation
+- `qwen25_baseline_results.json` - Qwen2.5 baseline evaluation
+- `qwen25_finetuned_results.json` - Qwen2.5 fine-tuned evaluation
+- `rag_model_comparison.json` - RAG generator comparison
+- `embedding_comparison.json` - Embedding model comparison
 
 ## Metrics
 

@@ -19,10 +19,11 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 # Force unbuffered output
 sys.stdout.reconfigure(line_buffering=True)
 
-# Embedding models to compare (2 schnellste)
+# Embedding models to compare
 EMBEDDING_MODELS = [
     "sentence-transformers/all-MiniLM-L6-v2",                        # 384 dim, English (Baseline)
     "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",   # 384 dim, Multilingual (für Deutsch!)
+    "sentence-transformers/all-mpnet-base-v2",                       # 768 dim, English (higher quality)
 ]
 
 
