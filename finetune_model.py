@@ -1,5 +1,5 @@
 """
-Fine-tuning Script for Rexx HR Q&A
+Fine-tuning Script for Rexx HR Q&A (Qwen2.5-1.5B-Instruct)
 Uses HuggingFace Transformers with LoRA for efficient fine-tuning
 """
 
@@ -57,11 +57,10 @@ Beantworte die folgende Frage über rexx HR Software präzise und auf Deutsch.
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     dataset_path = os.path.join(script_dir, "rexx_qa_dataset_curated.json")
-    output_dir = os.path.join(script_dir, "rexx_finetuned_model")
+    output_dir = os.path.join(script_dir, "qwen25_finetuned_model")
 
-    # Model selection - use a smaller model for faster training
-    # Options: "TinyLlama/TinyLlama-1.1B-Chat-v1.0", "microsoft/phi-2", "google/gemma-2b"
-    MODEL_NAME = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+    # Model selection - use Qwen2.5-1.5B-Instruct for CPU efficiency
+    MODEL_NAME = "Qwen/Qwen2.5-1.5B-Instruct"
 
     print(f"Loading model: {MODEL_NAME}")
     print(f"Device: {DEVICE}")
@@ -81,9 +80,9 @@ def main():
     )
     print("Model loaded!", flush=True)
 
-    # Configure LoRA
+    # Configure LoRA for Qwen2.5
     lora_config = LoraConfig(
-        r=16,  # LoRA rank
+        r=16,  # Standard rank for 1.5B model
         lora_alpha=32,
         target_modules=["q_proj", "v_proj", "k_proj", "o_proj"],
         lora_dropout=0.05,

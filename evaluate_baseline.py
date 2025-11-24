@@ -1,6 +1,6 @@
 """
 Baseline Evaluation Script for Rexx HR Q&A System
-Evaluates TinyLlama model (without fine-tuning) on test dataset
+Evaluates Qwen2.5-1.5B-Instruct model (without fine-tuning) on test dataset
 """
 
 import json
@@ -24,14 +24,14 @@ sys.stdout.reconfigure(line_buffering=True)
 class BaselineEvaluator:
     """Evaluate LLM baseline performance on Q&A dataset."""
 
-    def __init__(self, model_name: str = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"):
+    def __init__(self, model_name: str = "Qwen/Qwen2.5-1.5B-Instruct"):
         self.model_name = model_name
         self.results = []
         self.model = None
         self.tokenizer = None
 
     def load_model(self):
-        """Load TinyLlama model from HuggingFace."""
+        """Load Qwen2.5 model from HuggingFace."""
         print(f"Loading model: {self.model_name}", flush=True)
 
         self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
@@ -47,7 +47,7 @@ class BaselineEvaluator:
         print("Model loaded!", flush=True)
 
     def query_model(self, question: str, max_new_tokens: int = 300) -> str:
-        """Generate answer using TinyLlama."""
+        """Generate answer using Qwen2.5."""
         prompt = f"""### Instruction:
 Beantworte die folgende Frage über rexx HR Software präzise und auf Deutsch.
 
@@ -272,20 +272,20 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     dataset_path = os.path.join(script_dir, "rexx_qa_dataset_curated.json")
 
-    # Initialize evaluator with TinyLlama
-    evaluator = BaselineEvaluator(model_name="TinyLlama/TinyLlama-1.1B-Chat-v1.0")
+    # Initialize evaluator with Qwen2.5
+    evaluator = BaselineEvaluator(model_name="Qwen/Qwen2.5-1.5B-Instruct")
 
-    print("Starting TinyLlama baseline evaluation...", flush=True)
+    print("Starting Qwen2.5-1.5B baseline evaluation...", flush=True)
 
     # Run baseline evaluation
     print("\n" + "=" * 60, flush=True)
-    print("BASELINE EVALUATION (TinyLlama without fine-tuning)", flush=True)
+    print("BASELINE EVALUATION (Qwen2.5-1.5B-Instruct without fine-tuning)", flush=True)
     print("=" * 60, flush=True)
 
     results = evaluator.evaluate_dataset(dataset_path)
 
     # Save results
-    output_path = os.path.join(script_dir, "baseline_results.json")
+    output_path = os.path.join(script_dir, "qwen25_baseline_results.json")
     evaluator.save_results(output_path, results)
 
     # Print summary
@@ -294,3 +294,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
