@@ -1,0 +1,3 @@
+Model,Dimension,Avg_Top_Similarity,Avg_Relevance,Load_Time,Eval_Time
+paraphrase-multilingual-MiniLM-L12-v2,384,0.6947,0.354,44.64,2.07
+all-MiniLM-L6-v2,384,0.577,0.3431,2.67,2.56

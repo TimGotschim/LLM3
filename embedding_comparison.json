@@ -1,0 +1,18 @@
+{
+  "sentence-transformers/all-MiniLM-L6-v2": {
+    "avg_top_similarity": 0.577,
+    "avg_similarity": 0.5336,
+    "avg_relevance": 0.3431,
+    "load_time": 2.67,
+    "eval_time": 2.56,
+    "embedding_dim": 384
+  },
+  "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2": {
+    "avg_top_similarity": 0.6947,
+    "avg_similarity": 0.6603,
+    "avg_relevance": 0.354,
+    "load_time": 44.64,
+    "eval_time": 2.07,
+    "embedding_dim": 384
+  }
+}

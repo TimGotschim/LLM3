@@ -1,5 +1,5 @@
 """
-Evaluation Script for Fine-tuned TinyLlama Model
+Evaluation Script for Fine-tuned Qwen2.5-1.5B-Instruct Model
 Compares fine-tuned model performance against baseline
 """
 
@@ -20,7 +20,7 @@ sys.stdout.reconfigure(line_buffering=True)
 
 def load_finetuned_model(model_path: str):
     """Load the fine-tuned model with LoRA weights."""
-    base_model_name = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+    base_model_name = "Qwen/Qwen2.5-1.5B-Instruct"
 
     print(f"Loading base model: {base_model_name}", flush=True)
     tokenizer = AutoTokenizer.from_pretrained(model_path)
@@ -82,7 +82,7 @@ Beantworte die folgende Frage über rexx HR Software präzise und auf Deutsch.
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     dataset_path = os.path.join(script_dir, "rexx_qa_dataset_curated.json")
-    model_path = os.path.join(script_dir, "rexx_finetuned_model")
+    model_path = os.path.join(script_dir, "qwen25_finetuned_model")
 
     # Load fine-tuned model
     print("Loading fine-tuned model...", flush=True)
@@ -98,7 +98,7 @@ def main():
     print("=" * 60, flush=True)
 
     # Initialize evaluator for metrics
-    evaluator = BaselineEvaluator(model_name="tinyllama-finetuned")
+    evaluator = BaselineEvaluator(model_name="qwen25-finetuned")
 
     results = []
     start_time = time.time()
@@ -160,8 +160,8 @@ def main():
     # Save results
     output = {
         "metadata": {
-            "model": "TinyLlama-1.1B-finetuned",
-            "base_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+            "model": "Qwen2.5-1.5B-Instruct-finetuned",
+            "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
             "finetuned": True,
             "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S"),
             "num_questions": len(test_questions)
@@ -170,7 +170,7 @@ def main():
         "results": results
     }
 
-    output_path = os.path.join(script_dir, "finetuned_results.json")
+    output_path = os.path.join(script_dir, "qwen25_finetuned_results.json")
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
     print(f"\nResults saved to: {output_path}", flush=True)
@@ -179,7 +179,7 @@ def main():
     print("\n" + "=" * 60, flush=True)
     print("FINE-TUNED MODEL EVALUATION SUMMARY", flush=True)
     print("=" * 60, flush=True)
-    print(f"Model: TinyLlama-1.1B (fine-tuned on rexx data)", flush=True)
+    print(f"Model: Qwen2.5-1.5B-Instruct (fine-tuned on rexx data)", flush=True)
     print(f"Questions Evaluated: {len(test_questions)}", flush=True)
     print(f"Total Time: {aggregate['total_time_seconds']}s", flush=True)
     print(f"Avg Response Time: {aggregate['avg_response_time']}s", flush=True)
@@ -195,13 +195,13 @@ def main():
         print(f"  {cat}: {score:.4f}", flush=True)
 
     # Load baseline for comparison
-    baseline_path = os.path.join(script_dir, "baseline_results.json")
+    baseline_path = os.path.join(script_dir, "qwen25_baseline_results.json")
     if os.path.exists(baseline_path):
         with open(baseline_path, 'r') as f:
             baseline = json.load(f)
 
         print("\n" + "=" * 60, flush=True)
-        print("COMPARISON: BASELINE (TinyLlama) vs FINE-TUNED (TinyLlama)", flush=True)
+        print("COMPARISON: BASELINE (Qwen2.5) vs FINE-TUNED (Qwen2.5)", flush=True)
         print("=" * 60, flush=True)
 
         baseline_agg = baseline['aggregate_metrics']
